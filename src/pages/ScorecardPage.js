@@ -15,7 +15,7 @@ import DecoratedString from "../components/DecoratedStringComponent";
 import { catInitials, iconsPathPrefix, scoreCardText } from "../helpers/constants";
 import { format } from 'd3-format';
 import { randomInt } from 'd3-random';
-
+import ScoreCardExplainer from '../components/explainers/ScoreCardExplainer'
 
 function ScorecardPage(props) {
 
@@ -25,6 +25,7 @@ function ScorecardPage(props) {
     categoryScoresExtent, countryProfiles } = data;
 
   const [highlightCat, setHighlightCat] = useState("");
+  const [openExplainer, setOpenExplainer] = useState(false);
 
   const openCatsRemoveConfused = countryProfiles[iso].open_categories.filter(c => !countryProfiles[iso].incomplete_categories.includes(c));
   const closedCatsRemoveConfused = countryProfiles[iso].closed_categories.filter(c => !countryProfiles[iso].incomplete_categories.includes(c));
@@ -206,6 +207,18 @@ function ScorecardPage(props) {
                       Source: <a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD">World Bank</a>
                   </Popup>
                 </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                            
+                <ScoreCardExplainer
+                  open={openExplainer}
+                  setOpen={setOpenExplainer}
+                  questionData={questions}
+                  scoreData={countryDataNestToScore}
+                />         
+                <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
+                <br/>
+                <br/>
               </Grid.Row>
             </Grid>
           </Grid.Column>

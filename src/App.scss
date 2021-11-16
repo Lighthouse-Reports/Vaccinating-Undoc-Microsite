@@ -194,7 +194,7 @@ table, td, th {
 }
 
 .scoreCard {
-
+  width: 100%;
   text-align: left;
   .scoreCardContent {
     min-height: 370px;
@@ -403,5 +403,13 @@ table, td, th {
   &.mobile {
     height: 2em;
     display: inline;
+  }
+}
+
+.questionContainer {
+  overflow: auto;
+  padding: 0.3em;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

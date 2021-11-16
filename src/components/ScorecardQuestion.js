@@ -7,8 +7,8 @@ import { Card } from 'semantic-ui-react';
 import CardShareWidget from './CardShareWidget';
 
 function ScorecardQuestion(props) {
-  const { width, height, data, shareRoute } = props;
-  const chartPadding = paddings.mapChartBorder;
+  const { width, height, data, shareRoute, smallWidth } = props;
+  const chartPadding = smallWidth ? 0 : paddings.mapChartBorder;
   const inBetweenPadding = paddings.mapChartInBetween;
   const lineHeight = height;
   const paddedWidth = width - chartPadding*2;
