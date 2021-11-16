@@ -67,7 +67,7 @@ const countryData = [
     "Answer": "No",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -78,7 +78,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -261,11 +261,11 @@ const countryData = [
     "Country": "Poland",
     "Iso3": "POL",
     "Iso2": "PL",
-    "Score": -1.5,
+    "Score": -2,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -320,7 +320,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -386,7 +386,7 @@ const countryData = [
     "Answer": "Unknown",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -397,7 +397,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -580,11 +580,11 @@ const countryData = [
     "Country": "United Kingdom",
     "Iso3": "GBR",
     "Iso2": "GB",
-    "Score": 6,
+    "Score": 5.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -639,7 +639,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -705,7 +705,7 @@ const countryData = [
     "Answer": "Unknown",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -716,7 +716,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -899,11 +899,11 @@ const countryData = [
     "Country": "Portugal",
     "Iso3": "PRT",
     "Iso2": "PT",
-    "Score": 1,
+    "Score": 0.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -958,7 +958,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -1024,7 +1024,7 @@ const countryData = [
     "Answer": "No",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -1035,7 +1035,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -1218,11 +1218,11 @@ const countryData = [
     "Country": "Italy",
     "Iso3": "ITA",
     "Iso2": "IT",
-    "Score": -0.5,
+    "Score": -1,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -1277,7 +1277,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -1343,7 +1343,7 @@ const countryData = [
     "Answer": "No",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -1354,7 +1354,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -1537,11 +1537,11 @@ const countryData = [
     "Country": "Spain",
     "Iso3": "ESP",
     "Iso2": "ES",
-    "Score": 1.5,
+    "Score": 1,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -1596,7 +1596,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -1658,22 +1658,22 @@ const countryData = [
     "Country": "Ireland",
     "Iso3": "IRL",
     "Iso2": "IE",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Ireland",
     "Iso3": "IRL",
     "Iso2": "IE",
-    "Score": -1.75,
+    "Score": -0.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -1856,11 +1856,11 @@ const countryData = [
     "Country": "Ireland",
     "Iso3": "IRL",
     "Iso2": "IE",
-    "Score": 2,
+    "Score": 1.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -1911,11 +1911,11 @@ const countryData = [
     "Country": "Ireland",
     "Iso3": "IRL",
     "Iso2": "IE",
-    "Score": 2.75,
+    "Score": 4.25,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -1977,22 +1977,22 @@ const countryData = [
     "Country": "Slovakia",
     "Iso3": "SVK",
     "Iso2": "SK",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Slovakia",
     "Iso3": "SVK",
     "Iso2": "SK",
-    "Score": 0.75,
+    "Score": 2.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -2175,11 +2175,11 @@ const countryData = [
     "Country": "Slovakia",
     "Iso3": "SVK",
     "Iso2": "SK",
-    "Score": 1,
+    "Score": 0.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -2230,15 +2230,15 @@ const countryData = [
     "Country": "Slovakia",
     "Iso3": "SVK",
     "Iso2": "SK",
-    "Score": -9.25,
+    "Score": -7.75,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2249,7 +2249,7 @@ const countryData = [
   },
   {
     "Score Type": "T2",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2260,7 +2260,7 @@ const countryData = [
   },
   {
     "Score Type": "T3",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2271,7 +2271,7 @@ const countryData = [
   },
   {
     "Score Type": "T11",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -1,
@@ -2282,7 +2282,7 @@ const countryData = [
   },
   {
     "Score Type": "T6",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -0.5,
@@ -2293,29 +2293,29 @@ const countryData = [
   },
   {
     "Score Type": "A1",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
-    "Score": 0.75,
+    "Score": 2.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2326,7 +2326,7 @@ const countryData = [
   },
   {
     "Score Type": "T5",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -1,
@@ -2337,7 +2337,7 @@ const countryData = [
   },
   {
     "Score Type": "A3",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2348,7 +2348,7 @@ const countryData = [
   },
   {
     "Score Type": "A11",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -2,
@@ -2359,7 +2359,7 @@ const countryData = [
   },
   {
     "Score Type": "A12",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2370,7 +2370,7 @@ const countryData = [
   },
   {
     "Score Type": "A13",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -1,
@@ -2381,7 +2381,7 @@ const countryData = [
   },
   {
     "Score Type": "Undocumented Access",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -1,
@@ -2392,7 +2392,7 @@ const countryData = [
   },
   {
     "Score Type": "T9",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2403,7 +2403,7 @@ const countryData = [
   },
   {
     "Score Type": "T10",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2414,7 +2414,7 @@ const countryData = [
   },
   {
     "Score Type": "Identification and Residency Requirements",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 2,
@@ -2425,7 +2425,7 @@ const countryData = [
   },
   {
     "Score Type": "T7",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2436,7 +2436,7 @@ const countryData = [
   },
   {
     "Score Type": "A18",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2447,7 +2447,7 @@ const countryData = [
   },
   {
     "Score Type": "A19",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2458,7 +2458,7 @@ const countryData = [
   },
   {
     "Score Type": "A21",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2469,7 +2469,7 @@ const countryData = [
   },
   {
     "Score Type": "A26",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2480,7 +2480,7 @@ const countryData = [
   },
   {
     "Score Type": "A27",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2491,18 +2491,18 @@ const countryData = [
   },
   {
     "Score Type": "Marginalized Access",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
-    "Score": 6,
+    "Score": 5.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 1,
@@ -2513,7 +2513,7 @@ const countryData = [
   },
   {
     "Score Type": "A5",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -1,
@@ -2524,7 +2524,7 @@ const countryData = [
   },
   {
     "Score Type": "A31",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": -1,
@@ -2535,7 +2535,7 @@ const countryData = [
   },
   {
     "Score Type": "Privacy Guarantees",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
     "Score": 0,
@@ -2546,14 +2546,14 @@ const countryData = [
   },
   {
     "Score Type": "Total Score",
-    "Country": "Netherlands",
+    "Country": "The Netherlands",
     "Iso3": "NLD",
     "Iso2": "NL",
-    "Score": 7.25,
+    "Score": 8.75,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -2619,7 +2619,7 @@ const countryData = [
     "Answer": "No",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -2630,7 +2630,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -2813,11 +2813,11 @@ const countryData = [
     "Country": "France",
     "Iso3": "FRA",
     "Iso2": "FR",
-    "Score": 4.5,
+    "Score": 4,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -2872,7 +2872,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -2934,22 +2934,22 @@ const countryData = [
     "Country": "Malta",
     "Iso3": "MLT",
     "Iso2": "MT",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Malta",
     "Iso3": "MLT",
     "Iso2": "MT",
-    "Score": -1.75,
+    "Score": -0.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -3132,11 +3132,11 @@ const countryData = [
     "Country": "Malta",
     "Iso3": "MLT",
     "Iso2": "MT",
-    "Score": 0,
+    "Score": -0.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -3187,11 +3187,11 @@ const countryData = [
     "Country": "Malta",
     "Iso3": "MLT",
     "Iso2": "MT",
-    "Score": -7.25,
+    "Score": -5.75,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -3253,22 +3253,22 @@ const countryData = [
     "Country": "Romania",
     "Iso3": "ROU",
     "Iso2": "RO",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Romania",
     "Iso3": "ROU",
     "Iso2": "RO",
-    "Score": 0.75,
+    "Score": 2.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -3451,11 +3451,11 @@ const countryData = [
     "Country": "Romania",
     "Iso3": "ROU",
     "Iso2": "RO",
-    "Score": 1.5,
+    "Score": 1,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -3506,11 +3506,11 @@ const countryData = [
     "Country": "Romania",
     "Iso3": "ROU",
     "Iso2": "RO",
-    "Score": -8.75,
+    "Score": -7.25,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -3572,22 +3572,22 @@ const countryData = [
     "Country": "Germany",
     "Iso3": "DEU",
     "Iso2": "DE",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Germany",
     "Iso3": "DEU",
     "Iso2": "DE",
-    "Score": 0.75,
+    "Score": 2.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -3770,11 +3770,11 @@ const countryData = [
     "Country": "Germany",
     "Iso3": "DEU",
     "Iso2": "DE",
-    "Score": 1,
+    "Score": 0.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -3825,11 +3825,11 @@ const countryData = [
     "Country": "Germany",
     "Iso3": "DEU",
     "Iso2": "DE",
-    "Score": -1.25,
+    "Score": 0.25,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -3891,22 +3891,22 @@ const countryData = [
     "Country": "Czech Republic",
     "Iso3": "CZE",
     "Iso2": "CZ",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Czech Republic",
     "Iso3": "CZE",
     "Iso2": "CZ",
-    "Score": -1.75,
+    "Score": -0.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -4089,11 +4089,11 @@ const countryData = [
     "Country": "Czech Republic",
     "Iso3": "CZE",
     "Iso2": "CZ",
-    "Score": 0.5,
+    "Score": 0,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -4144,11 +4144,11 @@ const countryData = [
     "Country": "Czech Republic",
     "Iso3": "CZE",
     "Iso2": "CZ",
-    "Score": -15.25,
+    "Score": -13.75,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -4214,7 +4214,7 @@ const countryData = [
     "Answer": "No",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -4225,7 +4225,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -4408,11 +4408,11 @@ const countryData = [
     "Country": "Austria",
     "Iso3": "AUT",
     "Iso2": "AT",
-    "Score": 3,
+    "Score": 2.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -4467,7 +4467,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -4529,22 +4529,22 @@ const countryData = [
     "Country": "Denmark",
     "Iso3": "DNK",
     "Iso2": "DK",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Denmark",
     "Iso3": "DNK",
     "Iso2": "DK",
-    "Score": -1.25,
+    "Score": 0.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -4727,11 +4727,11 @@ const countryData = [
     "Country": "Denmark",
     "Iso3": "DNK",
     "Iso2": "DK",
-    "Score": 6,
+    "Score": 5.5,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -4782,11 +4782,11 @@ const countryData = [
     "Country": "Denmark",
     "Iso3": "DNK",
     "Iso2": "DK",
-    "Score": 6.25,
+    "Score": 7.75,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -4852,7 +4852,7 @@ const countryData = [
     "Answer": "No",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
@@ -4863,7 +4863,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -5046,11 +5046,11 @@ const countryData = [
     "Country": "Belgium",
     "Iso3": "BEL",
     "Iso2": "BE",
-    "Score": 1.5,
+    "Score": 1,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
+    "Median": 0.75
   },
   {
     "Score Type": "T12",
@@ -5105,7 +5105,7 @@ const countryData = [
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   },
   {
     "Score Type": "T1",
@@ -5167,22 +5167,22 @@ const countryData = [
     "Country": "Greece",
     "Iso3": "GRC",
     "Iso2": "GR",
-    "Score": -5,
+    "Score": -2,
     "Answer": "NA",
     "Cat_type": "Policy Transparency",
     "Cat_short": "trans",
-    "Median": -5
+    "Median": -2
   },
   {
     "Score Type": "Policy Transparency",
     "Country": "Greece",
     "Iso3": "GRC",
     "Iso2": "GR",
-    "Score": 0.75,
+    "Score": 2.25,
     "Answer": "",
     "Cat_type": "Sub Aggregate",
     "Cat_short": "subagg",
-    "Median": 0.75
+    "Median": 1
   },
   {
     "Score Type": "T4",
@@ -5365,330 +5365,330 @@ const countryData = [
     "Country": "Greece",
     "Iso3": "GRC",
     "Iso2": "GR",
+    "Score": -0.5,
+    "Answer": "",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "subagg",
+    "Median": 0.75
+  },
+  {
+    "Score Type": "T12",
+    "Country": "Greece",
+    "Iso3": "GRC",
+    "Iso2": "GR",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Privacy Guarantees",
+    "Cat_short": "priv",
+    "Median": 1
+  },
+  {
+    "Score Type": "A5",
+    "Country": "Greece",
+    "Iso3": "GRC",
+    "Iso2": "GR",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Privacy Guarantees",
+    "Cat_short": "priv",
+    "Median": -1
+  },
+  {
+    "Score Type": "A31",
+    "Country": "Greece",
+    "Iso3": "GRC",
+    "Iso2": "GR",
+    "Score": 1,
+    "Answer": "No",
+    "Cat_type": "Privacy Guarantees",
+    "Cat_short": "priv",
+    "Median": -1
+  },
+  {
+    "Score Type": "Privacy Guarantees",
+    "Country": "Greece",
+    "Iso3": "GRC",
+    "Iso2": "GR",
+    "Score": 3,
+    "Answer": "",
+    "Cat_type": "Sub Aggregate",
+    "Cat_short": "subagg",
+    "Median": 0
+  },
+  {
+    "Score Type": "Total Score",
+    "Country": "Greece",
+    "Iso3": "GRC",
+    "Iso2": "GR",
+    "Score": 1.25,
+    "Answer": "",
+    "Cat_type": "Aggregate",
+    "Cat_short": "aggregate",
+    "Median": -2.25
+  },
+  {
+    "Score Type": "T1",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Policy Transparency",
+    "Cat_short": "trans",
+    "Median": 1
+  },
+  {
+    "Score Type": "T2",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Policy Transparency",
+    "Cat_short": "trans",
+    "Median": 1
+  },
+  {
+    "Score Type": "T3",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Policy Transparency",
+    "Cat_short": "trans",
+    "Median": -1
+  },
+  {
+    "Score Type": "T11",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -1,
+    "Answer": "No",
+    "Cat_type": "Policy Transparency",
+    "Cat_short": "trans",
+    "Median": -2
+  },
+  {
+    "Score Type": "T6",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -0.5,
+    "Answer": "Unknown",
+    "Cat_type": "Policy Transparency",
+    "Cat_short": "trans",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "A1",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -2,
+    "Answer": "NA",
+    "Cat_type": "Policy Transparency",
+    "Cat_short": "trans",
+    "Median": -2
+  },
+  {
+    "Score Type": "Policy Transparency",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 2.25,
+    "Answer": "",
+    "Cat_type": "Sub Aggregate",
+    "Cat_short": "subagg",
+    "Median": 1
+  },
+  {
+    "Score Type": "T4",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -1,
+    "Answer": "Unknown",
+    "Cat_type": "Undocumented Access",
+    "Cat_short": "undoc",
+    "Median": -1
+  },
+  {
+    "Score Type": "T5",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -1,
+    "Answer": "Unknown",
+    "Cat_type": "Undocumented Access",
+    "Cat_short": "undoc",
+    "Median": -1
+  },
+  {
+    "Score Type": "A3",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -1,
+    "Answer": "Unknown",
+    "Cat_type": "Undocumented Access",
+    "Cat_short": "undoc",
+    "Median": -1
+  },
+  {
+    "Score Type": "A11",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -0.5,
+    "Answer": "Unknown",
+    "Cat_type": "Undocumented Access",
+    "Cat_short": "undoc",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "A12",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -0.5,
+    "Answer": "Unknown",
+    "Cat_type": "Undocumented Access",
+    "Cat_short": "undoc",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "A13",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -0.5,
+    "Answer": "Unknown",
+    "Cat_type": "Undocumented Access",
+    "Cat_short": "undoc",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "Undocumented Access",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -5.5,
+    "Answer": "",
+    "Cat_type": "Sub Aggregate",
+    "Cat_short": "subagg",
+    "Median": -5.5
+  },
+  {
+    "Score Type": "T9",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Identification and Residency Requirements",
+    "Cat_short": "idres",
+    "Median": 1
+  },
+  {
+    "Score Type": "T10",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -0.5,
+    "Answer": "Unknown",
+    "Cat_type": "Identification and Residency Requirements",
+    "Cat_short": "idres",
+    "Median": 1
+  },
+  {
+    "Score Type": "Identification and Residency Requirements",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 0.5,
+    "Answer": "",
+    "Cat_type": "Sub Aggregate",
+    "Cat_short": "subagg",
+    "Median": 2
+  },
+  {
+    "Score Type": "T7",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -1,
+    "Answer": "No",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "marg",
+    "Median": 0.25
+  },
+  {
+    "Score Type": "A18",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -1,
+    "Answer": "No",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "marg",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "A19",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "marg",
+    "Median": 1
+  },
+  {
+    "Score Type": "A21",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "marg",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "A26",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": 1,
+    "Answer": "Yes",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "marg",
+    "Median": 1
+  },
+  {
+    "Score Type": "A27",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
+    "Score": -0.5,
+    "Answer": "Unknown",
+    "Cat_type": "Marginalized Access",
+    "Cat_short": "marg",
+    "Median": -0.5
+  },
+  {
+    "Score Type": "Marginalized Access",
+    "Country": "Estonia",
+    "Iso3": "EST",
+    "Iso2": "EE",
     "Score": 0,
     "Answer": "",
     "Cat_type": "Marginalized Access",
     "Cat_short": "subagg",
-    "Median": 1.25
-  },
-  {
-    "Score Type": "T12",
-    "Country": "Greece",
-    "Iso3": "GRC",
-    "Iso2": "GR",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Privacy Guarantees",
-    "Cat_short": "priv",
-    "Median": 1
-  },
-  {
-    "Score Type": "A5",
-    "Country": "Greece",
-    "Iso3": "GRC",
-    "Iso2": "GR",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Privacy Guarantees",
-    "Cat_short": "priv",
-    "Median": -1
-  },
-  {
-    "Score Type": "A31",
-    "Country": "Greece",
-    "Iso3": "GRC",
-    "Iso2": "GR",
-    "Score": 1,
-    "Answer": "No",
-    "Cat_type": "Privacy Guarantees",
-    "Cat_short": "priv",
-    "Median": -1
-  },
-  {
-    "Score Type": "Privacy Guarantees",
-    "Country": "Greece",
-    "Iso3": "GRC",
-    "Iso2": "GR",
-    "Score": 3,
-    "Answer": "",
-    "Cat_type": "Sub Aggregate",
-    "Cat_short": "subagg",
-    "Median": 0
-  },
-  {
-    "Score Type": "Total Score",
-    "Country": "Greece",
-    "Iso3": "GRC",
-    "Iso2": "GR",
-    "Score": -0.25,
-    "Answer": "",
-    "Cat_type": "Aggregate",
-    "Cat_short": "aggregate",
-    "Median": -2.625
-  },
-  {
-    "Score Type": "T1",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Policy Transparency",
-    "Cat_short": "trans",
-    "Median": 1
-  },
-  {
-    "Score Type": "T2",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Policy Transparency",
-    "Cat_short": "trans",
-    "Median": 1
-  },
-  {
-    "Score Type": "T3",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Policy Transparency",
-    "Cat_short": "trans",
-    "Median": -1
-  },
-  {
-    "Score Type": "T11",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -1,
-    "Answer": "No",
-    "Cat_type": "Policy Transparency",
-    "Cat_short": "trans",
-    "Median": -2
-  },
-  {
-    "Score Type": "T6",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -0.5,
-    "Answer": "Unknown",
-    "Cat_type": "Policy Transparency",
-    "Cat_short": "trans",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "A1",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -5,
-    "Answer": "NA",
-    "Cat_type": "Policy Transparency",
-    "Cat_short": "trans",
-    "Median": -5
-  },
-  {
-    "Score Type": "Policy Transparency",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 0.75,
-    "Answer": "",
-    "Cat_type": "Sub Aggregate",
-    "Cat_short": "subagg",
     "Median": 0.75
-  },
-  {
-    "Score Type": "T4",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -1,
-    "Answer": "Unknown",
-    "Cat_type": "Undocumented Access",
-    "Cat_short": "undoc",
-    "Median": -1
-  },
-  {
-    "Score Type": "T5",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -1,
-    "Answer": "Unknown",
-    "Cat_type": "Undocumented Access",
-    "Cat_short": "undoc",
-    "Median": -1
-  },
-  {
-    "Score Type": "A3",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -1,
-    "Answer": "Unknown",
-    "Cat_type": "Undocumented Access",
-    "Cat_short": "undoc",
-    "Median": -1
-  },
-  {
-    "Score Type": "A11",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -0.5,
-    "Answer": "Unknown",
-    "Cat_type": "Undocumented Access",
-    "Cat_short": "undoc",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "A12",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -0.5,
-    "Answer": "Unknown",
-    "Cat_type": "Undocumented Access",
-    "Cat_short": "undoc",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "A13",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -0.5,
-    "Answer": "Unknown",
-    "Cat_type": "Undocumented Access",
-    "Cat_short": "undoc",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "Undocumented Access",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -5.5,
-    "Answer": "",
-    "Cat_type": "Sub Aggregate",
-    "Cat_short": "subagg",
-    "Median": -5.5
-  },
-  {
-    "Score Type": "T9",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Identification and Residency Requirements",
-    "Cat_short": "idres",
-    "Median": 1
-  },
-  {
-    "Score Type": "T10",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -0.5,
-    "Answer": "Unknown",
-    "Cat_type": "Identification and Residency Requirements",
-    "Cat_short": "idres",
-    "Median": 1
-  },
-  {
-    "Score Type": "Identification and Residency Requirements",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 0.5,
-    "Answer": "",
-    "Cat_type": "Sub Aggregate",
-    "Cat_short": "subagg",
-    "Median": 2
-  },
-  {
-    "Score Type": "T7",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -1,
-    "Answer": "No",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "marg",
-    "Median": 0.25
-  },
-  {
-    "Score Type": "A18",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -1,
-    "Answer": "No",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "marg",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "A19",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "marg",
-    "Median": 1
-  },
-  {
-    "Score Type": "A21",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "marg",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "A26",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 1,
-    "Answer": "Yes",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "marg",
-    "Median": 1
-  },
-  {
-    "Score Type": "A27",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": -0.5,
-    "Answer": "Unknown",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "marg",
-    "Median": -0.5
-  },
-  {
-    "Score Type": "Marginalized Access",
-    "Country": "Estonia",
-    "Iso3": "EST",
-    "Iso2": "EE",
-    "Score": 0.5,
-    "Answer": "",
-    "Cat_type": "Marginalized Access",
-    "Cat_short": "subagg",
-    "Median": 1.25
   },
   {
     "Score Type": "T12",
@@ -5739,11 +5739,11 @@ const countryData = [
     "Country": "Estonia",
     "Iso3": "EST",
     "Iso2": "EE",
-    "Score": -8.25,
+    "Score": -6.75,
     "Answer": "",
     "Cat_type": "Aggregate",
     "Cat_short": "aggregate",
-    "Median": -2.625
+    "Median": -2.25
   }
 ]
 
@@ -5789,7 +5789,7 @@ const countryCodes = [
     "blank": 0
   },
   {
-    "country_name": "Netherlands",
+    "country_name": "The Netherlands",
     "iso3": "NLD",
     "iso2": "NL",
     "grid_pos_x": 4,
@@ -5907,6 +5907,46 @@ const countryCodes = [
     "grid_pos_x": 6,
     "grid_pos_y": 4,
     "blank": 1
+  },
+  {
+    "country_name": "",
+    "iso3": "",
+    "iso2": "",
+    "grid_pos_x": 8,
+    "grid_pos_y": 1,
+    "blank": 1
+  },
+  {
+    "country_name": "",
+    "iso3": "",
+    "iso2": "",
+    "grid_pos_x": 8,
+    "grid_pos_y": 2,
+    "blank": 1
+  },
+  {
+    "country_name": "",
+    "iso3": "",
+    "iso2": "",
+    "grid_pos_x": 7,
+    "grid_pos_y": 2,
+    "blank": 1
+  },
+  {
+    "country_name": "",
+    "iso3": "",
+    "iso2": "",
+    "grid_pos_x": 8,
+    "grid_pos_y": 3,
+    "blank": 1
+  },
+  {
+    "country_name": "",
+    "iso3": "",
+    "iso2": "",
+    "grid_pos_x": 8,
+    "grid_pos_y": 4,
+    "blank": 1
   }
 ]
 
@@ -6010,7 +6050,7 @@ const questions = [
     "Unknown": "Unknown, there is a list but it is not clear who the people are/who they represent (the list does not include affiliations)",
     "Yes_Score": 1,
     "No_Score": -1,
-    "NA_Score": -5,
+    "NA_Score": -2,
     "Unknown_Score": -0.5
   },
   {
@@ -6304,6 +6344,466 @@ const questions = [
   }
 ]
 
+const countryProfiles = {
+  BEL: {
+    country: "Belgium",
+    overall_rank: "Closed Doors",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: [
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+    ],
+    closed_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: ["Undocumented Access", "Marginalized Access"],
+    covid_performance: "worse",
+    vax_percent: "74.64",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "225.2342",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "4912.70068359",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "BEL",
+  },
+  CZE: {
+    country: "Czech Republic",
+    overall_rank: "Closed Doors",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: ["Identification and Residency Requirements"],
+    closed_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: [],
+    covid_performance: "worse",
+    vax_percent: "57.68",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "289.5505",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "1765.58837891",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "CZE",
+  },
+  DNK: {
+    country: "Denmark",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: [
+      "Undocumented Access",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    closed_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+    ],
+    incomplete_categories: ["Undocumented Access"],
+    covid_performance: "better",
+    vax_percent: "76.96",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "47.2365",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "6216.76855469",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "DNK",
+  },
+  EST: {
+    country: "Estonia",
+    overall_rank: "Closed Doors",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: ["Policy Transparency"],
+    closed_categories: [
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: ["Undocumented Access"],
+    covid_performance: "better",
+    vax_percent: "59.17",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "122.0204",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "1552.96875",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "EST",
+  },
+  FRA: {
+    country: "France",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: ["Undocumented Access", "Marginalized Access"],
+    closed_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: ["Undocumented Access"],
+    covid_performance: "better",
+    vax_percent: "75.61",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "176.0162",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "4690.07226563",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "FRA",
+  },
+  DEU: {
+    country: "Germany",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+      "Privacy Guarantees",
+    ],
+    closed_categories: ["Undocumented Access", "Marginalized Access"],
+    incomplete_categories: ["Undocumented Access"],
+    covid_performance: "better",
+    vax_percent: "68.55",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "115.2926",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "5472.20214844",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "DEU",
+  },
+  AUT: {
+    country: "Austria",
+    overall_rank: "Closed Doors",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: [
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+    ],
+    closed_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: ["Undocumented Access"],
+    covid_performance: "better",
+    vax_percent: "64.77",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "127.335",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "5326.43701172",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "AUT",
+  },
+  GRC: {
+    country: "Greece",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+      "Privacy Guarantees",
+    ],
+    closed_categories: ["Undocumented Access", "Marginalized Access"],
+    incomplete_categories: ["Undocumented Access", "Marginalized Access"],
+    covid_performance: "worse",
+    vax_percent: "63.73",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "157.7611",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "1566.89990234",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "GRC",
+  },
+  IRL: {
+    country: "Ireland",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: [
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    closed_categories: ["Policy Transparency"],
+    incomplete_categories: ["Undocumented Access"],
+    covid_performance: "better",
+    vax_percent: "76.36",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "110.2169",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "5489.07080078",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "IRL",
+  },
+  ITA: {
+    country: "Italy",
+    overall_rank: "Closed Doors",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: ["Undocumented Access"],
+    closed_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: ["Undocumented Access", "Marginalized Access"],
+    covid_performance: "worse",
+    vax_percent: "77.07",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "219.361499999999",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "2988.99584961",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "ITA",
+  },
+  NLD: {
+    country: "The Netherlands",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+    ],
+    closed_categories: ["Privacy Guarantees"],
+    incomplete_categories: [],
+    covid_performance: "better",
+    vax_percent: "75.43",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "110.7838",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "5306.53466797",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "NLD",
+  },
+  POL: {
+    country: "Poland",
+    overall_rank: "Closed Doors",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: ["Identification and Residency Requirements"],
+    closed_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: [],
+    covid_performance: "worse",
+    vax_percent: "53.26",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "205.7306",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "978.73565674",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "POL",
+  },
+  PRT: {
+    country: "Portugal",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Privacy Guarantees",
+    ],
+    closed_categories: ["Marginalized Access"],
+    incomplete_categories: [],
+    covid_performance: "better",
+    vax_percent: "88.63",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "179.0828",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "2215.17358398",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "PRT",
+  },
+  ROU: {
+    country: "Romania",
+    overall_rank: "Closed Doors",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: ["Policy Transparency", "Marginalized Access"],
+    closed_categories: [
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: ["Undocumented Access", "Marginalized Access"],
+    covid_performance: "worse",
+    vax_percent: "31.48",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "266.6071",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "687.25439453",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "ROU",
+  },
+  SVK: {
+    country: "Slovakia",
+    overall_rank: "Closed Doors",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+    ],
+    closed_categories: [
+      "Undocumented Access",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    incomplete_categories: [],
+    covid_performance: "worse",
+    vax_percent: "45.6",
+    vax_average: "68.1338888888889",
+    vax_rank: "worse",
+    deaths_per_100k: "242.9897",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "1299.91137695",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "SVK",
+  },
+  ESP: {
+    country: "Spain",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: [
+      "Undocumented Access",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    closed_categories: [
+      "Policy Transparency",
+      "Identification and Residency Requirements",
+    ],
+    incomplete_categories: ["Marginalized Access"],
+    covid_performance: "better",
+    vax_percent: "81.27",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "187.309",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "2736.32324219",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "ESP",
+  },
+  GBR: {
+    country: "United Kingdom",
+    overall_rank: "Open and Accessible",
+    confidence_rank: "strong",
+    completeness_of_documents: "complete",
+    open_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+      "Privacy Guarantees",
+    ],
+    closed_categories: [],
+    incomplete_categories: [],
+    covid_performance: "worse",
+    vax_percent: "72.94",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "208.619",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "worse",
+    healthcare_spending_per_capita: "4315.42773438",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "above",
+    iso3: "GBR",
+  },
+  MLT: {
+    country: "Malta",
+    overall_rank: "Closed Doors",
+    confidence_rank: "weak",
+    completeness_of_documents: "incomplete",
+    open_categories: ["Privacy Guarantees"],
+    closed_categories: [
+      "Policy Transparency",
+      "Undocumented Access",
+      "Identification and Residency Requirements",
+      "Marginalized Access",
+    ],
+    incomplete_categories: ["Undocumented Access", "Marginalized Access"],
+    covid_performance: "better",
+    vax_percent: "83.26",
+    vax_average: "68.1338888888889",
+    vax_rank: "better",
+    deaths_per_100k: "89.5175",
+    study_deaths_average: "171.148022222222",
+    deaths_rank: "better",
+    healthcare_spending_per_capita: "2753.51098633",
+    healthcare_spending_avg: "3348.58755493222",
+    healthcare_rank: "below",
+    iso3: "MLT",
+  },
+};
+
 const questionsReshaped = questions.map(q => {
   let {Yes, No, NA, Unknown,
     Yes_Score, No_Score, NA_Score, Unknown_Score,
@@ -6331,6 +6831,7 @@ const questionsReshaped = questions.map(q => {
 
 export const data = {
   countryCodesArray: countryCodes.filter(d => !d.blank),
+  countryProfiles: countryProfiles,
   countryDataNestToScore: nest()
     .key(d => d.Iso3)
     .key(d => d.Cat_short)
@@ -6344,6 +6845,11 @@ export const data = {
     .key(d => d.Cat_short)
     .key(d => d.Iso3)
     .object(countryData),
+  categorySubaggData: nest()
+    .key(d => d["Score Type"])
+    // .key(d => d["Score"])
+    // .key(d => d.Iso3)
+    .object(countryData.filter(d => d.Cat_short === "subagg")),
   countryToIsoLookup: Object
     .fromEntries(countryCodes
       .filter(d => !d.blank)
@@ -6354,7 +6860,8 @@ export const data = {
       .filter(d => !d.blank)
       .map(d => [d.iso3,d])),
   gridMax: {
-    x: max(countryCodes.map(d => d.grid_pos_x)), 
+    // x: max(countryCodes.map(d => d.grid_pos_x)), 
+    x: 7, 
     y: max(countryCodes.map(d => d.grid_pos_x))
   },
   blanks: countryCodes.filter(d => d.blank),
