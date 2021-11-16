@@ -1,14 +1,15 @@
 
 import "semantic-ui-css/semantic.min.css";
 import React, { useState, useEffect, useRef } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Button } from "semantic-ui-react";
 import { catInitials, scoreCardText, iconsPathPrefix } from "../helpers/constants";
 import { data } from "../helpers/datasets"
 import CountryComparisonChart from "../components/CountryComparisonChart";
-
+import ComparisonExplainer from "../components/explainers/ComparisonExplainer";
 
 function ComparePage(props) {
 
+  const [openExplainer, setOpenExplainer] = useState(false);
 
   const categories = Object.keys(catInitials);
   const { categorySubaggData, categoryData } = data;
@@ -22,7 +23,19 @@ function ComparePage(props) {
         <Grid.Row>
           <Grid.Column>
             <h1 className={"scoreCardPageHead"}>Countries Comparison</h1>          
-            <h4>Explore how countries perform across the different categories of the Scorecard.</h4>          
+            <h4>Explore how countries perform across the different categories of the Scorecard.</h4> 
+            
+            <ComparisonExplainer
+              open={openExplainer}
+              setOpen={setOpenExplainer}
+              categories={categories}
+              categorySubaggData={categorySubaggData}
+              catInitials={catInitials}
+            />         
+            <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
+            <br/>
+            <br/>
+            
           </Grid.Column>
         </Grid.Row>
         {/* <Grid.Row>
