@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body {
+body, h4 {
   margin: 10;
   font-family: 'Poppins', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.item {
+  font-family: 'Poppins', sans-serif !important;
+  
 }
 
 code {
@@ -15,6 +22,10 @@ code {
 
 table, td, th {
   border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.2em;
+  text-align: center;
+  font-family: "Inconsolata", monospace;
 }
 
 .App {
@@ -110,7 +121,7 @@ table, td, th {
     border: 1px solid #000;
     color: #000;
     &:hover {
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(255,255,255,0.3);
     }
   }
   &.good {
@@ -227,17 +238,12 @@ table, td, th {
   }
 }
 
-.quoteCardContent.content {
-  background-color: black;
-
-}
 
 .quoteCard {
   text-align: left;
-  border: none;
+  background-color: #ddd !important;
   .quoteCardContent {
     min-height: 370px;
-
     .header {
 
       &.quoteCardHeader {
@@ -302,6 +308,7 @@ table, td, th {
   }
 }
 
+
 .simpleIcon {
 
   // stroke-width: 0.4px;
@@ -334,6 +341,7 @@ table, td, th {
   padding-right: 0.3em;
   border-radius: 0.3em;
   cursor: pointer;
+  margin: 2px;
   // white-space:nowrap;
   &.good {
     border: 1px solid #2A9D8F;

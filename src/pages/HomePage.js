@@ -12,7 +12,8 @@ function HomePage(props) {
   return (
     <div className={'HomePage'} >
       <Container className="MainContainer">
-        
+        <h4>The scorecard assesses national policies on vaccinating the undocumented against COVID-19. </h4>
+        <p>Hover over a country for a snapshot of results or and click for a more in-depth look. </p>
         <MainMap
           width={1000}
           height={750}

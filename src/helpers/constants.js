@@ -180,3 +180,4 @@ export const comparisonInfo = {
 }
 
 export const iconsPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/be6fb6f6db2795b3b556f0d2f8924c798da1c02a/public/icons/"
+export const logoPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/be6fb6f6db2795b3b556f0d2f8924c798da1c02a/public/"

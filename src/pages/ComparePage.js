@@ -22,6 +22,7 @@ function ComparePage(props) {
         <Grid.Row>
           <Grid.Column>
             <h1 className={"scoreCardPageHead"}>Countries Comparison</h1>          
+            <h4>Explore how countries perform across the different categories of the Scorecard.</h4>          
           </Grid.Column>
         </Grid.Row>
         {

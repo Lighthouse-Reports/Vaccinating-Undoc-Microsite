@@ -16,6 +16,7 @@ import {
 } from "semantic-ui-react";
 
 import styled from "styled-components";
+import { logoPathPrefix } from '../helpers/constants';
 
 // Pages
 import HomePage from '../pages/HomePage';
@@ -113,6 +114,7 @@ function Routes(props) {
                         </Grid.Row>
                       </Grid>
                     </Container> : <Container>
+                      <img src={logoPathPrefix+"logo-brand.svg"}/>
                       <h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2>
                       <Menu secondary className="HeaderNav">
                         <MenuItems />

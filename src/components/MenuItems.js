@@ -45,7 +45,7 @@ export default (props) => {
       <Menu.Item>
         <Dropdown scrolling text="Scorecards">
           <Dropdown.Menu>
-            {Object.keys(countryToIsoLookup).map((country) => {
+            {Object.keys(countryToIsoLookup).sort().map((country) => {
               const iso = countryToIsoLookup[country].iso3;
               return (
                 <Dropdown.Item
