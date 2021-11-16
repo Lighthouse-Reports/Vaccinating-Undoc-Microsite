@@ -22,6 +22,9 @@ const ScoreCardExplainer = (props) => {
         
         <Modal.Description>
         <p>
+        To understand how we transformed our research into scores, we have selected one country and explained the evidence that led the researcher to an answer for each question. To replicate the process for any country on the scorecard, please find the original questions, answers and source documents here. 
+        <br/>
+        <br/>
 Portugal, one of only two countries that scores positively in the scorecard in all categories, illustrates how a country’s overall policy can set the tone for a country’s vaccination campaign, even if the reality follows the spirit, if not the letter, of the policy. Below we explain how we transformed policy documents and public statements into numbers and those numbers into scores. 
 <br/>
 <br/>
@@ -335,7 +338,7 @@ The policies do not specify what type of information is included in the vaccinat
 The data for the Scorecards is drawn entirely from written policies, strategies, statements, registration pages and implementation plans. We are well aware that there is — or can be — a huge difference between policies and practice. We have bridged this gap by bringing the results into the specific, on-the-ground context, in two ways:
 </p>
 <ul>
-<li>Through country-specific reporting, which you can access here. Journalists try to capture this gap between policy and reality by telling the stories of undocumented people who have tried to access the vaccine. </li>
+<li>Through country-specific reporting, which you can access <a href="https://www.lighthousereports.nl/investigation/are-covid-vaccines-reaching-the-undocumented/">here</a>. Journalists try to capture this gap between policy and reality by telling the stories of undocumented people who have tried to access the vaccine. </li>
 <li>Through expert opinions: we approached a number of migration and healthcare experts in the countries in our scorecard and asked for their perspective on each of the issues covered in the scorecard. Their replies are displayed alongside the scores for each country, where they are available. These opinions are meant to provide at least one perspective on how these policies play out in reality. There may be cases where a country is actually doing much better in reality than on paper but the opposite can also be true: despite well-intentioned, inclusive policies, the vaccination of undocumented people is not effective. The experts’ opinions are meant to provide a more balanced overall picture of vaccine access for undocumented people. </li>
 </ul>
         </Modal.Description>

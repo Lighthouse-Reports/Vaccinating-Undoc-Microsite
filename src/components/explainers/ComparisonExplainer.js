@@ -7,7 +7,10 @@ const ComparisonExplainer = (props) => {
   const { open, setOpen,
     categories,
     categorySubaggData,
-    catInitials } = props;
+    catInitials,
+    modalState,
+    countryProfiles,
+    category } = props;
   // const [open, setOpen] = React.useState(false)
   console.log(open)
 
@@ -26,6 +29,7 @@ const ComparisonExplainer = (props) => {
 <h3>Transparency: policies often shrouded in secrecy</h3>
 <br />
 <p>
+
 Since most countries are vague in their policies on the undocumented, we evaluated the policies from several different angles to determine how inclusive they are.
 <br />
 <br />
@@ -38,6 +42,10 @@ The first thing to understand is just how difficult it is to even figure out wha
   height={300}
   data={categorySubaggData["Policy Transparency"]}
   range={catInitials["Policy Transparency"].range}
+  modalState={modalState}
+  countryProfiles={countryProfiles}
+  category={"Policy Transparency"}
+  // modalState={open}
 />
 <br />
 <br />
@@ -59,6 +67,10 @@ The question of the accessiblity of the COVID-19 vaccine for undocumented people
   height={300}
   data={categorySubaggData["Undocumented Access"]}
   range={catInitials["Undocumented Access"].range}
+  modalState={modalState}
+  countryProfiles={countryProfiles}
+  category={"Undocumented Access"}
+  // modalState={open}
 />
 <br />
 <br />
@@ -99,6 +111,10 @@ In many countries, it was easier to determine how the government was addressing 
   height={300}
   data={categorySubaggData["Marginalized Access"]}
   range={catInitials["Marginalized Access"].range}
+  modalState={modalState}
+  countryProfiles={countryProfiles}
+  category={"Marginalized Access"}
+  // modalState={open}
 />
 <br />
 <br />
@@ -120,6 +136,10 @@ Undocumented people often live in fear of having their immigration status report
   height={300}
   data={categorySubaggData["Privacy Guarantees"]}
   range={catInitials["Privacy Guarantees"].range}
+  modalState={modalState}
+  countryProfiles={countryProfiles}
+  category={"Privacy Guarantees"}
+  // modalState={open}
 />
 <br />
 <br />

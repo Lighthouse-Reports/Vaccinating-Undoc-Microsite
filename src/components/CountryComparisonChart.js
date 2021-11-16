@@ -6,9 +6,10 @@ import { forceSimulation, forceManyBody, forceX, forceY,
   forceCollide } from 'd3-force';
 import { Grid, Popup, Icon } from 'semantic-ui-react';
 import { saveSvg } from '../helpers/saveSvg';
+import { getGoodOrBad } from '../helpers/getGoodOrBad';
 
 function CountryComparisonChart(props) {
-  const { data, range } = props;
+  const { data, range, countryProfiles, category } = props;
 
   const [width, setWidth] = useState();
   const [height, setHeight] = useState();
@@ -20,7 +21,7 @@ function CountryComparisonChart(props) {
   // const charge = -3;
 
   const [animatedNodes, setAnimatedNodes] = useState([]);
-  // console.log(data,extent(data.map(d => d.Score)));
+  // console.log(countryProfiles);
 
   const containerRef = useRef();
   const chartRef = useRef();
@@ -51,7 +52,14 @@ function CountryComparisonChart(props) {
 
   useEffect(() => {
     const simulation = forceSimulation()
-      .force("x", forceX(d => scaleX(d.Score >0 ? 1: -1)).strength(comparisonInfo.strength))
+      .force("x", forceX(d => {
+        const value = countryProfiles[d.Iso3]['confidence_rank'] === "weak" 
+          ? 0
+          : countryProfiles[d.Iso3]['open_categories'].includes(category)
+            ? 1
+            : -1
+        return scaleX(value);  
+        }).strength(comparisonInfo.strength))
       .force("y", forceY(lineHeight/2).strength(comparisonInfo.strength))
       .force("charge", forceManyBody().strength(comparisonInfo.charge))
       .force('collide', forceCollide(

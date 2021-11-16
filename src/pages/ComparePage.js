@@ -12,7 +12,7 @@ function ComparePage(props) {
   const [openExplainer, setOpenExplainer] = useState(false);
 
   const categories = Object.keys(catInitials);
-  const { categorySubaggData, categoryData } = data;
+  const { categorySubaggData, countryProfiles } = data;
   
   const cleanedData = {};
   console.log(categorySubaggData);
@@ -31,6 +31,8 @@ function ComparePage(props) {
               categories={categories}
               categorySubaggData={categorySubaggData}
               catInitials={catInitials}
+              modalState={openExplainer}
+              countryProfiles={countryProfiles}
             />         
             <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
             <br/>
@@ -81,6 +83,9 @@ function ComparePage(props) {
                       data={categorySubaggData[cat]}
                       range={catInitials[cat].range}
                       // dataArray={categoryData[catShort]}
+                      modalState={openExplainer}
+                      countryProfiles={countryProfiles}
+                      category={cat}
                     />
                   </div>
                 </Grid.Column>
