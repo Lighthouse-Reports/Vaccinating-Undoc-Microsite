@@ -12,35 +12,40 @@ function MethodologyPage(props) {
         Methodology
       </Grid> */}
       <Container>
-        <h2>Methodology</h2>
-        <h4>We developed the methodology in collaboration with experts on access to health for undocumented people, and data journalists and data scientists.
-          Below is a short explanation of how we went about developing the Scorecards, from the data collection process, to data validation and analysis. If you would like to read a more in-depth explanation, and access the materials we used for the Scorecards, you can click here. </h4>
+        <h1 className={"scoreCardPageHead"}>Methodology</h1>          
+         
+        <p>
+        We developed the methodology in collaboration with experts on access to health for undocumented people, and data journalists and data scientists.
+        <br />
+        <br />
+        Below is a short explanation of how we went about developing the Scorecards, from the data collection process, to data validation and analysis. If you would like to read a more in-depth explanation, and access the materials we used for the Scorecards, you can click <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented">here</a>. 
+        </p>
         <h2>Data Collection</h2>
-        <p><a href='https://www.lighthousereports.nl/'>Lighthouse Reports</a>, in consultation with <a href='https://picum.org/'>PICUM</a> - a network of organisations providing assistance to and advocating for the rights of undocumented migrants in Europe - developed a scorecard to assess the transparency and accessibility of the coronavirus vaccine to undocumented people in Europe and the United Kingdom, according to official national policies.
+        <p>
+          <a href='https://www.lighthousereports.nl/'>Lighthouse Reports</a>, in consultation with <a href='https://picum.org/'>PICUM</a> — an umbrella group for organisations providing assistance to and advocating for the rights of undocumented migrants in Europe — developed a Scorecard to assess the transparency and accessibility of the coronavirus vaccine to undocumented people in Europe and the United Kingdom, according to official national policies..
           <br />
           <br />
-          To complete the scorecard, Lighthouse Reports recruited volunteer researchers for each of the countries in the study. Most of the volunteers came from Birmingham University’s Masters’ in Data Journalism. Volunteers were selected based on their availability, language proficiency in the specific country’s national language, and previous experience and interest in collaborative data journalism projects. In a few cases, one volunteer was responsible for two countries.
+          To complete the Scorecard, Lighthouse Reports recruited volunteer researchers for each of the countries in the study. Most of the volunteers came from Birmingham University’s Masters’ in Data Journalism. Volunteers were selected based on their availability, language proficiency and previous experience and interest in collaborative data journalism projects. In a few cases, one volunteer was responsible for two countries.
           <br />
           <br />
-          Researchers attended a virtual orientation session in which they were introduced to the project and scorecard methodology. The volunteers were responsible for collecting material for analysis, following the points below on the type of material needed:
+          Researchers attended a virtual orientation session in which they were introduced to the project and scorecard methodology. The volunteers were responsible for collecting material for analysis, following the points below on the type of material needed: 
           <br />
           <ul>
             <li>Official vaccine policies, at the national level</li>
-            <li>National vaccination implementation plans
-            </li>
+            <li>National vaccination implementation plans</li>
             <li>National vaccination registration website</li>
           </ul>
-          &nbsp;&nbsp;This a non-exhaustive list of acceptable sources:<br />
+          This a non-exhaustive list of acceptable sources:<br />
           <ul>
-            <li>official national document: official vaccine policy, national implementation plan
+            <li>Official national document: official vaccine policy, national implementation plan
             </li>
-            <li>other government communication: government press release, speech by authorities,</li>
-            <li>parliamentary records, social media post from official government account</li>
-            <li>media: news items (print, online, TV, radio, ..)</li>
+            <li>Other government communication: government press release, speech by authorities</li>
+            <li>Parliamentary records, social media post from official government account</li>
+            <li>Media: news items (print, online, TV, radio, ..)</li>
             <li>NGO: civil society organisation press release, statement, NGO information on</li>
-            <li>government policy</li>
-            <li>registration website: vaccine registration website</li>
-            <li>academic source: academic analysis of government policy or implementation</li>
+            <li>Government policy</li>
+            <li>Registration website: vaccine registration website</li>
+            <li>Academic source: academic analysis of government policy or implementation</li>
           </ul>
           <br />
           &nbsp;&nbsp;This is a non-exhaustive list of materials to exclude:
@@ -50,7 +55,7 @@ function MethodologyPage(props) {
             <li>Advocacy statements, press releases</li>
             <li>Unverified/Unofficial statements
             </li>
-            <li>Statements that cannot be found online (eg. a TV statement which is untraceable)”
+            <li>Statements that cannot be found online (eg. a TV statement which is untraceable)
             </li>
           </ul>
           <br />
@@ -60,7 +65,7 @@ function MethodologyPage(props) {
           Following document collection, volunteers were provided with the questions included in the questionnaire for analysis, and were asked to identify whether the documents they found were relevant for answering scorecard questions. They marked a document with Yes or No respectively.
           <br />
           <br />
-          During a joint sprint session, the volunteers convened online with Eva Constantaras, Lighthouse Reports Data Editor, and Francesca Pierigh, project coordinator, for the data inputting sessions. Volunteers were asked to answer all questions to the best of their abilities, and doubts were addressed by the organizers. Upon completion of the questionnaires, volunteers were asked to double-check that all materials used to answer questions were appropriately marked as such in the Data Collection spreadsheet.
+          During a joint sprint session, the volunteers convened online with Eva Constantaras, Lighthouse Reports Data Editor, and Francesca Pierigh, Project Coordinator, for the data inputting sessions. Volunteers were asked to answer all questions to the best of their abilities, and doubts were addressed by the organisers. Upon completion of the questionnaires, volunteers were asked to double-check that all materials used to answer questions were appropriately marked as such in the Data Collection spreadsheet.
           <br />
           <br />
           Following the data inputting session, the data cleaning process took approximately two months and included a round of questions specifically targeted to each researcher. Cleaning steps included:
@@ -77,7 +82,7 @@ function MethodologyPage(props) {
           Following unavailability of three researchers, and lack of in-house language knowledge for those countries, three countries were dropped from the data cleaning process: Sweden, Hungary and Croatia.
           <br />
           <br />
-          The data cleaning continued for the remaining 21 countries. This process led to the elimination of a number of questions, which were deemed so vague that responses were inconsistent or so specific that the majority of researchers were not able to provide answers.
+          The data cleaning continued for the remaining 21 countries. This process led to the elimination of a number of questions, which were deemed so vague that responses were inconsistent or so specific that the majority of researchers were not able to provide answers. 
         </p>
 
         <br />
@@ -94,7 +99,7 @@ function MethodologyPage(props) {
 
         <h3>Openness Questions</h3>
         <p>
-          In addition to these five categories, 12 questions are marked to identify a country’s openness about the vaccine rollout policies. These openness questions are used to identify countries with not enough information for analysis and report.
+        In addition to these five categories, 12 questions are marked to identify a country’s openness about the vaccine rollout policies. These openness questions are used to identify countries with not enough information for analysis and report.
         </p>
         <h3>Question ID</h3>
         <p>Questions are given a unique identifier of the form “T1” or “A5”. These identifiers do not bear any meaning for this project.</p>
@@ -146,24 +151,36 @@ function MethodologyPage(props) {
         <br />
         <h3>Question Importance Scale</h3>
         <p>
-          In addition to the point system, each question is given an importance from &#x7B;not so important, important, very important&#x7D;, based on how impactful these questions are to the overall score of each country.
-          <br />
-          The importance value is mapped so that &#x7B;not so important, important, very important&#x7D; are weighted at &#x7B;0.5, 1.0, 1.5&#x7D;, respectively.
+        In addition to the point system, each question is given an importance from &#x7B;not so important, important, very important&#x7D;, based on how impactful these questions are to the overall score of each country.
+        <br />
+        <br />
+        The importance value is mapped so that &#x7B;not so important, important, very important&#x7D; are weighted at &#x7B;0.5, 1.0, 1.5&#x7D;, respectively.
         </p>
         <h2>Data Validity Tests</h2>
         <p>
-          A few tests are run on the collected and processed data to test the reliability, validity and internal consistency within the dataset.
-          <br />
-          Inter-item correlation is tested on all categories. As expected, all semantically related questions are correlated as expected while non-related questions do not show any correlation. Interrelated questions show great reliability as they scored correlations between 0.6 and 0.99.
-          <br />
-          Cronbach’s Alpha is also calculated to test the internal consistency of the dataset. The Cronbahc’s Alpha value of 0.729 indicates that the internal consistency of the dataset is good for exploratory research.
-          <br />
-          For validity test, the trends in the dataset is also roughly compared with the results shown in <a href='https://picum.org/covid-19-vaccines-undocumented-migrants-europe/'>The COVID-19 Vaccines and Undocumented Migrants: What Are European Countries Doing? </a>. After converting PICUM ratings to number scale, PICUM scores and our country scores show a strong statistically significant correlation, which provides additional validity to our dataset.
+        A few tests are run on the collected and processed data to test the reliability, validity and internal consistency within the dataset.
+        <br />
+        <br />
+        Inter-item correlation is tested on all categories. As expected, all semantically related questions are correlated as expected while non-related questions do not show any correlation. Interrelated questions show great reliability as they scored correlations between 0.6 and 0.99.
+        <br />
+        <br />
+        Cronbach’s Alpha is also calculated to test the internal consistency of the dataset. The Cronbahc’s Alpha value of 0.729 indicates that the internal consistency of the dataset is good for exploratory research.
+        <br />
+        <br />
+        For validity test, the trends in the dataset is also roughly compared with the results shown in <a href='https://picum.org/covid-19-vaccines-undocumented-migrants-europe/'>The COVID-19 Vaccines and Undocumented Migrants: What Are European Countries Doing? </a>. After converting PICUM ratings to number scale, PICUM scores and our country scores show a strong statistically significant correlation, which provides additional validity to our dataset.
 
         </p>
 
         <h2>Data Analysis</h2>
         <p>Several types of analysis are run on the dataset: cluster analysis, similarity between country pairs, statistical distributions, and correlation analysis with scatter plots.</p>
+
+        <h2>Appendix</h2>
+        <p>
+        List of Sources Referenced and the Descriptions (for description, please see the section “list_of_documents_used_for_national_scorecards.csv”)
+        <br />
+        <br />
+        Processed Data and the Descriptions
+        </p>
       </Container>
     </div>
   );

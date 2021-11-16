@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body, h2, h4 {
+body {
   margin: 10;
   font-family: 'Poppins', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h2, h3, h4 {
+  font-family: "Inconsolata", monospace !important;
+}
+
+
+
+.mainTitle {
+  font-family: "Inconsolata", monospace !important;
+  display: inline-block;
+  color: black;
+
 }
 
 
@@ -67,14 +79,6 @@ table, td, th {
   }
 }
 
-
-
-.mainTitle {
-  font-family: "Inconsolata", monospace !important;
-  display: inline-block;
-  color: black;
-
-}
 
 .hexGrid {
   // background-color: #f6fbfc;
