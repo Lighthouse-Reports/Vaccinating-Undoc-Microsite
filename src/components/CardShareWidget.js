@@ -7,7 +7,7 @@ function CardShareWidget(props) {
   const { shareRoute } = props
   
   let location = window.location;
-  console.log(location)
+  // console.log(location)
 
   const getEmbedUrl = () => {
     let url = location.origin + "/Vaccinating-Undoc-Microsite" + shareRoute;

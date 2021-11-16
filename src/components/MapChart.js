@@ -106,7 +106,9 @@ function MapChart(props) {
     stroke={+category.Score > 0 ? colors.positive : colors.negative}
     className={"hexChartElement"}
     onMouseOver={() => scoreMouseOver(category["Score Type"])}
+    onTouchStart={() => scoreMouseOver(category["Score Type"])}
     onMouseOut={() => scoreMouseOut(category["Score Type"])}
+    onTouchEnd={() => scoreMouseOut(category["Score Type"])}
     onClick={() => selectHighlightCountry(country)}
     />
 
@@ -126,7 +128,9 @@ function MapChart(props) {
       fill={+category.Score > 0 ? colors.positive : colors.negative}
       className={"hexChartElement"}
       onMouseOver={() => scoreMouseOver(category["Score Type"])}
+      onTouchStart={() => scoreMouseOver(category["Score Type"])}
       onMouseOut={() => scoreMouseOut(category["Score Type"])}
+      onTouchEnd={() => scoreMouseOut(category["Score Type"])}
       onClick={() => selectHighlightCountry(country)}
     >
       {
@@ -179,7 +183,9 @@ function MapChart(props) {
                 opacity={0.1}
                 className={"hexChartElement"}
                 onMouseOver={() => scoreMouseOver(category["Score Type"])}
+                onTouchStart={() => scoreMouseOver(category["Score Type"])}
                 onMouseOut={() => scoreMouseOut(category["Score Type"])}
+                onTouchEnd={() => scoreMouseOut(category["Score Type"])}
                 onClick={() => selectHighlightCountry(country)}
               />
 
@@ -205,7 +211,9 @@ function MapChart(props) {
                 }
                 className={"hexChartElement"}
                 onMouseOver={() => scoreMouseOver(category["Score Type"])}
+                onTouchStart={() => scoreMouseOver(category["Score Type"])}
                 onMouseOut={() => scoreMouseOut(category["Score Type"])}
+                onTouchEnd={() => scoreMouseOut(category["Score Type"])}
                 onClick={() => selectHighlightCountry(country)}
               />
 

@@ -176,10 +176,10 @@ function MethodologyPage(props) {
 
         <h2>Appendix</h2>
         <p>
-        List of Sources Referenced and the Descriptions (for description, please see the section “list_of_documents_used_for_national_scorecards.csv”)
+        <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented/blob/main/data/list_of_documents_used_for_national_scorecards.csv">List of Sources Referenced</a> and the <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented/blob/main/data/codebook.md">Descriptions</a> (for description, please see the section “list_of_documents_used_for_national_scorecards.csv”)
         <br />
         <br />
-        Processed Data and the Descriptions
+        <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented/blob/main/output/main_data.csv">Processed Data</a> and the <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented/blob/main/output/codebook.md">Descriptions</a>
         </p>
       </Container>
     </div>
