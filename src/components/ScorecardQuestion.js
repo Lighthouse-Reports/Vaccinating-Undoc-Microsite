@@ -291,23 +291,28 @@ function ScorecardQuestion(props) {
              <text 
                 x={
                   xStart
+                  // + (
+                  //     getScoreToUse(score["Answer"]) > 0 
+                  //     ? barWidth/2 + answerWidth(score["Answer"]) 
+                  //     : barWidth/2 - answerWidth(score["Answer"])
+                  //   )
                   + (
-                      score["Score"] > 0 
-                      ? (scale(score["Score"]) >= barWidth/2)
-                        ? barWidth/2 + scale(score["Score"]) + scoreCardCircleRadii.answer*2 
-                        : barWidth/2 + scale(score["Score"]) 
-                      : (scale(score["Score"]) >= barWidth/2)
-                        ? barWidth/2 - scale(score["Score"]) - scoreCardCircleRadii.answer*2 
-                        : barWidth/2 - scale(score["Score"])
+                      getScoreToUse(score["Answer"]) > 0 
+                      ? (scale(getScoreToUse(score["Answer"])) >= barWidth/2)
+                        ? barWidth/2 + scale(getScoreToUse(score["Answer"])) + scoreCardCircleRadii.answer*2 
+                        : barWidth/2 + scale(getScoreToUse(score["Answer"])) 
+                      : (scale(getScoreToUse(score["Answer"])) >= barWidth/2)
+                        ? barWidth/2 - scale(getScoreToUse(score["Answer"])) - scoreCardCircleRadii.answer*2 
+                        : barWidth/2 - scale(getScoreToUse(score["Answer"]))
                     )
                 }
                 y={questionBar.y - 2*paddings.scoreCardMediaLabelPadding}
-                fill={getColor(+score["Score"])}
+                fill={getColor(+getScoreToUse(score["Answer"]))}
                 fontSize={medianMarker.fontSize}
                 textAnchor={
-                  score["Score"] > 0 && (scale(score["Score"]) >= barWidth/2)
+                  getScoreToUse(score["Answer"]) > 0 && (scale(getScoreToUse(score["Answer"])) >= barWidth/2)
                   ? "end" 
-                  : score["Score"] < 0 && (scale(score["Score"]) >= barWidth/2) 
+                  : getScoreToUse(score["Answer"]) < 0 && (scale(getScoreToUse(score["Answer"])) >= barWidth/2) 
                     ? "start" 
                     : "middle"
                 }
@@ -317,7 +322,7 @@ function ScorecardQuestion(props) {
                     ? score["Country"]
                       + (score["Country"][score["Country"].length - 1] === 's' ? "' " : "'s ")
                       + "Score"
-                    : "If answer were " + hoverScore
+                    : "If answer was " + hoverScore
                   }
                 </text>
               // : null

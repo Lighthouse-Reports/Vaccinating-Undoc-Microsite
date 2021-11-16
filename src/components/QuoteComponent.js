@@ -86,13 +86,13 @@ function Quote(props) {
             Expert Opinion
           </Modal.Header>
           <Modal.Content className={"quoteCardContent"}>
-            {
+            {/* {
             data.Question
             ? <Modal.Description >
                 Question:
               </Modal.Description>
               : null 
-            }
+            } */}
             {
               data.Question
               ? <Modal.Description  className={"quoteCardQuestion"}>
@@ -100,13 +100,13 @@ function Quote(props) {
                 </Modal.Description>
               : null
             }
-            {
+            {/* {
               data.Answer
               ? <Modal.Description>
                 Answer:
               </Modal.Description>
               : null
-            }
+            } */}
             { 
               data.Answer
               ? <Modal.Description  className={"quoteCardAnswer " + answerClass}>
@@ -114,13 +114,13 @@ function Quote(props) {
                 </Modal.Description>
               : null
             }
-            {
+            {/* {
               data.Comment
               ? <Modal.Description>
                   Quote:
                 </Modal.Description>
               : null
-            }
+            } */}
             {
               data.Comment
               ? <Modal.Description  className={"quoteCardQuote"}>

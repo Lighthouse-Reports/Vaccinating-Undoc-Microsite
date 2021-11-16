@@ -56,7 +56,8 @@ function Routes(props) {
   const [visible, setVisible] = React.useState(false)
 
   return (
-    <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+    // <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+    <BrowserRouter history={history} basename={"/Vaccinating-Undoc-Microsite"}>
       {/* <Wrapper> */}
       {/* <Route
         render={props => (
@@ -161,7 +162,6 @@ function Routes(props) {
         </Route>
       </Switch>
       
-      https://lighthouse-reports.github.io/Vaccinating-Undoc-Microsite/scorecard/EST
 
 
       {/* </Wrapper> */}

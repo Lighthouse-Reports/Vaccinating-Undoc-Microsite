@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { colors, paddings, catInitials, hexCatTextLabels } from '../helpers/constants';
+import { colors, paddings, catInitials, hexCatTextLabels, iconsPathPrefix } from '../helpers/constants';
 import { getGoodOrBad } from "../helpers/getGoodOrBad";
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
@@ -7,7 +7,7 @@ import { color } from 'd3-color';
 
 function BigHexComponent(props) {
   const { width, height, dx, dy, data, scoresExtent, countryInfo, 
-    highlightCat, edge, noCountryLabel, noHex, multiplier, iconsPathPrefix, overall } = props;
+    highlightCat, edge, noCountryLabel, noHex, multiplier, overall } = props;
   const padding = paddings.mainMap;
   const chartPadding = paddings.mapChartBorder;
   const inBetweenPadding = paddings.mapChartInBetween;
@@ -96,7 +96,7 @@ function BigHexComponent(props) {
         ? null
         : <g>
             <image 
-              href={iconsPathPrefix+countryInfo.country_name.replace(" ","_")+"_96.png"} 
+              href={iconsPathPrefix+"flaground/"+countryInfo.country_name.replace(" ","_")+"_96.png"} 
               height="30" 
               width="30" 
               x={hexWidth*.27}

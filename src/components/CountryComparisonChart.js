@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { colors, paddings, catInitials, comparisonInfo } from '../helpers/constants';
+import { colors, paddings, catInitials, comparisonInfo, iconsPathPrefix } from '../helpers/constants';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max, extent } from 'd3-array';
 import { forceSimulation, forceManyBody, forceX, forceY, 
@@ -175,7 +175,7 @@ function CountryComparisonChart(props) {
             return <g>
 
               <image 
-                href={"icons/flaground/"+country["Country"].replace(" ","_")+"_96.png"} 
+                href={iconsPathPrefix+"flaground/"+country["Country"].replace(" ","_")+"_96.png"} 
                 height={comparisonInfo.size}
                 width={comparisonInfo.size}
                 x={country.x} 

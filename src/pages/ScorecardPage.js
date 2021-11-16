@@ -12,7 +12,7 @@ import ScorecardWaterfallChart from "../components/ScorecardWaterfallChart";
 import BigHexComponent from "../components/BigHexComponent";
 import Quote from "../components/QuoteComponent";
 import DecoratedString from "../components/DecoratedStringComponent";
-import { catInitials } from "../helpers/constants";
+import { catInitials, iconsPathPrefix } from "../helpers/constants";
 import { format } from 'd3-format';
 import { randomInt } from 'd3-random';
 
@@ -25,6 +25,9 @@ function ScorecardPage(props) {
     categoryScoresExtent, countryProfiles } = data;
 
   const [highlightCat, setHighlightCat] = useState("");
+
+  const openCatsRemoveConfused = countryProfiles[iso].open_categories.filter(c => !countryProfiles[iso].incomplete_categories.includes(c));
+  const closedCatsRemoveConfused = countryProfiles[iso].closed_categories.filter(c => !countryProfiles[iso].incomplete_categories.includes(c));
 
   const highlightCatMouseOver = (cat) => {
     setHighlightCat(cat)
@@ -117,7 +120,7 @@ function ScorecardPage(props) {
               // selectHighlightCountry={selectHighlightCountry}
               noCountryLabel={false}
               noHex={false}
-              iconsPathPrefix={"../icons/flaground/"}
+              iconsPathPrefix={iconsPathPrefix+"flaground/"}
               highlightCat={highlightCat}
               overall={countryProfiles[iso].overall_rank}
             />
@@ -126,30 +129,34 @@ function ScorecardPage(props) {
           </Grid.Column>
           <Grid.Column tablet={9} computer={11} className={"scoreCardDescription"}>
             <p>
-            {countryProfiles[iso].country} overall leans more towards <DecoratedString stringText={countryProfiles[iso].overall_rank}/>.
+            {countryProfiles[iso].country} overall leans more towards <DecoratedString stringText={countryProfiles[iso].overall_confidence_rank === "strong" ? countryProfiles[iso].overall_rank : "confused"}/>.
             </p>
 
             <p>It has a <DecoratedString stringText={countryProfiles[iso].confidence_rank + " confidence score"} stringClass={countryProfiles[iso].confidence_rank}/>, meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}.
             {/* . The country is more open and accessible for {countryProfiles[iso].open_categories.join(", ")}  */}
             {/* and more exclusionary or less transparent for {countryProfiles[iso].closed_categories.join(", ")}  */}
+
+            {
+              countryProfiles[iso].incomplete_categories.length > 0
+              ? <> Due to incompleteness of data, it was difficult to evaluate {stringListConcat(countryProfiles[iso].incomplete_categories, "", highlightCatMouseOver, highlightCatMouseOut)}.</>
+              : ""
+            }
             </p>
+
             <p>
             {
               countryProfiles[iso].open_categories.length > 0
               ? <>The country is more open and accessible for {
-                  stringListConcat(countryProfiles[iso].open_categories, "good", highlightCatMouseOver, highlightCatMouseOut)
+                  // stringListConcat(countryProfiles[iso].open_categories, "", highlightCatMouseOver, highlightCatMouseOut)
+                  stringListConcat(openCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut)
                 }</>
               : ""
             }
             {
               countryProfiles[iso].closed_categories.length > 0
-              ? <>, and more exclusionary or less transparent for {stringListConcat(countryProfiles[iso].closed_categories, "bad", highlightCatMouseOver, highlightCatMouseOut)}. </>
+              // ? <>, and more exclusionary or less transparent for {stringListConcat(countryProfiles[iso].closed_categories, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
+              ? <>, and more exclusionary or less transparent for {stringListConcat(closedCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
               : ". "
-            }
-            {
-              countryProfiles[iso].incomplete_categories.length > 0
-              ? <>Due to incompleteness of data, it was difficult to evaluate {stringListConcat(countryProfiles[iso].incomplete_categories, highlightCatMouseOver, highlightCatMouseOut)}.</>
-              : ""
             }
             </p>
             <br/>
@@ -167,7 +174,7 @@ function ScorecardPage(props) {
                   <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].vax_rank)}>
                     <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].vax_percent)}%</span> <br/>
                     of the population is fully vaccinated, <br/> <br/>
-                    <b>{countryProfiles[iso].vax_rank} than average</b> of {f(countryProfiles[iso].vax_average)}%.
+                    This is <b>{countryProfiles[iso].vax_rank} than average</b> of {f(countryProfiles[iso].vax_average)}% across countries in the Scorecard.
                   </div>
                 </Grid.Column>
                 <Grid.Column>
@@ -175,14 +182,14 @@ function ScorecardPage(props) {
                     
                     <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].deaths_per_100k)}</span> <br/>
                     people per 100,000 have died of the coronavirus, <br/> <br/>
-                    <b>{countryProfiles[iso].healthcare_rank} average</b> of {f(countryProfiles[iso].study_deaths_average)} for all countries in the Scorecard.
+                    This is <b>{countryProfiles[iso].deaths_rank} than average</b> of {f(countryProfiles[iso].study_deaths_average)} across countries in the Scorecard.
                   </div>
                 </Grid.Column>
                 <Grid.Column>
                   <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].healthcare_rank)}>
                     <span className={"descriptionStatsBoxMainFig"}>€{f(countryProfiles[iso].healthcare_spending_per_capita)}</span> <br/>
                     per capita is spent by the government on health care, <br/> <br/>
-                    <b>{countryProfiles[iso].healthcare_rank} average</b> of €{f(countryProfiles[iso].healthcare_spending_avg)} for all countries in the Scorecard.
+                    This is <b>{countryProfiles[iso].healthcare_rank} average</b> of €{f(countryProfiles[iso].healthcare_spending_avg)} across countries in the Scorecard.
                   </div>
                 </Grid.Column>
               </Grid.Row>
@@ -209,11 +216,11 @@ function ScorecardPage(props) {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column width={3}>
-                  <img src={"../icons/categories/"+catShort+"Complex.svg"}  width={240}/>
+                  <img src={iconsPathPrefix+"categories/"+catShort+"Complex.svg"}  width={240}/>
                 </Grid.Column>
                 <Grid.Column width={12}  className={"scoreCardDescription"}>
                   <p>{scoreCardText[cat]}</p>
-                  <p>For a more detailed breakdown of questions, please refer to the section below.</p>
+                  {/* <p>For a more detailed breakdown of questions, please refer to the section below.</p> */}
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>

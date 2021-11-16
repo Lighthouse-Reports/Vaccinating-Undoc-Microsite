@@ -198,7 +198,10 @@ function MainMap(props) {
                 noCountryLabel={false}
                 iconsPathPrefix={"icons/flaground/"}
                 open={highlightCountry !== ""}
-                countryRank={countryProfiles[highlightCountry].overall_rank}
+                // countryRank={countryProfiles[highlightCountry].overall_rank}
+                countryRank={
+                  countryProfiles[highlightCountry].overall_confidence_rank === "strong" ? countryProfiles[highlightCountry].overall_rank : "confused"
+                }
                 country={countryProfiles[highlightCountry].country}
                 highlightCountry={highlightCountry}
             />

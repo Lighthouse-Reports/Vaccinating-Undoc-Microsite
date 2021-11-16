@@ -52,8 +52,9 @@ function BigHexModal(props) {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <a href={"/scorecard/"+highlightCountry}>
+            <a href={"/Vaccinating-Undoc-Microsite/scorecard/"+highlightCountry}>
             <div className={"hexModalMainLabel " + getGoodOrBad(countryRank)}>
+              {/* Overall score: {countryRank} <br/> */}
               Overall score: {countryRank} <br/>
 
               <div className={"hexModalSecondaryLabel"}>Click here to view scorecard for {country}</div>

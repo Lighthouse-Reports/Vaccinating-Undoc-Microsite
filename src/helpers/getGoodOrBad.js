@@ -19,5 +19,7 @@ export const getGoodOrBad = (textInput) => {
   if (text === "above") return "good";
   if (text === "below") return "bad";
 
+  if (text === "confused") return "neutral";
+
   return textInput;
 }
