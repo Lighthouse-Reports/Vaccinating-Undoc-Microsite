@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Vaccinating-Undoc-Microsite/static/css/main.a8495126.chunk.css",
-    "main.js": "/Vaccinating-Undoc-Microsite/static/js/main.53c528b3.chunk.js",
-    "main.js.map": "/Vaccinating-Undoc-Microsite/static/js/main.53c528b3.chunk.js.map",
+    "main.js": "/Vaccinating-Undoc-Microsite/static/js/main.a45e6ee7.chunk.js",
+    "main.js.map": "/Vaccinating-Undoc-Microsite/static/js/main.a45e6ee7.chunk.js.map",
     "runtime-main.js": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.88312898.js",
     "runtime-main.js.map": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.88312898.js.map",
     "static/css/2.de326b34.chunk.css": "/Vaccinating-Undoc-Microsite/static/css/2.de326b34.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.de326b34.chunk.css",
     "static/js/2.20f2064b.chunk.js",
     "static/css/main.a8495126.chunk.css",
-    "static/js/main.53c528b3.chunk.js"
+    "static/js/main.a45e6ee7.chunk.js"
   ]
 }
