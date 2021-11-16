@@ -139,7 +139,7 @@ function ScorecardPage(props) {
 
             <p>
             {
-              openCatsRemoveConfused > 0
+              openCatsRemoveConfused.length > 0
               ? <>The country is more open and accessible for {
                   // stringListConcat(countryProfiles[iso].open_categories, "", highlightCatMouseOver, highlightCatMouseOut)
                   stringListConcat(openCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut)
@@ -148,7 +148,7 @@ function ScorecardPage(props) {
             }
             {
               // countryProfiles[iso].closed_categories.length > 0
-              closedCatsRemoveConfused > 0
+              closedCatsRemoveConfused.length > 0
               // ? <>, and more exclusionary or less transparent for {stringListConcat(countryProfiles[iso].closed_categories, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
               ? <>, and more exclusionary or less transparent for {stringListConcat(closedCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
               : ". "

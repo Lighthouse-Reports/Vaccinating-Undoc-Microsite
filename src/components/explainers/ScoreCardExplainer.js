@@ -22,10 +22,11 @@ const ScoreCardExplainer = (props) => {
         
         <Modal.Description>
         <p>
-        To understand how we transformed our research into scores, we have selected one country and explained the evidence that led the researcher to an answer for each question. To replicate the process for any country on the scorecard, please find the original questions, answers and source documents here. 
+        To understand how we transformed our research into scores, we have selected one country and explained the evidence that led the researcher to an answer for each question. To replicate the process for any country on the scorecard, please find the original questions, answers and source documents <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented">here</a>. 
         <br/>
         <br/>
-Portugal, one of only two countries that scores positively in the scorecard in all categories, illustrates how a country’s overall policy can set the tone for a country’s vaccination campaign, even if the reality follows the spirit, if not the letter, of the policy. Below we explain how we transformed policy documents and public statements into numbers and those numbers into scores. 
+Portugal, one of only two countries that scores positively in the scorecard in all categories, illustrates how a country’s overall policy can set the tone for a country’s vaccination campaign, even if the reality follows the spirit, if not the letter, of the policy. 
+{/* Below we explain how we transformed policy documents and public statements into numbers and those numbers into scores.  */}
 <br/>
 <br/>
 <h3>

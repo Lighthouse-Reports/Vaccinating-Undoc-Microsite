@@ -111,20 +111,28 @@ function MainMap(props) {
             const {x,y,hexPointsString} = calcPos(country.grid_pos_x,country.grid_pos_y,hexWidth,hexHeight);
             // console.log(country.grid_pos_x)
             return <g key={country.iso3}>
+              <clipPath id={"hexMaxExtent"+country.iso3}>
+                <polygon 
+                  points={hexPointsString}/>
+              </clipPath>
               <polygon 
                 points={hexPointsString}
                 stroke={hoverCountry === country.iso3 
-                  ? getGoodOrBad(countryProfiles[country.iso3].overall_rank) === "good"
-                    ? colors.positive
-                    : colors.negative 
+                  ? getGoodOrBad(countryProfiles[country.iso3].confidence_rank) === "bad"
+                    ? colors.border
+                    :  getGoodOrBad(countryProfiles[country.iso3].overall_rank) === "good"
+                        ? colors.positive
+                        : colors.negative 
                   : colors.border} 
-                strokeWidth="2" 
+                strokeWidth={hoverCountry === country.iso3 ? 4 : 2} 
                 // fill={hoverCountry === country.iso3 ? colors.highlight : "white"} 
+                // fill={"white"} 
                 fill={"white"} 
                 opacity={hoverCountry === country.iso3 ? 0.4 : 1}
                 onClick={() => selectHighlightCountry(country.iso3)}
                 onMouseOver={() => selectHoverCountry(country.iso3)}
                 onMouseOut={() => selectHoverCountry(country.iso3)}
+                clipPath={"url(#hexMaxExtent"+country.iso3+")"}
               />
               <text 
                 x={x+hexWidth/2}
