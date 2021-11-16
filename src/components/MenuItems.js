@@ -73,7 +73,7 @@ export default (props) => {
         as={Link}
         to="/advocacy"
         name="advocacy"
-        active={activeItem === "about"}
+        active={activeItem === "advocacy"}
         onClick={() => handleItemClick("advocacy")}
       /> */}
       <Menu.Item

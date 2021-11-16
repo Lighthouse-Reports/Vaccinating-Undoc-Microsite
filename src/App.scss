@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body, h4 {
+body, h2, h4 {
   margin: 10;
   font-family: 'Poppins', sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -70,7 +70,10 @@ table, td, th {
 
 
 .mainTitle {
-  font-family: "Inconsolata", monospace;
+  font-family: "Inconsolata", monospace !important;
+  display: inline-block;
+  color: black;
+
 }
 
 .hexGrid {
@@ -85,7 +88,7 @@ table, td, th {
     display: none;
   }
   width: calc(100vw - 50px);
-  max-height: 80vh;
+  // max-height: 80vh;
   margin: 0px;
   padding: 0px;
   margin-left: 0;
@@ -156,7 +159,7 @@ table, td, th {
 }
 
 .scoreCardPageSubHead {
-  font-family: "Inconsolata", monospace;
+  font-family: "Inconsolata", monospace !important;
   text-decoration: underline;
   padding-top: 2em;
   padding-bottom: 1em;
@@ -386,4 +389,15 @@ table, td, th {
 
 .downloadIcon {
   text-align: right;
+}
+
+.logo {
+  height: 3em;
+  display: inline-block;
+  margin: 0em 1em;
+  padding: 0;
+  &.mobile {
+    height: 2em;
+    display: inline;
+  }
 }

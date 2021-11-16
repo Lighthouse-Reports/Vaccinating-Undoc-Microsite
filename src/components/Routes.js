@@ -101,21 +101,22 @@ function Routes(props) {
                     isMobile ? <Container>
                       <Grid>
                         <Grid.Row>
-                          <Grid.Column width={4}>
-                          <Button onClick={() => setVisible(true)}>
-                            <Button.Content>
-                              <Icon name='align justify' />
-                            </Button.Content>
-                          </Button>
+                          <Grid.Column width={2}>
+                          <Icon onClick={() => setVisible(true)}  name='align justify'>
+                            {/* <Button.Content>
+                              <Icon name='align justify'/>
+                            </Button.Content> */}
+                          </Icon>
                           </Grid.Column>
-                          <Grid.Column width={12}>
-                          <h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4>
+                          <Grid.Column width={14}>
+                          <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo mobile"}/></a>
+                          <a href="/Vaccinating-Undoc-Microsite/"> <h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4></a>
                           </Grid.Column>
                         </Grid.Row>
                       </Grid>
                     </Container> : <Container>
-                      <img src={logoPathPrefix+"logo-brand.svg"}/>
-                      <h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2>
+                      <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo"}/></a>
+                      <a href="/Vaccinating-Undoc-Microsite/"><h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2></a>
                       <Menu secondary className="HeaderNav">
                         <MenuItems />
                       </Menu>

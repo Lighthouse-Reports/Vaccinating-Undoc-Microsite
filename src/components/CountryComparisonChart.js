@@ -8,7 +8,7 @@ import { Grid, Popup, Icon } from 'semantic-ui-react';
 import { saveSvg } from '../helpers/saveSvg';
 
 function CountryComparisonChart(props) {
-  const { data } = props;
+  const { data, range } = props;
 
   const [width, setWidth] = useState();
   const [height, setHeight] = useState();
@@ -28,10 +28,10 @@ function CountryComparisonChart(props) {
 
   // This function calculates width and height of the list
   const getContainerSize = () => {
-    const newWidth = containerRef.current.clientWidth;
+    const newWidth = containerRef.current ? containerRef.current.clientWidth : 0;
     setWidth(newWidth);
 
-    const newHeight = containerRef.current.clientHeight;
+    const newHeight = containerRef.current ? containerRef.current.clientHeight : 0;
     setHeight(newHeight);
   };
 
@@ -203,10 +203,12 @@ function CountryComparisonChart(props) {
     <Grid columns={2}>
       <Grid.Row>
         <Grid.Column>
-        Exclusionary or less transparent
+        {/* Exclusionary or less transparent */}
+        {range[0]}
         </Grid.Column>
         <Grid.Column style={{textAlign:"right"}}>
-        Open and accessible
+        {/* Open and accessible */}
+        {range[1]}
         </Grid.Column>
       </Grid.Row>
     </Grid>

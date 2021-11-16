@@ -138,31 +138,38 @@ const getIcon = (iconName,iconType) => (x,y,size,fillPrimary,sizeModifier) => {
   }
 }
 
+
+
 export const catInitials = {
   "Policy Transparency": {
     initial:"T", 
     short:"trans", 
-    iconSimple: getIcon("trans","simple")
+    iconSimple: getIcon("trans","simple"),
+    range: ["Opaque","Transparent"]
   },
   "Undocumented Access": {
     initial:"U", 
     short:"undoc", 
-    iconSimple: getIcon("undoc","simple")
+    iconSimple: getIcon("undoc","simple"),
+    range: ["Closed Door","Open and Accessible"]
   },
   "Identification and Residency Requirements": {
     initial:"I", 
     short:"idres", 
-    iconSimple: getIcon("idres","simple")
+    iconSimple: getIcon("idres","simple"),
+    range: ["Opaque","Transparent"]
   },
   "Marginalized Access": {
     initial:"M", 
     short:"marg", 
-    iconSimple: getIcon("marg","simple")
+    iconSimple: getIcon("marg","simple"),
+    range: ["Inclusive","Exclusionary"]
   },
   "Privacy Guarantees": {
     initial:"P", 
     short:"priv", 
-    iconSimple: getIcon("priv","simple")
+    iconSimple: getIcon("priv","simple"),
+    range: ["Opaque","Transparent"]
   }
 }
 
@@ -179,5 +186,15 @@ export const comparisonInfo = {
   widthCutOffForLabels: 500
 }
 
+export const scoreCardText = {
+  "Policy Transparency": "Policy Transparency evaluates government efforts to make national vaccine policies available to the public.  We determined whether an official vaccine strategy is online, whether the government has made public statements explaining the strategy, whether the budget is public, who was involved in developing the strategy and finally whether undocumented people were part of the process.",
+  "Undocumented Access": "Undocumented Access addresses the central question of the scorecard: are undocumented people able to access vaccination against COVID-19? This is where researchers identified whether undocumented people are included in the language of both written and oral vaccination policies, whether undocumented people can access vaccination without an ID, and whether access is equitable: undocumented people able to get vaccinated on the same basis as regularly residing individuals, and the type and choice of vaccine, costs and prioritisation are the same.",
+  "Identification and Residency Requirements": "Identification and Residency Requirements is an indirect means to determine whether the undocumented are able to get vaccinated. Researchers evaluated whether national vaccination policies are explicit in the type of documentation that is needed to access the vaccine, both in terms of identification and residency.",
+  "Marginalized Access": "Marginalised Access attempts to evaluate how a country is accommodating the needs of other marginalized groups within its borders.  The scorecard evaluates policies towards people in detention centres or without freedom of movement, people who are not fluent in the local language, people without internet access or means of transportation and people who are housing insecure. We evaluated how these groups are addressed overall, with the understanding  that undocumented people may also be part of these groups.",
+  "Privacy Guarantees": "Privacy Guarantees evaluates policies related to the collection, processing and sharing of data.  Researchers evaluated whether these policies are publicly available and whether assurances are provided that data collected prior to and during vaccination will not be shared outside health authorities. Undocumented people often avoid accessing public services out of fear that their residency status will be reported to government authorities. Privacy guarantees are therefore critical to making vaccines accessible. Lastly, researchers measured whether the certificate of vaccination indicates the location where the vaccination took place, with the understanding that this may create additional barriers for undocumented people if they seek to move to another country undetected."
+}
+
+
 export const iconsPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/be6fb6f6db2795b3b556f0d2f8924c798da1c02a/public/icons/"
-export const logoPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/be6fb6f6db2795b3b556f0d2f8924c798da1c02a/public/"
+export const logoPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/20cf331d54c7ab9402cfa93f1155294effbfb248/public/logo-brand.svg"
+// export const logoPathPrefix = "https://www.lighthousereports.nl/wp-content/themes/lhr/assets/images/logo-text.svg"

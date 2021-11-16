@@ -6,13 +6,13 @@ import { data } from '../helpers/datasets';
 import {quotesNest} from '../helpers/quotes';
 import {stringListConcat} from '../helpers/stringListConcat';
 import { getGoodOrBad } from "../helpers/getGoodOrBad";
-import { Button, Card, Image, Container } from 'semantic-ui-react'
+import { Button, Card, Image, Container, Popup } from 'semantic-ui-react'
 import ScorecardQuestion from "../components/ScorecardQuestion";
 import ScorecardWaterfallChart from "../components/ScorecardWaterfallChart";
 import BigHexComponent from "../components/BigHexComponent";
 import Quote from "../components/QuoteComponent";
 import DecoratedString from "../components/DecoratedStringComponent";
-import { catInitials, iconsPathPrefix } from "../helpers/constants";
+import { catInitials, iconsPathPrefix, scoreCardText } from "../helpers/constants";
 import { format } from 'd3-format';
 import { randomInt } from 'd3-random';
 
@@ -39,14 +39,7 @@ function ScorecardPage(props) {
 
   const f = format(",.0f")
 
-  const scoreCardText = {
-    "Policy Transparency": "Policy Transparency evaluates government efforts to make national vaccine policies available to the public.  We determined whether an official vaccine strategy is online, whether the government has made public statements explaining the strategy, whether the budget is public, who was involved in developing the strategy and finally whether undocumented people were part of the process.",
-    "Undocumented Access": "Undocumented Access addresses the central question of the scorecard: are undocumented people able to access vaccination against COVID-19? This is where researchers identified whether undocumented people are included in the language of both written and oral vaccination policies, whether undocumented people can access vaccination without an ID, and whether access is equitable: undocumented people able to get vaccinated on the same basis as regularly residing individuals, and the type and choice of vaccine, costs and prioritisation are the same.",
-    "Identification and Residency Requirements": "Identification and Residency Requirements is an indirect means to determine whether the undocumented are able to get vaccinated. Researchers evaluated whether national vaccination policies are explicit in the type of documentation that is needed to access the vaccine, both in terms of identification and residency.",
-    "Marginalized Access": "Marginalised Access attempts to evaluate how a country is accommodating the needs of other marginalized groups within its borders.  The scorecard evaluates policies towards people in detention centres or without freedom of movement, people who are not fluent in the local language, people without internet access or means of transportation and people who are housing insecure. We evaluated how these groups are addressed overall, with the understanding  that undocumented people may also be part of these groups.",
-    "Privacy Guarantees": "Privacy Guarantees evaluates policies related to the collection, processing and sharing of data.  Researchers evaluated whether these policies are publicly available and whether assurances are provided that data collected prior to and during vaccination will not be shared outside health authorities. Undocumented people often avoid accessing public services out of fear that their residency status will be reported to government authorities. Privacy guarantees are therefore critical to making vaccines accessible. Lastly, researchers measured whether the certificate of vaccination indicates the location where the vaccination took place, with the understanding that this may create additional barriers for undocumented people if they seek to move to another country undetected."
-  }
-
+ 
 
   const quotesAll = quotesNest[isoToCountryLookup[iso]["country_name"]];
   // console.log(quotesAll)
@@ -132,7 +125,7 @@ function ScorecardPage(props) {
             {countryProfiles[iso].country} overall leans more towards <DecoratedString stringText={countryProfiles[iso].overall_confidence_rank === "strong" ? countryProfiles[iso].overall_rank : "confused"}/>.
             </p>
 
-            <p>It has a <DecoratedString stringText={countryProfiles[iso].confidence_rank + " confidence score"} stringClass={countryProfiles[iso].confidence_rank}/>, meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}.
+            <p>It has a <Popup flowing hoverable trigger={<span><DecoratedString stringText={countryProfiles[iso].confidence_rank + " confidence score"} stringClass={countryProfiles[iso].confidence_rank}/></span>}>Low confidence score indicates a high number of unknowns.</Popup>, meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}.
             {/* . The country is more open and accessible for {countryProfiles[iso].open_categories.join(", ")}  */}
             {/* and more exclusionary or less transparent for {countryProfiles[iso].closed_categories.join(", ")}  */}
 
@@ -171,26 +164,47 @@ function ScorecardPage(props) {
             <Grid stackable centered  className="descriptionStats" columns={3}>
               <Grid.Row stretched>
                 <Grid.Column>
-                  <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].vax_rank)}>
-                    <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].vax_percent)}%</span> <br/>
-                    of the population is fully vaccinated, <br/> <br/>
-                    This is <b>{countryProfiles[iso].vax_rank} than average</b> of {f(countryProfiles[iso].vax_average)}% across countries in the Scorecard.
-                  </div>
+                  <Popup 
+                    flowing 
+                    hoverable
+                    trigger={
+                      <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].vax_rank)}>
+                        <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].vax_percent)}%</span> <br/>
+                        of the population is fully vaccinated, <br/> <br/>
+                        This is <b>{countryProfiles[iso].vax_rank} than average</b> of {f(countryProfiles[iso].vax_average)}% across countries in the Scorecard.
+                      </div>
+                    }>
+                      Source: <a href="https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations">Our World in Data</a>
+                  </Popup>
                 </Grid.Column>
                 <Grid.Column>
-                  <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].deaths_rank)}>
-                    
-                    <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].deaths_per_100k)}</span> <br/>
-                    people per 100,000 have died of the coronavirus, <br/> <br/>
-                    This is <b>{countryProfiles[iso].deaths_rank} than average</b> of {f(countryProfiles[iso].study_deaths_average)} across countries in the Scorecard.
-                  </div>
+                  <Popup 
+                    flowing 
+                    hoverable
+                    trigger={
+                      <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].deaths_rank)}>
+                        
+                        <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].deaths_per_100k)}</span> <br/>
+                        people per 100,000 have died of the coronavirus, <br/> <br/>
+                        This is <b>{countryProfiles[iso].deaths_rank} than average</b> of {f(countryProfiles[iso].study_deaths_average)} across countries in the Scorecard.
+                      </div>
+                    }>
+                      Source: <a href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a>
+                  </Popup>
                 </Grid.Column>
                 <Grid.Column>
-                  <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].healthcare_rank)}>
-                    <span className={"descriptionStatsBoxMainFig"}>€{f(countryProfiles[iso].healthcare_spending_per_capita)}</span> <br/>
-                    per capita is spent by the government on health care, <br/> <br/>
-                    This is <b>{countryProfiles[iso].healthcare_rank} average</b> of €{f(countryProfiles[iso].healthcare_spending_avg)} across countries in the Scorecard.
-                  </div>
+                  <Popup 
+                    flowing 
+                    hoverable
+                    trigger={
+                      <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].healthcare_rank)}>
+                        <span className={"descriptionStatsBoxMainFig"}>€{f(countryProfiles[iso].healthcare_spending_per_capita)}</span> <br/>
+                        per capita is spent by the government on health care, <br/> <br/>
+                        This is <b>{countryProfiles[iso].healthcare_rank} average</b> of €{f(countryProfiles[iso].healthcare_spending_avg)} across countries in the Scorecard.
+                      </div>
+                    }>
+                      Source: <a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD">World Bank</a>
+                  </Popup>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

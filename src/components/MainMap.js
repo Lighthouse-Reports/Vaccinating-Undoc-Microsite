@@ -58,7 +58,7 @@ function MainMap(props) {
   }
 
   return (
-    <div className={"hexGridHolder"}>
+    <div>
       <table cellspacing="0" cellpadding="0" style={{border: "none"}}>
         <tr  style={{border: "none"}}>
           <td  style={{border: "none"}}>
@@ -91,7 +91,7 @@ function MainMap(props) {
           </td>
         </tr>
       </table>
-      
+      <div className={"hexGridHolder"}>
       <svg className="hexGrid" width={width} height={height} ref={mapRef}>
         {
           blanks.map((currentBlank,i) => {
@@ -200,7 +200,7 @@ function MainMap(props) {
                 open={highlightCountry !== ""}
                 // countryRank={countryProfiles[highlightCountry].overall_rank}
                 countryRank={
-                  countryProfiles[highlightCountry].overall_confidence_rank === "strong" ? countryProfiles[highlightCountry].overall_rank : "confused"
+                  countryProfiles[highlightCountry].overall_confidence_rank === "strong" ? countryProfiles[highlightCountry].overall_rank : "Confused"
                 }
                 country={countryProfiles[highlightCountry].country}
                 highlightCountry={highlightCountry}
@@ -277,6 +277,7 @@ function MainMap(props) {
         }
         
       </svg>
+      </div>
     </div>
   )
 
