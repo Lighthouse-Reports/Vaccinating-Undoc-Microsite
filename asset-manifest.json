@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Vaccinating-Undoc-Microsite/static/css/main.2f053dc0.chunk.css",
-    "main.js": "/Vaccinating-Undoc-Microsite/static/js/main.851324db.chunk.js",
-    "main.js.map": "/Vaccinating-Undoc-Microsite/static/js/main.851324db.chunk.js.map",
+    "main.css": "/Vaccinating-Undoc-Microsite/static/css/main.85088697.chunk.css",
+    "main.js": "/Vaccinating-Undoc-Microsite/static/js/main.cff9ab37.chunk.js",
+    "main.js.map": "/Vaccinating-Undoc-Microsite/static/js/main.cff9ab37.chunk.js.map",
     "runtime-main.js": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.daff2317.js",
     "runtime-main.js.map": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.daff2317.js.map",
     "static/css/2.de326b34.chunk.css": "/Vaccinating-Undoc-Microsite/static/css/2.de326b34.chunk.css",
-    "static/js/2.b50706bb.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/2.b50706bb.chunk.js",
-    "static/js/2.b50706bb.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/2.b50706bb.chunk.js.map",
+    "static/js/2.918a4855.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/2.918a4855.chunk.js",
+    "static/js/2.918a4855.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/2.918a4855.chunk.js.map",
     "static/js/3.03d5beed.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/3.03d5beed.chunk.js",
     "static/js/3.03d5beed.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/3.03d5beed.chunk.js.map",
     "index.html": "/Vaccinating-Undoc-Microsite/index.html",
     "static/css/2.de326b34.chunk.css.map": "/Vaccinating-Undoc-Microsite/static/css/2.de326b34.chunk.css.map",
-    "static/css/main.2f053dc0.chunk.css.map": "/Vaccinating-Undoc-Microsite/static/css/main.2f053dc0.chunk.css.map",
-    "static/js/2.b50706bb.chunk.js.LICENSE.txt": "/Vaccinating-Undoc-Microsite/static/js/2.b50706bb.chunk.js.LICENSE.txt",
+    "static/css/main.85088697.chunk.css.map": "/Vaccinating-Undoc-Microsite/static/css/main.85088697.chunk.css.map",
+    "static/js/2.918a4855.chunk.js.LICENSE.txt": "/Vaccinating-Undoc-Microsite/static/js/2.918a4855.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/Vaccinating-Undoc-Microsite/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.daff2317.js",
     "static/css/2.de326b34.chunk.css",
-    "static/js/2.b50706bb.chunk.js",
-    "static/css/main.2f053dc0.chunk.css",
-    "static/js/main.851324db.chunk.js"
+    "static/js/2.918a4855.chunk.js",
+    "static/css/main.85088697.chunk.css",
+    "static/js/main.cff9ab37.chunk.js"
   ]
 }
