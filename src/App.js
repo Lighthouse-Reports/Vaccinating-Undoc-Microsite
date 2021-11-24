@@ -4,7 +4,7 @@ import RoutesComponent from './components/Routes';
 import GA4React, { useGA4React } from "ga-4-react";
 // import ga from './helpers/ga';
 
-const ga4react = new GA4React("G-54GET7EG27");
+// const ga4react = new GA4React("G-54GET7EG27");
 
 
 function App() {

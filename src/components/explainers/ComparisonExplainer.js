@@ -40,7 +40,7 @@ The first thing to understand is just how difficult it is to even figure out wha
 <CountryComparisonChart
   width={320}
   height={300}
-  data={categorySubaggData["Policy Transparency"]}
+  data={[...categorySubaggData["Policy Transparency"]]}
   range={catInitials["Policy Transparency"].range}
   modalState={modalState}
   countryProfiles={countryProfiles}
@@ -65,7 +65,7 @@ The question of the accessiblity of the COVID-19 vaccine for undocumented people
 <CountryComparisonChart
   width={320}
   height={300}
-  data={categorySubaggData["Undocumented Access"]}
+  data={[...categorySubaggData["Undocumented Access"]]}
   range={catInitials["Undocumented Access"].range}
   modalState={modalState}
   countryProfiles={countryProfiles}
@@ -109,7 +109,7 @@ In many countries, it was easier to determine how the government was addressing 
 <CountryComparisonChart
   width={320}
   height={300}
-  data={categorySubaggData["Marginalized Access"]}
+  data={[...categorySubaggData["Marginalized Access"]]}
   range={catInitials["Marginalized Access"].range}
   modalState={modalState}
   countryProfiles={countryProfiles}
@@ -134,7 +134,7 @@ Undocumented people often live in fear of having their immigration status report
 <CountryComparisonChart
   width={320}
   height={300}
-  data={categorySubaggData["Privacy Guarantees"]}
+  data={[...categorySubaggData["Privacy Guarantees"]]}
   range={catInitials["Privacy Guarantees"].range}
   modalState={modalState}
   countryProfiles={countryProfiles}

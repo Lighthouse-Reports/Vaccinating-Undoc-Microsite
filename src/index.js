@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GA4React, { useGA4React } from "ga-4-react";
 
-const ga4react = new GA4React("G-0S5GK16F68");
+const ga4react = new GA4React("G-54GET7EG27");
 
 (async () => {
   await ga4react.initialize();

@@ -176,14 +176,17 @@ export const catInitials = {
 export const comparisonInfo = {
   opacity: 0.2,
   r: 6,
-  charge: -3,
-  strength: 0.6,
+  charge: 0,
+  strength: 5,
   size: 20,
   fixedHeight: 350,
   fontSize: "0.7em",
   forceCollideMultipleBig: 1.6,
   forceCollideMultipleSmall: 0.6,
-  widthCutOffForLabels: 500
+  widthCutOffForLabels: 500,
+  positiveXVal: 1.4,
+  negativeXVal: -1.4,
+  neutralXVal: 0
 }
 
 export const scoreCardText = {

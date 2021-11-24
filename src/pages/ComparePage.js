@@ -25,7 +25,7 @@ function ComparePage(props) {
             <h1 className={"scoreCardPageHead"}>Countries Comparison</h1>          
             <h4>Explore how countries perform across the different categories of the Scorecard.</h4> 
             
-            <ComparisonExplainer
+            {/* <ComparisonExplainer
               open={openExplainer}
               setOpen={setOpenExplainer}
               categories={categories}
@@ -34,33 +34,38 @@ function ComparePage(props) {
               modalState={openExplainer}
               countryProfiles={countryProfiles}
             />         
-            <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
-            <br/>
-            <br/>
+            <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button> */}
+            {/* <br/>
+            <br/> */}
             
           </Grid.Column>
         </Grid.Row>
-        {/* <Grid.Row>
+        <Grid.Row>
           <Grid.Column>
-            <div key={+"Group"}>
+            <div key={"MainGroup"}>
               <h2 className={"scoreCardPageSubHead"}>Overall</h2>
+              <p>Countries with little public information for the given category are shown "Confused", and among the rest, those that scored low on the scorecard are considered "Exclusionary or less transparent", and those that scored high on the scorecard are considered "Open and accessible".</p>
+
               <CountryComparisonChart
                 width={320}
                 height={300}
-                data={categorySubaggData[cat]}
+                data={categorySubaggData["Undocumented Access"].map(d => ({"Country":d.Country,"Iso3":d.Iso3}))}
                 range={["Exclusionary or less transparent","Open and accessible"]}
                 // dataArray={categoryData[catShort]}
+                modalState={openExplainer}
+                countryProfiles={countryProfiles}
+                category={"overall"}
               />
             </div>
           </Grid.Column>
-        </Grid.Row> */}
+        </Grid.Row>
         {
-          categories.map(cat => {
+          categories.map((cat,i) => {
             const catShort = catInitials[cat].short;
             return <Grid stackable >
               <Grid.Row>
                 <Grid.Column>
-                  <div key={+"Group"}>
+                  <div key={"Group"+i}>
                     <h2 className={"scoreCardPageSubHead"}>{cat}</h2>
                   </div>
                 </Grid.Column>
@@ -80,7 +85,7 @@ function ComparePage(props) {
                     <CountryComparisonChart
                       width={320}
                       height={300}
-                      data={categorySubaggData[cat]}
+                      data={categorySubaggData[cat].map(d => ({"Country":d.Country,"Iso3":d.Iso3}))}
                       range={catInitials[cat].range}
                       // dataArray={categoryData[catShort]}
                       modalState={openExplainer}

@@ -10,6 +10,7 @@ import { getGoodOrBad } from '../helpers/getGoodOrBad';
 
 function CountryComparisonChart(props) {
   const { data, range, countryProfiles, category } = props;
+  console.log(data)
 
   const [width, setWidth] = useState();
   const [height, setHeight] = useState();
@@ -19,8 +20,9 @@ function CountryComparisonChart(props) {
   const lineHeight = comparisonInfo.fixedHeight;
   const paddedWidth = width - chartPadding*2;
   // const charge = -3;
-
+  // const [modifiedData, setModifiedData] = useState([]);
   const [animatedNodes, setAnimatedNodes] = useState([]);
+  // const [data, setData] = useState([]);
   // console.log(countryProfiles);
 
   const containerRef = useRef();
@@ -50,14 +52,30 @@ function CountryComparisonChart(props) {
     getContainerSize();
   }, []);
 
+
+  const  getPos = (isOverall,category,iso) => {
+    let returnVal = ''
+    if (isOverall) {
+      returnVal = countryProfiles[iso]['overall_confidence_rank'] === "weak" 
+        ? comparisonInfo.neutralXVal
+        : getGoodOrBad(countryProfiles[iso]['overall_rank']) === "good"
+          ? comparisonInfo.positiveXVal
+          : comparisonInfo.negativeXVal
+    } else {
+      returnVal = countryProfiles[iso]['C-'+category] === "weak" 
+        ? comparisonInfo.neutralXVal
+        : countryProfiles[iso]['open_categories'].includes(category)
+          ? comparisonInfo.positiveXVal
+          : comparisonInfo.negativeXVal
+    }
+    return returnVal
+  }
+
   useEffect(() => {
     const simulation = forceSimulation()
       .force("x", forceX(d => {
-        const value = countryProfiles[d.Iso3]['confidence_rank'] === "weak" 
-          ? 0
-          : countryProfiles[d.Iso3]['open_categories'].includes(category)
-            ? 1
-            : -1
+        const value = getPos(category === "overall",category,d.Iso3);
+        // console.log(category,d.Iso3,value)
         return scaleX(value);  
         }).strength(comparisonInfo.strength))
       .force("y", forceY(lineHeight/2).strength(comparisonInfo.strength))
@@ -76,7 +94,7 @@ function CountryComparisonChart(props) {
     // copy nodes into simulation
     simulation.nodes([...data]);
     // slow down with a small alpha
-    simulation.alpha(0.2).restart();
+    simulation.alpha(0.1).restart();
 
     // stop simulation on unmount
     return () => simulation.stop();
@@ -175,6 +193,19 @@ function CountryComparisonChart(props) {
           clipPath="url(#backgroundExtent)"
         />
 
+        <rect 
+          x={scaleX((comparisonInfo.negativeXVal+comparisonInfo.neutralXVal)/2)}
+          y={0}
+          width={(
+            scaleX((comparisonInfo.positiveXVal+comparisonInfo.neutralXVal)/2)
+            - scaleX((comparisonInfo.negativeXVal+comparisonInfo.neutralXVal)/2)
+          )}
+          height={comparisonInfo.fixedHeight}
+          fill={colors.neutral}
+          // opacity={comparisonInfo.opacity}
+          clipPath="url(#backgroundExtent)"
+        />
+
         
       
         {
@@ -208,13 +239,17 @@ function CountryComparisonChart(props) {
         }
       </g>
     </svg>
-    <Grid columns={2}>
+    <Grid columns={3}>
       <Grid.Row>
-        <Grid.Column>
+        <Grid.Column style={{textAlign:"center"}}>
         {/* Exclusionary or less transparent */}
         {range[0]}
         </Grid.Column>
-        <Grid.Column style={{textAlign:"right"}}>
+        <Grid.Column style={{textAlign:"center"}}>
+        {/* Exclusionary or less transparent */}
+        Confused
+        </Grid.Column>
+        <Grid.Column style={{textAlign:"center"}}>
         {/* Open and accessible */}
         {range[1]}
         </Grid.Column>
