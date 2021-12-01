@@ -417,3 +417,21 @@ table, td, th {
     display: none;
   }
 }
+
+.ui.inverted.link.list .item, .ui.inverted.link.list .item a:not(.ui), .ui.inverted.link.list a.item {
+  color: #a1bbc4 !important;
+  text-decoration: none;
+}
+
+.ui.inverted.link.list .item:hover, .ui.inverted.link.list .item a:not(.ui):hover, .ui.inverted.link.list a.item:hover {
+  color: #f5f7f8 !important;
+}
+
+.socialicon {
+  color: #a1bbc4 !important;
+  text-decoration: none;
+}
+
+.socialicon:hover {
+  color: #f5f7f8 !important;
+}

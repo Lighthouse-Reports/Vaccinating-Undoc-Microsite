@@ -29,6 +29,8 @@ import AboutPage from '../pages/AboutPage';
 import MenuItems from './MenuItems';
 import HexMapSharePage from '../pages/HexMapSharePage';
 import CardSharePage from '../pages/CardSharePage';
+import Footer from './Footer';
+import InvestigationPage from '../pages/InvestigationPage';
 
 
 const history = createHashHistory();
@@ -80,92 +82,97 @@ function Routes(props) {
           path="/"
         >
           <Grid columns={1}>
-          <Grid.Column>
-            <Sidebar.Pushable as={Segment}>
-              <Sidebar
-                as={Menu}
-                animation='overlay'
-                icon='labeled'
-                inverted
-                onHide={() => setVisible(false)}
-                vertical
-                visible={visible}
-                width='thin'
-              >
-                <MenuItems />
-              </Sidebar>
+            <Grid.Column>
+              <Sidebar.Pushable as={Segment}>
+                <Sidebar
+                  as={Menu}
+                  animation='overlay'
+                  icon='labeled'
+                  inverted
+                  onHide={() => setVisible(false)}
+                  vertical
+                  visible={visible}
+                  width='thin'
+                >
+                  <MenuItems />
+                </Sidebar>
 
-              <Sidebar.Pusher dimmed={visible}>
-                <Segment basic>
-                  {
-                    isMobile ? <Container>
-                      <Grid>
-                        <Grid.Row>
-                          <Grid.Column width={2}>
-                          <Icon onClick={() => setVisible(true)}  name='align justify'>
-                            {/* <Button.Content>
+                <Sidebar.Pusher dimmed={visible}>
+                  <Segment basic>
+                    {
+                      isMobile ? <Container>
+                        <Grid>
+                          <Grid.Row>
+                            <Grid.Column width={2}>
+                              <Icon onClick={() => setVisible(true)} name='align justify'>
+                                {/* <Button.Content>
                               <Icon name='align justify'/>
                             </Button.Content> */}
-                          </Icon>
-                          </Grid.Column>
-                          <Grid.Column width={14}>
-                          <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo mobile"}/></a>
-                          <a href="/Vaccinating-Undoc-Microsite/"> <h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4></a>
-                          </Grid.Column>
-                        </Grid.Row>
-                      </Grid>
-                    </Container> : <Container>
-                      <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo"}/></a>
-                      <a href="/Vaccinating-Undoc-Microsite/"><h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2></a>
-                      <Menu secondary className="HeaderNav">
-                        <MenuItems />
-                      </Menu>
-                    </Container>
-                  }
+                              </Icon>
+                            </Grid.Column>
+                            <Grid.Column width={14}>
+                              <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo mobile"} /></a>
+                              <a href="/Vaccinating-Undoc-Microsite/"> <h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4></a>
+                            </Grid.Column>
+                          </Grid.Row>
+                        </Grid>
+                      </Container> : <Container>
+                        <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo"} /></a>
+                        <a href="/Vaccinating-Undoc-Microsite/"><h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2></a>
+                        <Menu secondary className="HeaderNav">
+                          <MenuItems />
+                        </Menu>
+                      </Container>
+                    }
 
-                  {/* <HeaderNav {...props} /> */}
-                  <Divider />
-                  <Switch>
-                    <Route
-                      exact
-                      path="/"
-                      component={HomePage}
-                    />
-                    <Route
-                      exact
-                      path="/explainer"
-                      component={ExplainerPage}
-                    />
-                    <Route
-                      exact
-                      path="/compare"
-                      component={ComparePage}
-                    />
-                    <Route
-                      exact
-                      path="/scorecard/:iso"
-                      component={ScorecardPage}
-                    />
-                    <Route
-                      exact
-                      path="/methodology"
-                      component={MethodologyPage}
-                    />
-                    <Route
-                      exact
-                      path="/about"
-                      component={AboutPage}
-                    />
-                  </Switch>
-                </Segment>
-              </Sidebar.Pusher>
-            </Sidebar.Pushable>
-          </Grid.Column>
-        </Grid>
+                    {/* <HeaderNav {...props} /> */}
+                    <Divider />
+                    <Switch>
+                      <Route
+                        exact
+                        path="/"
+                        component={HomePage}
+                      />
+                      <Route
+                        exact
+                        path="/explainer"
+                        component={ExplainerPage}
+                      />
+                      {/* <Route
+                        exact
+                        path="/compare"
+                        component={ComparePage}
+                      /> */}
+                      <Route
+                        exact
+                        path="/scorecard/:iso"
+                        component={ScorecardPage}
+                      />
+                      <Route
+                        exact
+                        path="/methodology"
+                        component={MethodologyPage}
+                      />
+                      <Route
+                        exact
+                        path="/about"
+                        component={AboutPage}
+                      />
+                      <Route
+                        exact
+                        path="/investigations"
+                        component={InvestigationPage}
+                      />
+                    </Switch>
+                  </Segment>
+                </Sidebar.Pusher>
+              </Sidebar.Pushable>
+            </Grid.Column>
+          </Grid>
         </Route>
       </Switch>
-      
 
+      <Footer />
 
       {/* </Wrapper> */}
 
