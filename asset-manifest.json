@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Vaccinating-Undoc-Microsite/static/css/main.85088697.chunk.css",
-    "main.js": "/Vaccinating-Undoc-Microsite/static/js/main.e412bf0c.chunk.js",
-    "main.js.map": "/Vaccinating-Undoc-Microsite/static/js/main.e412bf0c.chunk.js.map",
-    "runtime-main.js": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.daff2317.js",
-    "runtime-main.js.map": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.daff2317.js.map",
+    "main.css": "/Vaccinating-Undoc-Microsite/static/css/main.220c88ec.chunk.css",
+    "main.js": "/Vaccinating-Undoc-Microsite/static/js/main.a9663caa.chunk.js",
+    "main.js.map": "/Vaccinating-Undoc-Microsite/static/js/main.a9663caa.chunk.js.map",
+    "runtime-main.js": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.2a7cfd4e.js",
+    "runtime-main.js.map": "/Vaccinating-Undoc-Microsite/static/js/runtime-main.2a7cfd4e.js.map",
     "static/css/2.de326b34.chunk.css": "/Vaccinating-Undoc-Microsite/static/css/2.de326b34.chunk.css",
-    "static/js/2.918a4855.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/2.918a4855.chunk.js",
-    "static/js/2.918a4855.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/2.918a4855.chunk.js.map",
-    "static/js/3.03d5beed.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/3.03d5beed.chunk.js",
-    "static/js/3.03d5beed.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/3.03d5beed.chunk.js.map",
+    "static/js/2.93ab6e9a.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/2.93ab6e9a.chunk.js",
+    "static/js/2.93ab6e9a.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/2.93ab6e9a.chunk.js.map",
+    "static/js/3.d6ae28c7.chunk.js": "/Vaccinating-Undoc-Microsite/static/js/3.d6ae28c7.chunk.js",
+    "static/js/3.d6ae28c7.chunk.js.map": "/Vaccinating-Undoc-Microsite/static/js/3.d6ae28c7.chunk.js.map",
     "index.html": "/Vaccinating-Undoc-Microsite/index.html",
     "static/css/2.de326b34.chunk.css.map": "/Vaccinating-Undoc-Microsite/static/css/2.de326b34.chunk.css.map",
-    "static/css/main.85088697.chunk.css.map": "/Vaccinating-Undoc-Microsite/static/css/main.85088697.chunk.css.map",
-    "static/js/2.918a4855.chunk.js.LICENSE.txt": "/Vaccinating-Undoc-Microsite/static/js/2.918a4855.chunk.js.LICENSE.txt",
+    "static/css/main.220c88ec.chunk.css.map": "/Vaccinating-Undoc-Microsite/static/css/main.220c88ec.chunk.css.map",
+    "static/js/2.93ab6e9a.chunk.js.LICENSE.txt": "/Vaccinating-Undoc-Microsite/static/js/2.93ab6e9a.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/Vaccinating-Undoc-Microsite/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.daff2317.js",
+    "static/js/runtime-main.2a7cfd4e.js",
     "static/css/2.de326b34.chunk.css",
-    "static/js/2.918a4855.chunk.js",
-    "static/css/main.85088697.chunk.css",
-    "static/js/main.e412bf0c.chunk.js"
+    "static/js/2.93ab6e9a.chunk.js",
+    "static/css/main.220c88ec.chunk.css",
+    "static/js/main.a9663caa.chunk.js"
   ]
 }

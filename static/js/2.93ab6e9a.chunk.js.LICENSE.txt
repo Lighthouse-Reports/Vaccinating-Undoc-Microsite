@@ -16,6 +16,8 @@ object-assign
   All rights reserved.
 */
 
+/*! For license information please see index.js.LICENSE.txt */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
