@@ -35,13 +35,13 @@ export default (props) => {
                 active={activeItem === 'explainer'}
                 onClick={() => handleItemClick('explainer')}
             /> */}
-      {/* <Menu.Item
+      <Menu.Item
         as={Link}
         to="/compare"
         name="compare countries"
         active={activeItem === "compare"}
         onClick={() => handleItemClick("compare")}
-      /> */}
+      />
       <Menu.Item>
         <Dropdown scrolling text="Scorecards">
           <Dropdown.Menu>

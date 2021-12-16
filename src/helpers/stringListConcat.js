@@ -1,7 +1,7 @@
 import React from "react";
 import DecoratedString from "../components/DecoratedStringComponent";
 
-export const stringListConcat = (stringListInput, scores, mouseOver, mouseOut) => {
+export const stringListConcat = (stringListInput, scores, mouseOver, mouseOut, t) => {
 
   const scoreArray = Array.isArray(scores) ? scores : stringListInput.map(s => scores)
 
@@ -27,7 +27,7 @@ export const stringListConcat = (stringListInput, scores, mouseOver, mouseOut) =
         stringList.slice(0,stringList.length - 1).map((item) => {
           return <>{item}, </>
         })
-      } and {stringList[stringList.length - 1]}
+      } {t("and")} {stringList[stringList.length - 1]}
     </>
   }
 }

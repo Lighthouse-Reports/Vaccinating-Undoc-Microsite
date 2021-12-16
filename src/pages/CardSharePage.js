@@ -15,7 +15,7 @@ import DecoratedString from "../components/DecoratedStringComponent";
 import { catInitials } from "../helpers/constants";
 import { format } from 'd3-format';
 import { randomInt } from 'd3-random';
-
+import { useTranslation } from 'react-i18next';
 
 function CardSharePage(props) {
 
@@ -23,6 +23,9 @@ function CardSharePage(props) {
   const categories = Object.keys(catInitials);
   const { countryDataNestToScore, questions, isoToCountryLookup, countryData,
     categoryScoresExtent, countryProfiles } = data;
+
+    
+  const { t, i18n } = useTranslation();
 
   const [highlightCat, setHighlightCat] = useState("");
 
@@ -45,7 +48,7 @@ function CardSharePage(props) {
   }
 
 
-  const quotesAll = quotesNest[isoToCountryLookup[iso]["country_name"]];
+  const quotesAll = quotesNest[i18n.language][isoToCountryLookup[iso]["country_name"]];
   // console.log(quotesNest[isoToCountryLookup[iso]["country_name"]])
 
   const additionalQuotes = quotesAll && quotesAll["Uncategorised"] && quotesAll["Uncategorised"].length > 0
@@ -59,8 +62,8 @@ function CardSharePage(props) {
     const scoreCardKeys = Object.keys(scoreCards);
     const quoteIndices = [1,3,5,7,9,11];
     // const scoreCardValues = Object.values(scoreCards);
-    const quotes = quotesNest[isoToCountryLookup[iso]["country_name"]] 
-      ? quotesNest[isoToCountryLookup[iso]["country_name"]][cat]
+    const quotes = quotesNest[i18n.language][isoToCountryLookup[iso]["country_name"]] 
+      ? quotesNest[i18n.language][isoToCountryLookup[iso]["country_name"]][cat]
       : undefined;
 
     // console.log(quotes)
@@ -100,7 +103,7 @@ function CardSharePage(props) {
         shareRoute={"/share/card/" +cardtype+"/"+iso+"/"+cat+"/"+id}
       />
     : <Quote
-      data={quotesRaw.filter(q => q.id === +id)[0]}
+      data={quotesRaw[i18n.language].filter(q => q.id === +id)[0]}
       width={260}
       height={100}
       key={"Quote"+id}

@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GA4React, { useGA4React } from "ga-4-react";
+import './i18n/config';
+
 
 const ga4react = new GA4React("G-54GET7EG27");
 

@@ -5,6 +5,7 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
 import { Card } from 'semantic-ui-react';
 import CardShareWidget from './CardShareWidget';
+import { useTranslation } from 'react-i18next';
 
 function ScorecardQuestion(props) {
   const { width, height, data, shareRoute, smallWidth } = props;
@@ -33,6 +34,8 @@ function ScorecardQuestion(props) {
 
   const fillColor = getColor(+score["Score"]);
   const xStart = (width-barWidth)/2;
+
+  const { t, i18n } = useTranslation();
 
 
   // For Tooltip
@@ -127,14 +130,14 @@ function ScorecardQuestion(props) {
                 onMouseEnter={() => onMouseEnter(answer)}
                 onMouseLeave={() => onMouseLeave(answer)}
               >
-                {answer}
+                {t(answer)}
               </div>
             })
         }
       </Card.Description>
       <Card.Description>
         {
-          hoverScore !== score["Answer"] && hoverScore != null ? <div>If the answer was {hoverScore}:<br/></div> : ""
+          hoverScore !== score["Answer"] && hoverScore != null ? <div>{t("If the answer was "+hoverScore)}:<br/></div> : ""
         }  
         {question["answers"][getScoreTypeToUse(score["Answer"])]} <br/>
       </Card.Description>
@@ -188,14 +191,14 @@ function ScorecardQuestion(props) {
             y={(questionBar.y + paddings.scoreCardQuestionLabelPadding)} 
             textAnchor={"start"} 
             fontSize={questionBar.fontSize}>
-            {question["Range Min"]}
+            {t(question["Range Min"])}
           </text>
           <text 
             x={xStart+barWidth} 
             y={(questionBar.y + paddings.scoreCardQuestionLabelPadding)} 
             fontSize={questionBar.fontSize} 
             textAnchor={"end"}>
-            {question["Range Max"]}
+            {t(question["Range Max"])}
           </text>
 
           {/* Median Marker */}
@@ -281,7 +284,7 @@ function ScorecardQuestion(props) {
             fill={getColor(+score["Median"])}
             fontSize={medianMarker.fontSize}
             textAnchor={"middle"}
-            className="answerBar" >Median</text>
+            className="answerBar" >{t("Median")}</text>
 
 
           {/* Country Score Marker */}
@@ -319,10 +322,10 @@ function ScorecardQuestion(props) {
                 className="answerBar" >
                   {
                     hoverScore === null || score["Answer"] === hoverScore
-                    ? score["Country"]
+                    ? t(score["Country"]
                       + (score["Country"][score["Country"].length - 1] === 's' ? "' " : "'s ")
-                      + "Score"
-                    : "If answer was " + hoverScore
+                      + "Score")
+                    : t("If the answer was " + hoverScore)
                   }
                 </text>
               // : null

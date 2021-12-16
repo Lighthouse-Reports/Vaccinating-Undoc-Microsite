@@ -5,11 +5,14 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
 import { Button, Card, CardContent, Modal } from 'semantic-ui-react';
 import CardShareWidget from './CardShareWidget';
+import { useTranslation } from 'react-i18next';
 
 function Quote(props) {
   const { data, shareRoute } = props;
   const [open, setOpen] = React.useState(false);
   // console.log(shareRoute);
+
+  const { t, i18n } = useTranslation();
 
   const commentShort = data.Comment 
     ? '"' + data.Comment.split(" ").slice(0,quoteInfo.numWords).join(" ") 
@@ -28,7 +31,7 @@ function Quote(props) {
           {
             data.CategoryDetail
             ? data.CategoryDetail
-            : "Expert Opinion"
+            : t("Expert Opinion")
           }
         </Card.Header>
         {/* {
@@ -80,10 +83,10 @@ function Quote(props) {
           className={"quoteCard"}
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
-          trigger={<Button basic size='tiny'>Read more</Button>}
+          trigger={<Button basic size='tiny'>{t("Read more")}</Button>}
         >
           <Modal.Header className={"quoteCardHeader"}>
-            Expert Opinion
+            {t("Expert Opinion")}
           </Modal.Header>
           <Modal.Content className={"quoteCardContent"}>
             {/* {
@@ -140,7 +143,7 @@ function Quote(props) {
             </Modal.Description>
           </Modal.Content>
           <Modal.Actions>
-            <Button onClick={() => setOpen(false)}>Close</Button>
+            <Button onClick={() => setOpen(false)}>{t("Close")}</Button>
           </Modal.Actions>
         </Modal>
         {/* <Card.Description className={"quoteCardReadMore"}>

@@ -2,16 +2,24 @@ import React, { useState, useRef, useEffect } from 'react';
 import { colors, paddings, catInitials, hexCatTextLabels } from '../helpers/constants';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
+import { useTranslation } from 'react-i18next';
 
 function MapChart(props) {
   const { country, width, height, data, scoresExtent, edge, labelOnly,
     hoverCountry, selectHoverCountry, selectHighlightCountry, expandCat, 
-    setExpandCat } = props;
+    setExpandCat, labelWidths } = props;
   const chartPadding = paddings.mapChartBorder;
   const inBetweenPadding = paddings.mapChartInBetween;
   const lineHeight = height;
   const paddedWidth = width - chartPadding*2;;
   const [localExpandCat, setLocalExpandCat] = useState("");
+
+  // const labelsRef = useRef([]);
+  // const [labelWidths, setLabelWidths] = useState({});
+
+  // console.log(labelWidths)
+
+  const { t } = useTranslation();
 
   const scaleX = scaleBand()
     .domain(range(0,data.subagg.length))
@@ -44,12 +52,16 @@ function MapChart(props) {
 
 
   const getGridEdgeAwareXPosTextAnchor = (index) => {
-    let position = edge === "left" ? "start" : edge === "right" ? "end" : "middle";
-    if (edge === "left" && index > data.subagg.length/2) position = "middle"
-    if (edge === "right" && index < data.subagg.length/2 - 1) position = "middle"
+    let position = edge === "left" 
+      ? "start" 
+      : edge === "right" 
+        ? "end" 
+        : "middle";
+    if (edge === "left" && index > data.subagg.length/2 + 1) position = "middle"
+    if (edge === "right" && index < data.subagg.length/2 - 2) position = "middle"
 
     return {
-      textAnchor: position === "end" ? "start" : position,
+      textAnchor: position === 'end' ? 'start' : position,
       position: position
     };
   }
@@ -63,7 +75,7 @@ function MapChart(props) {
     // if (textAnchor === "end") return initialPosition - thingWidth/2 + chartPadding+scaleX(index) + hexCatTextLabels.r;
     if (position === "end") returnPos = chartPadding+paddedWidth-thingWidth+hexCatTextLabels.r*2
 
-    if (isText) returnPos += hexCatTextLabels.r*1.5
+    if (isText) returnPos += hexCatTextLabels.r*1
 
     return returnPos
   }
@@ -71,46 +83,56 @@ function MapChart(props) {
   // console.log(data)
 
   /* Text Background Rounded Rect */
-  const getTextBackGroundRoundedRect = (category,i) => <rect
-    x={
-      getGridEdgeAwareXPos(i,
-        chartPadding+scaleX(i)
-        + scaleX.bandwidth()/2 
-        - hexCatTextLabels.r
-        - (
-          expandCat === category["Score Type"] 
-          ? hexCatTextLabels.catLength[category["Score Type"]]/2 - hexCatTextLabels.r 
-          : 0
-          ),
-        hexCatTextLabels.catLength[category["Score Type"]]
-      )
-    }
-    y={lineHeight*.7 - hexCatTextLabels.r}
-    rx={hexCatTextLabels.r}
-    ry={hexCatTextLabels.r}
-    width={
+  const getTextBackGroundRoundedRect = (category,i) => {
+    // const labelBBox = labelsRef.current[i] ? labelsRef.current[i].getBBox() : {width:0,height:0};
+    // if (labelBBox.width > 0 && labelWidths[i] === undefined) setLabelWidths({...labelWidths,[i]:labelBBox.width+hexCatTextLabels.r*2})
+    // console.log(labelWidths)
+    return <rect
+      x={
+        getGridEdgeAwareXPos(i,
+          chartPadding+scaleX(i)
+          + scaleX.bandwidth()/2 
+          - hexCatTextLabels.r
+          - (
+            expandCat === category["Score Type"] 
+            // ? hexCatTextLabels.catLength[category["Score Type"]]/2 - hexCatTextLabels.r 
+            ? labelWidths[i]/2 - hexCatTextLabels.r 
+            : 0
+            ),
+          // hexCatTextLabels.catLength[category["Score Type"]]
+          labelWidths[i]
+        )
+      }
+      y={lineHeight*.7 - hexCatTextLabels.r}
+      rx={hexCatTextLabels.r}
+      ry={hexCatTextLabels.r}
+      // width={
+      //     expandCat === category["Score Type"] && country === hoverCountry
+      //     ? hexCatTextLabels.catLength[category["Score Type"]]
+      //     : 0
+      //   }
+      width={
+        labelWidths[i]
+      }
+      height={2 * hexCatTextLabels.r}
+      fill={
+        expandCat === category["Score Type"] && country === hoverCountry 
+        ? "white" : "none" 
+      }
+      strokeWidth={
         expandCat === category["Score Type"] && country === hoverCountry
-        ? hexCatTextLabels.catLength[category["Score Type"]]
+        ? 1
         : 0
       }
-    height={2 * hexCatTextLabels.r}
-    fill={
-      expandCat === category["Score Type"] && country === hoverCountry 
-      ? "white" : "none" 
-    }
-    strokeWidth={
-      expandCat === category["Score Type"] && country === hoverCountry
-      ? 1
-      : 0
-    }
-    stroke={+category.Score > 0 ? colors.positive : colors.negative}
-    className={"hexChartElement"}
-    onMouseOver={() => scoreMouseOver(category["Score Type"])}
-    onTouchStart={() => scoreMouseOver(category["Score Type"])}
-    onMouseOut={() => scoreMouseOut(category["Score Type"])}
-    onTouchEnd={() => scoreMouseOut(category["Score Type"])}
-    onClick={() => selectHighlightCountry(country)}
-    />
+      stroke={+category.Score > 0 ? colors.positive : colors.negative}
+      className={"hexChartElement"}
+      onMouseOver={() => scoreMouseOver(category["Score Type"])}
+      onTouchStart={() => scoreMouseOver(category["Score Type"])}
+      onMouseOut={() => scoreMouseOut(category["Score Type"])}
+      onTouchEnd={() => scoreMouseOut(category["Score Type"])}
+      onClick={() => selectHighlightCountry(country)}
+      />
+  }
 
 
   /* Label */
@@ -118,7 +140,8 @@ function MapChart(props) {
       x={
         getGridEdgeAwareXPos(i,
           chartPadding+scaleX(i)+scaleX.bandwidth()/2,
-          hexCatTextLabels.catLength[category["Score Type"]],
+          // hexCatTextLabels.catLength[category["Score Type"]],
+          labelWidths[i],
           true
         )
       }
@@ -132,10 +155,11 @@ function MapChart(props) {
       onMouseOut={() => scoreMouseOut(category["Score Type"])}
       onTouchEnd={() => scoreMouseOut(category["Score Type"])}
       onClick={() => selectHighlightCountry(country)}
+      // ref={el => labelsRef.current[i] = el}
     >
       {
         expandCat === category["Score Type"] && country === hoverCountry
-        ? category["Score Type"]
+        ? t(category["Score Type"])
         : localExpandCat !== category["Score Type"] && localExpandCat !== ""
           ? ""
           : ""
@@ -164,7 +188,7 @@ function MapChart(props) {
           // console.log(category,scaleY(+category.Scores),scaleX.bandwidth())
           const barAbsHeight = scaleY(Math.abs(category.Score));
           return <g 
-              key={"MapChartScore"+catInitials[category["Score Type"]]}
+              key={"MapChartScore"+i}
 
               className={"hexChartElement"}
               // style={{outline: "solid 1px blue"}}

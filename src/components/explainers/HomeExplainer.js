@@ -5,7 +5,7 @@ import { Button, Icon, Image, Modal } from 'semantic-ui-react'
 const HomeExplainer = (props) => {
   const { open, setOpen } = props;
   // const [open, setOpen] = React.useState(false)
-  console.log(open)
+  // console.log(open)
 
   return (
     <Modal

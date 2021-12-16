@@ -135,17 +135,27 @@ function Routes(props) {
                       />
                       <Route
                         exact
+                        path="/:language"
+                        component={HomePage}
+                      />
+                      <Route
+                        exact
                         path="/explainer"
                         component={ExplainerPage}
                       />
-                      {/* <Route
+                      <Route
                         exact
                         path="/compare"
                         component={ComparePage}
-                      /> */}
+                      />
                       <Route
                         exact
                         path="/scorecard/:iso"
+                        component={ScorecardPage}
+                      />
+                      <Route
+                        exact
+                        path="/scorecard/:iso/:language"
                         component={ScorecardPage}
                       />
                       <Route

@@ -12,14 +12,19 @@ import ScorecardWaterfallChart from "../components/ScorecardWaterfallChart";
 import BigHexComponent from "../components/BigHexComponent";
 import Quote from "../components/QuoteComponent";
 import DecoratedString from "../components/DecoratedStringComponent";
-import { catInitials, iconsPathPrefix, scoreCardText } from "../helpers/constants";
+import { catInitials, iconsPathPrefix, scoreCardText, hexCatTextLabels } from "../helpers/constants";
 import { format } from 'd3-format';
 import { randomInt } from 'd3-random';
 import ScoreCardExplainer from '../components/explainers/ScoreCardExplainer'
+import { useTranslation, Trans } from 'react-i18next';
+import { numCats } from '../helpers/datasets';
+import { numberLocales } from "../helpers/numberLocales";
+import { renderLanguageOptions } from '../helpers/renderLanguageOptions';
+
 
 function ScorecardPage(props) {
 
-  const { iso } = props.match.params;
+  const { iso, language } = props.match.params;
   const categories = Object.keys(catInitials);
   const { countryDataNestToScore, questions, isoToCountryLookup, countryData,
     categoryScoresExtent, countryProfiles } = data;
@@ -30,6 +35,33 @@ function ScorecardPage(props) {
   const openCatsRemoveConfused = countryProfiles[iso].open_categories.filter(c => !countryProfiles[iso].incomplete_categories.includes(c));
   const closedCatsRemoveConfused = countryProfiles[iso].closed_categories.filter(c => !countryProfiles[iso].incomplete_categories.includes(c));
 
+  const { t, i18n } = useTranslation();
+
+  const labelsRef = useRef([]);
+  const [labelWidths, setLabelWidths] = useState([]);
+
+
+
+  useEffect(() => {
+    const labelBBoxes = [];
+    for (let i = 0; i < numCats; i++) {
+      labelBBoxes.push(
+        labelsRef.current[i] 
+          ? labelsRef.current[i].getBBox() 
+          : {width:0,height:0}
+      ) 
+    }
+    setLabelWidths(labelBBoxes.map(bbox => bbox.width+hexCatTextLabels.r*2))
+  }, [numCats,language,i18n.language])
+
+  useEffect(() => {
+    if (i18n.getLanguages().includes(language) && i18n.language !== language) {
+      i18n.changeLanguage(language);
+    } else if (i18n.language !== 'en') {
+      i18n.changeLanguage('en');  
+    }
+  }, [language])
+
   const highlightCatMouseOver = (cat) => {
     setHighlightCat(cat)
   }
@@ -38,11 +70,11 @@ function ScorecardPage(props) {
     setHighlightCat("")  
   }
 
-  const f = format(",.0f")
+  const f = numberLocales[i18n.language].format(",.0f")
 
  
 
-  const quotesAll = quotesNest[isoToCountryLookup[iso]["country_name"]];
+  const quotesAll = quotesNest[i18n.language][isoToCountryLookup[iso]["country_name"]];
   // console.log(quotesAll)
 
   const additionalQuotes = quotesAll && quotesAll["Uncategorised"] && quotesAll["Uncategorised"].length > 0
@@ -56,8 +88,8 @@ function ScorecardPage(props) {
     const scoreCardKeys = Object.keys(scoreCards);
     const quoteIndices = [1,3,5,7,9,11];
     // const scoreCardValues = Object.values(scoreCards);
-    const quotes = quotesNest[isoToCountryLookup[iso]["country_name"]] 
-      ? quotesNest[isoToCountryLookup[iso]["country_name"]][cat]
+    const quotes = quotesNest[i18n.language][isoToCountryLookup[iso]["country_name"]] 
+      ? quotesNest[i18n.language][isoToCountryLookup[iso]["country_name"]][cat]
       : undefined;
 
     // console.log(quotes)
@@ -101,9 +133,26 @@ function ScorecardPage(props) {
         <Grid.Row>
           <Grid.Column tablet={7} computer={5} centered>
             <Container>
-            <svg width={335} height={350}>
+            <svg width={380} height={350}>
+
+            {/* Placeholders to calculate label width */}
+            {
+              countryData[iso].subagg.map((category,i) => {
+                return <text
+                  x={0}
+                  y={10000}
+                  // y={10}
+                  fontSize={"0.8em"}
+                  className={"hexChartElement"}
+                  ref={el => labelsRef.current[i] = el}
+                >
+                  {t(category["Score Type"])}
+                </text>
+              })
+            }
             <BigHexComponent
               width={180}
+              parentWidth={360}
               height={180}
               multiplier={2}
               data={countryData[iso]}
@@ -117,22 +166,45 @@ function ScorecardPage(props) {
               iconsPathPrefix={iconsPathPrefix+"flaground/"}
               highlightCat={highlightCat}
               overall={countryProfiles[iso].overall_rank}
+              labelWidths={labelWidths.map(width => width+hexCatTextLabels.r*2)}
             />
             </svg>
             </Container>
           </Grid.Column>
           <Grid.Column tablet={9} computer={11} className={"scoreCardDescription"}>
             <p>
-            {countryProfiles[iso].country} overall leans more towards <DecoratedString stringText={countryProfiles[iso].overall_confidence_rank === "strong" ? countryProfiles[iso].overall_rank : "confused"}/>.
+              {/* <Trans i18nKey="Overall Blurb" overallScore={countryProfiles[iso].overall_confidence_rank === "strong" ? countryProfiles[iso].overall_rank : "Confused"}> */}
+              <Trans i18nKey="Overall Blurb">
+              {countryProfiles[iso].country} overall leans more towards <DecoratedString stringText={t(countryProfiles[iso].overall_confidence_rank === "strong" ? countryProfiles[iso].overall_rank : "Confused")}/>.              
+              </Trans>
             </p>
 
-            <p>It has a <Popup flowing hoverable trigger={<span><DecoratedString stringText={countryProfiles[iso].confidence_rank + " confidence score"} stringClass={countryProfiles[iso].confidence_rank}/></span>}>Low confidence score indicates a high number of unknowns.</Popup>, meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}.
-            {/* . The country is more open and accessible for {countryProfiles[iso].open_categories.join(", ")}  */}
-            {/* and more exclusionary or less transparent for {countryProfiles[iso].closed_categories.join(", ")}  */}
-
+            <p>
+              {/* It has a <Popup flowing hoverable trigger={<span><DecoratedString stringText={countryProfiles[iso].confidence_rank + " confidence score"} stringClass={countryProfiles[iso].confidence_rank}/></span>}>Low confidence score indicates a high number of unknowns.</Popup>, meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}. */}
+              <Trans i18nKey="Incomplete Scores Blurb">
+              It has a 
+              <Popup 
+                flowing 
+                hoverable 
+                trigger={
+                  <span>
+                    <DecoratedString 
+                      stringText={countryProfiles[iso].confidence_rank + " confidence score"} 
+                      stringClass={countryProfiles[iso].confidence_rank}/>
+                  </span>}
+                >Low confidence score indicates a high number of unknowns.
+              </Popup>
+              , meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}.
+              </Trans>
+              
             {
               countryProfiles[iso].incomplete_categories.length > 0
-              ? <> Due to incompleteness of data, it was difficult to evaluate {stringListConcat(countryProfiles[iso].incomplete_categories, "", highlightCatMouseOver, highlightCatMouseOut)}.</>
+              ? <>
+                <Trans i18nKey="Incomplete Cats Blurb">
+                Due to incompleteness of data, it was difficult to evaluate
+                </Trans>
+                {stringListConcat(countryProfiles[iso].incomplete_categories, "", highlightCatMouseOver, highlightCatMouseOut, t)}.
+               </>
               : ""
             }
             </p>
@@ -140,9 +212,9 @@ function ScorecardPage(props) {
             <p>
             {
               openCatsRemoveConfused.length > 0
-              ? <>The country is more open and accessible for {
+              ? <>{t("The country is more open and accessible for ")}{
                   // stringListConcat(countryProfiles[iso].open_categories, "", highlightCatMouseOver, highlightCatMouseOut)
-                  stringListConcat(openCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut)
+                  stringListConcat(openCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut, t)
                 }</>
               : ""
             }
@@ -150,7 +222,7 @@ function ScorecardPage(props) {
               // countryProfiles[iso].closed_categories.length > 0
               closedCatsRemoveConfused.length > 0
               // ? <>, and more exclusionary or less transparent for {stringListConcat(countryProfiles[iso].closed_categories, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
-              ? <>, and more exclusionary or less transparent for {stringListConcat(closedCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
+              ? <>{t(", and more exclusionary or less transparent for ")}{stringListConcat(closedCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut, t)}. </>
               : ". "
             }
             </p>
@@ -172,11 +244,16 @@ function ScorecardPage(props) {
                     trigger={
                       <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].vax_rank)}>
                         <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].vax_percent)}%</span> <br/>
-                        of the population is fully vaccinated, <br/> <br/>
-                        This is <b>{countryProfiles[iso].vax_rank} than average</b> of {f(countryProfiles[iso].vax_average)}% across countries in the Scorecard.
+                        {/* of the population is fully vaccinated, <br/> <br/> */}
+                        {/* This is <b>{countryProfiles[iso].vax_rank} than average</b> of {f(countryProfiles[iso].vax_average)}% across countries in the Scorecard. */}
+                        
+                        <Trans i18nKey="Vaccinated Blurb" average={f( countryProfiles[iso].vax_average)}>
+                        of the population is fully vaccinated, <br/><br/> 
+                        This is <b>{countryProfiles[iso].vax_rank} than average</b> of {{average:f(countryProfiles[iso].vax_average)}}% across countries in the Scorecard.
+                        </Trans>
                       </div>
                     }>
-                      Source: <a href="https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations">Our World in Data</a>
+                      {t("Source")}: <a href="https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations">Our World in Data</a>
                   </Popup>
                 </Grid.Column>
                 <Grid.Column>
@@ -187,11 +264,17 @@ function ScorecardPage(props) {
                       <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].deaths_rank)}>
                         
                         <span className={"descriptionStatsBoxMainFig"}>{f(countryProfiles[iso].deaths_per_100k)}</span> <br/>
-                        people per 100,000 have died of the coronavirus, <br/> <br/>
-                        This is <b>{countryProfiles[iso].deaths_rank} than average</b> of {f(countryProfiles[iso].study_deaths_average)} across countries in the Scorecard.
+                        {/* people per 100,000 have died of the coronavirus, <br/> <br/> */}
+                        {/* This is <b>{countryProfiles[iso].deaths_rank} than average</b> of {f(countryProfiles[iso].study_deaths_average)} across countries in the Scorecard. */}
+
+
+                        <Trans i18nKey="COVID Deaths Blurb" average={f(countryProfiles[iso].study_deaths_average)}>
+                        people per 100,000 have died of the coronavirus, <br/><br/>
+                        This is <b>{countryProfiles[iso].deaths_rank} than average</b> of {{average:f(countryProfiles[iso].study_deaths_average)}} across countries in the Scorecard.
+                        </Trans>
                       </div>
                     }>
-                      Source: <a href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a>
+                      {t("Source")}: <a href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a>
                   </Popup>
                 </Grid.Column>
                 <Grid.Column>
@@ -201,26 +284,42 @@ function ScorecardPage(props) {
                     trigger={
                       <div className={"descriptionStatsBox " + getGoodOrBad(countryProfiles[iso].healthcare_rank)}>
                         <span className={"descriptionStatsBoxMainFig"}>€{f(countryProfiles[iso].healthcare_spending_per_capita)}</span> <br/>
-                        per capita is spent by the government on health care, <br/> <br/>
-                        This is <b>{countryProfiles[iso].healthcare_rank} average</b> of €{f(countryProfiles[iso].healthcare_spending_avg)} across countries in the Scorecard.
+                        {/* per capita is spent by the government on health care, <br/> <br/> */}
+                        {/* This is <b>{countryProfiles[iso].healthcare_rank} average</b> of €{f(countryProfiles[iso].healthcare_spending_avg)} across countries in the Scorecard. */}
+
+
+                        <Trans i18nKey="Health Spending Blurb" average={f(countryProfiles[iso].healthcare_spending_avg)}>
+                        per capita is spent by the government on health care, <br/><br/>
+                        This is <b>{countryProfiles[iso].healthcare_rank} average</b> of €{{average:f(countryProfiles[iso].healthcare_spending_avg)}} across countries in the Scorecard.
+                        </Trans>
                       </div>
                     }>
-                      Source: <a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD">World Bank</a>
+                      {t("Source")}: <a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD">World Bank</a>
                   </Popup>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                            
-                <ScoreCardExplainer
-                  open={openExplainer}
-                  setOpen={setOpenExplainer}
-                  questionData={questions}
-                  scoreData={countryDataNestToScore}
-                />         
-                <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
-                <br/>
-                <br/>
+                {
+                  ['GRC'].includes(iso)
+                  ? <div>This page is also availble in {renderLanguageOptions(i18n,t,'/scorecard/'+iso+'/')}.</div>
+                  : null
+                }
               </Grid.Row>
+              {
+                i18n.language === 'en'
+                ? <Grid.Row>
+                    <ScoreCardExplainer
+                      open={openExplainer}
+                      setOpen={setOpenExplainer}
+                      questionData={questions[i18n.language]}
+                      scoreData={countryDataNestToScore}
+                    />         
+                    <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
+                    <br/>
+                    <br/>
+                  </Grid.Row>
+                : null
+              }              
             </Grid>
           </Grid.Column>
         </Grid.Row>
@@ -240,15 +339,15 @@ function ScorecardPage(props) {
             const catShort = catInitials[cat].short;
             return <Grid stackable  className="MainContainer" key={catShort+"Group"}>
               <Grid.Row>
-              <h2 className={"scoreCardPageSubHead"}>{cat}</h2>
+              <h2 className={"scoreCardPageSubHead"}>{t(cat)}</h2>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column width={3}>
                   <img src={iconsPathPrefix+"categories/"+catShort+"Complex.svg"}  width={240}/>
                 </Grid.Column>
                 <Grid.Column width={12}  className={"scoreCardDescription"}>
-                  <p>{scoreCardText[cat]}</p>
-                  {/* <p>For a more detailed breakdown of questions, please refer to the section below.</p> */}
+                  {/* <p>{scoreCardText[cat]}</p> */}
+                  <p>{t(cat+" Blurb")}</p>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
@@ -262,7 +361,7 @@ function ScorecardPage(props) {
                           const question = pair.item
                           return <ScorecardQuestion
                             data={{
-                              question: questions[question][0],
+                              question: questions[i18n.language][question][0],
                               score: countryDataNestToScore[iso][catInitials[cat].short][question][0]
                             }}
                             width={260}
@@ -291,7 +390,7 @@ function ScorecardPage(props) {
           additionalQuotes.length > 0
           ? <Grid stackable  className="MainContainer" key={"AdditionalQuotesGroup"}>
               <Grid.Row>
-                <h2 className={"scoreCardPageSubHead"}>Additional Comments from Experts</h2>
+                <h2 className={"scoreCardPageSubHead"}>{t("Additional Comments from Experts")}</h2>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column width={16}>

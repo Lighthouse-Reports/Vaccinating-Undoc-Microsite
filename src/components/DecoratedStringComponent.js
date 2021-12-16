@@ -5,10 +5,12 @@ import { getGoodOrBad } from '../helpers/getGoodOrBad';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
 import { Button, Card, Icon } from 'semantic-ui-react';
+import { useTranslation } from 'react-i18next';
 
 function DecoratedString(props) {
   const { stringText, stringClass, stringIcon, mouseOver, mouseOut, stringFunction} = props;
 
+  const { t } = useTranslation();
 
   return (
     <div 
@@ -20,7 +22,7 @@ function DecoratedString(props) {
       onMouseOver={mouseOver ? () => mouseOver(stringText) : null}
       onMouseOut={mouseOut ? () => mouseOut() : null}
     >
-      {stringText} 
+      {t(stringText)} 
       {
         stringIcon 
         ? <Icon 

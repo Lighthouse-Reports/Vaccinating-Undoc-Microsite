@@ -4,10 +4,12 @@ import { getGoodOrBad } from "../helpers/getGoodOrBad";
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
 import { color } from 'd3-color';
+import { useTranslation } from 'react-i18next';
 
 function BigHexComponent(props) {
   const { width, height, dx, dy, data, scoresExtent, countryInfo, 
-    highlightCat, edge, noCountryLabel, noHex, multiplier, overall } = props;
+    highlightCat, edge, noCountryLabel, noHex, multiplier, overall,
+    labelWidths, parentWidth } = props;
   const padding = paddings.mainMap;
   const chartPadding = paddings.mapChartBorder;
   const inBetweenPadding = paddings.mapChartInBetween;
@@ -17,6 +19,7 @@ function BigHexComponent(props) {
   const hexHeight = (hexWidth) * 2/ Math.sqrt(3);
 
   const [expandCat, setExpandCat] = useState("");
+  const { t } = useTranslation();
 
   useEffect(() => {
     setExpandCat(highlightCat)
@@ -77,7 +80,10 @@ function BigHexComponent(props) {
   const {x,y,hexPointsString} = calcPos(1,1,hexWidth,hexHeight);
 
   return (
-    <g className="bigHexComponent" width={width} height={height}  transform={"translate("+(dx-hexWidth/2-padding)+","+dy+")"}>
+    <g className="bigHexComponent" 
+      width={width} 
+      height={height}  
+      transform={"translate("+((parentWidth-hexWidth)/2-padding)+","+dy+")"}>
       {
         noHex
         ? null
@@ -109,7 +115,7 @@ function BigHexComponent(props) {
               fontSize={(0.6*multiplier)+"em"}
               textAnchor="start"
             >
-              {countryInfo.country_name}
+              {t(countryInfo.country_name)}
             </text>
           </g>
       }
@@ -181,14 +187,16 @@ function BigHexComponent(props) {
                   + scaleX.bandwidth()/2 
                   // - (multiplierSecondary*2*hexCatTextLabels.r)
                   - (expandCat === category["Score Type"]
-                    ? multiplierSecondary*hexCatTextLabels.catLength[category["Score Type"]]/2 
+                    // ? multiplierSecondary*hexCatTextLabels.catLength[category["Score Type"]]/2 
+                    ? multiplierSecondary * labelWidths[i]/2 
                     : 0)}
                 y={lineHeight*.68 - multiplierSecondary*hexCatTextLabels.r*2}
                 rx={multiplierSecondary*hexCatTextLabels.r}
                 ry={multiplierSecondary*hexCatTextLabels.r}
                 width={
                     expandCat === category["Score Type"]
-                    ? multiplierSecondary*hexCatTextLabels.catLength[category["Score Type"]]
+                    // ? multiplierSecondary*hexCatTextLabels.catLength[category["Score Type"]]
+                    ? multiplierSecondary * labelWidths[i]
                     : expandCat !== category["Score Type"] && expandCat !== ""
                       ? 0
                       : 2 * multiplierSecondary * hexCatTextLabels.r
@@ -222,7 +230,7 @@ function BigHexComponent(props) {
               >
                 {
                   expandCat === category["Score Type"]
-                  ? category["Score Type"]
+                  ? t(category["Score Type"])
                   : expandCat !== category["Score Type"] && expandCat !== ""
                     ? ""
                     : ""

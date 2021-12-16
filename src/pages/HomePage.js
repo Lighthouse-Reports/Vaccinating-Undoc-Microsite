@@ -5,13 +5,25 @@ import { Container, Button } from "semantic-ui-react";
 import { data } from '../helpers/datasets';
 import MainMap from '../components/MainMap';
 import HomeExplainer from "../components/explainers/HomeExplainer";
-
+import { useTranslation } from 'react-i18next';
 
 function HomePage(props) {
 
   const [openExplainer, setOpenExplainer] = useState(false);
 
-  console.log(data);
+
+  const { language } = props.match.params;
+
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    if (i18n.getLanguages().includes(language) && i18n.language !== language) {
+      i18n.changeLanguage(language);
+    }
+  }, [language])
+  
+
+  // console.log(data);
   return (
     <div className={'HomePage'} >
       <Container className="MainContainer">

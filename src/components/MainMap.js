@@ -7,6 +7,9 @@ import BigHexComponent from './BigHexComponent';
 import BigHexModal from './BigHexModal';
 import { Button, Icon, Container, Popup } from 'semantic-ui-react';
 import CardShareWidget from './CardShareWidget';
+import { useTranslation } from 'react-i18next';
+import { renderLanguageOptions } from '../helpers/renderLanguageOptions';
+import { numCats } from '../helpers/datasets';
 
 function MainMap(props) {
 
@@ -20,7 +23,28 @@ function MainMap(props) {
   const [hoverCountry,setHoverCountry] = useState("");
   const [expandCat, setExpandCat] = useState("");
 
+
+  const labelsRef = useRef([]);
+  const [labelWidths, setLabelWidths] = useState([]);
+
   const mapRef= useRef();
+
+  const { t, i18n } = useTranslation();
+  
+
+  useEffect(() => {
+    // console.log("Hello")
+    const labelBBoxes = [];
+    for (let i = 0; i < numCats; i++) {
+      labelBBoxes.push(
+        labelsRef.current[i] 
+          ? labelsRef.current[i].getBBox() 
+          : {width:0,height:0}
+      ) 
+    }
+    setLabelWidths(labelBBoxes.map(bbox => bbox.width+hexCatTextLabels.r*2))
+  }, [hoverCountry, numCats])
+    
 
   // console.log(isoToCountryLookup)
 
@@ -89,10 +113,27 @@ function MainMap(props) {
             : <></>
           }
           </td>
+          <td style={{border: "none",textAlign:"left"}}>
+            The visualisation below is also availble in {renderLanguageOptions(i18n,t,'/')}.
+          </td>
         </tr>
       </table>
       <div className={"hexGridHolder"}>
       <svg className="hexGrid" width={width} height={height} ref={mapRef}>
+        {/* Placeholders to calculate label width */}
+        {
+          countryData[countryCodesArray[0].iso3].subagg.map((category,i) => {
+            return <text
+              x={0}
+              y={10000}
+              fontSize={"0.8em"}
+              className={"hexChartElement"}
+              ref={el => labelsRef.current[i] = el}
+            >
+              {t(category["Score Type"])}
+            </text>
+          })
+        }
         {
           blanks.map((currentBlank,i) => {
             const {x,y,hexPointsString} = calcPos(currentBlank.grid_pos_x,currentBlank.grid_pos_y,hexWidth,hexHeight);
@@ -141,7 +182,7 @@ function MainMap(props) {
                 textAnchor="middle"
                 onClick={() => selectHighlightCountry(country.iso3)}
               >
-                {country.country_name}
+                {t(country.country_name)}
               </text>
               <g className="mapChartHolder" transform={"translate("+x+","+y+")"}>
                 <MapChart
@@ -158,6 +199,7 @@ function MainMap(props) {
                   selectHoverCountry={selectHoverCountry}
                   edge={country.grid_pos_x === 1 ? "left" : (country.grid_pos_x === gridMax.x ? "right" : false)}
                   labelOnly={false}
+                  labelWidths={labelWidths}
                 />
               </g>
             </g>
@@ -185,6 +227,7 @@ function MainMap(props) {
                   highlightCountry={highlightCountry}
                   edge={country.grid_pos_x === 1 ? "left" : (country.grid_pos_x === gridMax.x ? "right" : false)}
                   labelOnly={true}
+                  labelWidths={labelWidths}
                 />
               </g>
             </g>
@@ -200,7 +243,7 @@ function MainMap(props) {
                 data={countryData[highlightCountry]}
                 scoresExtent={categoryScoresExtent}
                 dx={width/2}
-                dy={100}
+                dy={0}
                 countryInfo={isoToCountryLookup[highlightCountry]}
                 selectHighlightCountry={selectHighlightCountry}
                 noCountryLabel={false}
@@ -212,6 +255,7 @@ function MainMap(props) {
                 }
                 country={countryProfiles[highlightCountry].country}
                 highlightCountry={highlightCountry}
+                labelWidths={labelWidths}
             />
           // ? <g>
           //     <rect
