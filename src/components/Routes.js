@@ -60,7 +60,8 @@ function Routes(props) {
 
   return (
     // <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
-    <BrowserRouter history={history} basename={"/Vaccinating-Undoc-Microsite"}>
+    // <BrowserRouter history={history} basename={"/Vaccinating-Undoc-Microsite"}>
+    <BrowserRouter history={history} basename={"/"}>
       {/* <Wrapper> */}
       {/* <Route
         render={props => (
@@ -133,11 +134,7 @@ function Routes(props) {
                         path="/"
                         component={HomePage}
                       />
-                      <Route
-                        exact
-                        path="/:language"
-                        component={HomePage}
-                      />
+                      
                       <Route
                         exact
                         path="/explainer"
@@ -172,6 +169,11 @@ function Routes(props) {
                         exact
                         path="/investigations"
                         component={InvestigationPage}
+                      />
+                      <Route
+                        exact
+                        path="/:language"
+                        component={HomePage}
                       />
                     </Switch>
                   </Segment>

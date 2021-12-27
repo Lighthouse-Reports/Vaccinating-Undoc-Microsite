@@ -182,8 +182,7 @@ function ScorecardPage(props) {
             <p>
               {/* It has a <Popup flowing hoverable trigger={<span><DecoratedString stringText={countryProfiles[iso].confidence_rank + " confidence score"} stringClass={countryProfiles[iso].confidence_rank}/></span>}>Low confidence score indicates a high number of unknowns.</Popup>, meaning that the documents we analysed for the Scorecard were fairly {countryProfiles[iso].completeness_of_documents}. */}
               <Trans i18nKey="Incomplete Scores Blurb">
-              It has a 
-              <Popup 
+              It has a <Popup 
                 flowing 
                 hoverable 
                 trigger={

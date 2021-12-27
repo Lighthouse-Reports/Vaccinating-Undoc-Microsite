@@ -2,7 +2,7 @@
   "name": "lighthouse-vaccine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Lighthouse-Reports.github.io/Vaccinating-Undoc-Microsite/",
+  "homepage": "https://undocumentedunvaccinated.lighthousereports.nl/",
   "dependencies": {
     "@artsy/fresnel": "^3.0.2",
     "@testing-library/jest-dom": "^5.11.4",
