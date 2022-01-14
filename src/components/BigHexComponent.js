@@ -5,34 +5,53 @@ import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max } from 'd3-array';
 import { color } from 'd3-color';
 import { useTranslation } from 'react-i18next';
+import { Button, Label } from 'semantic-ui-react';
 
 function BigHexComponent(props) {
-  const { width, height, dx, dy, data, scoresExtent, countryInfo, 
+  const { width, height, dy, data, scoresExtent, countryInfo, 
     highlightCat, edge, noCountryLabel, noHex, multiplier, overall,
     labelWidths, parentWidth } = props;
   const padding = paddings.mainMap;
   const chartPadding = paddings.mapChartBorder;
   const inBetweenPadding = paddings.mapChartInBetween;
-  const lineHeight = height;
   const paddedWidth = width - chartPadding*2;
-  const hexWidth = width*1.5;
+  const hexWidth = width*1.5 > parentWidth ? parentWidth-padding : width*1.5-padding;
   const hexHeight = (hexWidth) * 2/ Math.sqrt(3);
+  const lineHeight = hexWidth/1.5;
 
   const [expandCat, setExpandCat] = useState("");
   const { t } = useTranslation();
+
+  const countryNameRef = useRef();
+  const [countyNameStartX, setCountryNameStartX] = useState(hexWidth*.27) 
+
+  // console.log(hexWidth,parentWidth)
+
+  useEffect(() => {
+    let countryNameBBox = countryNameRef.current.getBBox();
+    // console.log(countryNameRef)
+    if (countryNameBBox && countryNameBBox.width > 0) {
+      setCountryNameStartX((hexWidth-countryNameBBox.width)/2)
+    }
+  }, [countryNameRef && countryNameRef.current && countryNameRef.current.getBBox().width])
 
   useEffect(() => {
     setExpandCat(highlightCat)
   }, [highlightCat])
 
-  const multiplierSecondary = 1.2*.8;
+  const multiplierSecondary = 1;
 
-  const startX = width*.3;
-
+  const startX = (hexWidth - width)/2;
 
   const calcPos = (gridPosX,gridPosY,currentWidth,currentHeight) => {
-    let x = (gridPosX-1) * currentWidth + padding;
+    let x = (gridPosX-1) * currentWidth;
     let y = (gridPosY-1) * currentHeight*3/4 + padding;
+
+    // let x = (gridPosX-1) * currentWidth + padding;
+    // let y = (gridPosY-1) * currentHeight*3/4 + padding;
+
+
+    // console.log("currentWidth: " + currentWidth)
 
     if (gridPosY % 2 === 0) x += currentWidth/2;
 
@@ -66,11 +85,11 @@ function BigHexComponent(props) {
     .range([0, (lineHeight)/2]);
 
   const scoreMouseOver = (category) => {
+    // console.log(category);
     setExpandCat(category);
   }
 
   const scoreMouseOut = (category) => {
-    // console.log(category);
     setExpandCat("");
   }
 
@@ -83,7 +102,8 @@ function BigHexComponent(props) {
     <g className="bigHexComponent" 
       width={width} 
       height={height}  
-      transform={"translate("+((parentWidth-hexWidth)/2-padding)+","+dy+")"}>
+      transform={"translate("+((parentWidth-hexWidth)/2-padding)+","+dy+")"}
+      >
       {
         noHex
         ? null
@@ -100,17 +120,17 @@ function BigHexComponent(props) {
       {
         noCountryLabel
         ? null
-        : <g>
+        : <g ref={countryNameRef}>
             <image 
               href={iconsPathPrefix+"flaground/"+countryInfo.country_name.replace(" ","_")+"_96.png"} 
               height="30" 
               width="30" 
-              x={hexWidth*.27}
+              x={countyNameStartX}
               y={hexHeight*.21}
               className={"flag"}
             />
             <text 
-              x={hexWidth*.4}
+              x={countyNameStartX+40}
               y={hexHeight*.27}
               fontSize={(0.6*multiplier)+"em"}
               textAnchor="start"
@@ -180,8 +200,43 @@ function BigHexComponent(props) {
                 onMouseOut={() => scoreMouseOut(category["Score Type"])}
               />
 
+              {/* Text label with rounded rect background*/}
+              <switch>
+              <foreignObject
+                className={'bigHexLabelHolderForeignObject'}
+                x={-startX}
+                y={lineHeight*.2 - multiplierSecondary*hexCatTextLabels.r*2}
+                width={hexWidth}
+                height={100}
+              >
+                <div 
+                  xmlns="http://www.w3.org/1999/xhtml"
+                  className={"bigHexLabelHolder"}
+                >
+                  {
+                    expandCat === category["Score Type"]
+                    ? <Label 
+                        // pointing="below"
+                        basic
+                        className={"bigHexCatLabel" + (+category.Score > 0 ? " good" : " bad")}
+                      >
+                          {
+                            expandCat === category["Score Type"]
+                            ? t(category["Score Type"])
+                            : expandCat !== category["Score Type"] && expandCat !== ""
+                              ? ""
+                              : ""
+                          }
+                      </Label>
+                    : null
+                  }
+                  
+                </div>
+              </foreignObject>
+              </switch>
+
               {/* Text Background Rounded Rect */}
-              <rect
+              {/* <rect
                 x={
                   chartPadding+scaleX(i)
                   + scaleX.bandwidth()/2 
@@ -212,11 +267,11 @@ function BigHexComponent(props) {
                 className={"hexChartElement"}
                 onMouseOver={() => scoreMouseOver(category["Score Type"])}
                 onMouseOut={() => scoreMouseOut(category["Score Type"])}
-              />
+              /> */}
 
 
               {/* Label */}
-              <text
+              {/* <text
                 x={
                   chartPadding+scaleX(i)+scaleX.bandwidth()/2
                 }
@@ -235,7 +290,7 @@ function BigHexComponent(props) {
                     ? ""
                     : ""
                 }
-              </text>
+              </text> */}
 
               {/* Icon */}
               { 

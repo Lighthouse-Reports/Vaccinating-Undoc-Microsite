@@ -118,6 +118,40 @@ table, td, th {
   margin: auto;
 }
 
+.bigHexLabelHolderForeignObject {
+  pointer-events: none;
+}
+
+.bigHexLabelHolder {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  // border: 1px solid red;
+  vertical-align: bottom;
+}
+
+.ui.label.bigHexCatLabel {
+  display: inline-block;
+  margin: 0 auto;
+  position: fixed;
+  min-width: 80%;
+  padding: auto;
+  left: 50%;
+  transform: translate(-50% , 0);
+  bottom: 0;
+  border-radius: 8px;
+  background-color: white;
+
+  &.good {
+    border: 1px solid #2A9D8F;
+    color: #2A9D8F;
+  }
+  &.bad {
+    border: 1px solid #E76F51;
+    color: #E76F51;
+  }
+}
+
 .hexModalMainLabel {
   display: block;
   font-size: 1.5em;
@@ -434,4 +468,17 @@ table, td, th {
 
 .socialicon:hover {
   color: #f5f7f8 !important;
+}
+
+.comparisonChartGrid {
+  padding-top: 0px !important;
+  padding-bottom: 10px !important;
+  // min-width: 600px;
+}
+
+.comparisonChartGridContainer {
+  overflow-x: none;
+  overflow-y: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

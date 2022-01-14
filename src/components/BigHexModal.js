@@ -9,13 +9,22 @@ import BigHexComponent from '../components/BigHexComponent'
 import { useTranslation } from 'react-i18next';
 
 function BigHexModal(props) {
-  const { width, height, multiplier, data, scoresExtent, dx,dy,
+  const { width, height, multiplier, data, scoresExtent, dy,
     countryInfo,selectHighlightCountry,highlightCountry,noCountryLabel,
     iconsPathPrefix,countryRank,country,pathToScoreCard,
     open, labelWidths } = props;
 
 
   const { t } = useTranslation();
+
+  const hexHolderRef = useRef();
+  const [parentWidth, setParentWidth] = useState(width);
+
+  useEffect(() => {
+    let clientWidth = hexHolderRef.current.clientWidth;
+    // console.log("Ref width: " + clientWidth, hexHolderRef);
+    if (clientWidth) setParentWidth(clientWidth);
+  }, [hexHolderRef, hexHolderRef.current ? hexHolderRef.current.clientWidth : null])
 
   return (
     <Modal
@@ -35,16 +44,22 @@ function BigHexModal(props) {
       <Modal.Content>
         <Grid centered columns={1}>
           <Grid.Row>
-            <Grid.Column>
-              <svg className="bigHexHolder" width={width*1.9} height={height*2}>
+            <Grid.Column
+              className="bigHexHolderColumn"
+            >
+              <svg 
+                className="bigHexHolder" 
+                width={"100%"} 
+                height={height*2}
+                ref={hexHolderRef}
+              >
                 <BigHexComponent
                   width={width}
-                  parentWidth={width*1.9}
+                  parentWidth={parentWidth}
                   height={height}
                   multiplier={multiplier}
                   data={data}
                   scoresExtent={scoresExtent}
-                  dx={dx}
                   dy={dy}
                   countryInfo={countryInfo}
                   selectHighlightCountry={selectHighlightCountry}
@@ -57,7 +72,7 @@ function BigHexModal(props) {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <a href={"/Vaccinating-Undoc-Microsite/scorecard/"+highlightCountry}>
+            <a href={"/scorecard/"+highlightCountry}>
             <div className={"hexModalMainLabel " + getGoodOrBad(countryRank)}>
               {/* Overall score: {countryRank} <br/> */}
               {t("Overall score") + ": " + t(countryRank)} <br/>

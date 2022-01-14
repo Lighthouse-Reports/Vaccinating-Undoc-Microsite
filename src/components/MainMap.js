@@ -242,7 +242,6 @@ function MainMap(props) {
                 multiplier={2}
                 data={countryData[highlightCountry]}
                 scoresExtent={categoryScoresExtent}
-                dx={width/2}
                 dy={0}
                 countryInfo={isoToCountryLookup[highlightCountry]}
                 selectHighlightCountry={selectHighlightCountry}

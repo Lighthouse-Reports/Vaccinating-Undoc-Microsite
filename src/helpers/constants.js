@@ -89,6 +89,15 @@ export const quoteInfo = {
   numWords: 20
 }
 
+export const scoreThresholds  = {
+  "overall": 0.5,
+  "Policy Transparency": 1,
+  "Undocumented Access": -5.5,
+  "Identification and Residency Requirements": 0.5,
+  "Marginalized Access": 0.75,
+  "Privacy Guarantees": 0
+}
+
 const getIcon = (iconName,iconType) => (x,y,size,fillPrimary,sizeModifier) => {
   const sizeNew = sizeModifier === "big" ? size*2 : size;
   if (iconType === "simple") {
@@ -163,7 +172,7 @@ export const catInitials = {
     initial:"M", 
     short:"marg", 
     iconSimple: getIcon("marg","simple"),
-    range: ["Inclusive","Exclusionary"]
+    range: ["Exclusionary","Inclusive"]
   },
   "Privacy Guarantees": {
     initial:"P", 
@@ -179,14 +188,17 @@ export const comparisonInfo = {
   charge: 0,
   strength: 5,
   size: 20,
-  fixedHeight: 350,
+  fixedHeight: (verticalOrientation) => verticalOrientation ? 600 : 350,
   fontSize: "0.7em",
   forceCollideMultipleBig: 1.6,
   forceCollideMultipleSmall: 0.6,
   widthCutOffForLabels: 500,
   positiveXVal: 1.4,
   negativeXVal: -1.4,
-  neutralXVal: 0
+  neutralXVal: 0,
+  paddingSides: 40,
+  axesColor: "rgba(0,0,0,0.7)",
+  gridColor: "rgba(255,255,255,0.8)"
 }
 
 export const scoreCardText = {

@@ -42,10 +42,14 @@ function ComparePage(props) {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
+            <h2 className={"scoreCardPageSubHead"}>Overall</h2>
+            <p>Countries with little public information for the given category are shown "Confused", and among the rest, those that scored low on the scorecard are considered "Exclusionary or less transparent", and those that scored high on the scorecard are considered "Open and accessible".</p>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
             <div key={"MainGroup"}>
-              <h2 className={"scoreCardPageSubHead"}>Overall</h2>
-              <p>Countries with little public information for the given category are shown "Confused", and among the rest, those that scored low on the scorecard are considered "Exclusionary or less transparent", and those that scored high on the scorecard are considered "Open and accessible".</p>
-
+              
               <CountryComparisonChart
                 width={320}
                 height={300}
@@ -70,7 +74,7 @@ function ComparePage(props) {
                   </div>
                 </Grid.Column>
               </Grid.Row>
-              <Grid.Row>
+              <Grid.Row columns={2}>
                 <Grid.Column width={3}>
                   <img src={iconsPathPrefix+"categories/"+catShort+"Complex.svg"}  width={240}/>
                 </Grid.Column>
