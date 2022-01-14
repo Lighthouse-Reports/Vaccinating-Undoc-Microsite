@@ -17,6 +17,7 @@ import {
 
 import styled from "styled-components";
 import { logoPathPrefix } from '../helpers/constants';
+import { Link } from "react-router-dom";
 
 // Pages
 import HomePage from '../pages/HomePage';
@@ -113,13 +114,16 @@ function Routes(props) {
                             </Grid.Column>
                             <Grid.Column width={14}>
                               <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo mobile"} /></a>
-                              <a href="/Vaccinating-Undoc-Microsite/"> <h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4></a>
+                              {/* <a href="/Vaccinating-Undoc-Microsite/"> <h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4></a> */}
+                              <Link to={"/"}><h4 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h4></Link>
+
                             </Grid.Column>
                           </Grid.Row>
                         </Grid>
                       </Container> : <Container>
                         <a href="https://www.lighthousereports.nl/"><img src={logoPathPrefix} className={"logo"} /></a>
-                        <a href="/Vaccinating-Undoc-Microsite/"><h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2></a>
+                        {/* <a href="/Vaccinating-Undoc-Microsite/"><h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2></a> */}
+                        <Link to={"/"}><h2 className={"mainTitle"}>Vaccinating Europe's Undocumented: A Policy Scorecard</h2></Link>
                         <Menu secondary className="HeaderNav">
                           <MenuItems />
                         </Menu>

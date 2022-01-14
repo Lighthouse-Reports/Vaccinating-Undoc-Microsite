@@ -7,6 +7,7 @@ import { range, max } from 'd3-array';
 import { Button, Grid, Container, Icon, Modal } from 'semantic-ui-react';
 import BigHexComponent from '../components/BigHexComponent'
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function BigHexModal(props) {
   const { width, height, multiplier, data, scoresExtent, dy,
@@ -72,14 +73,16 @@ function BigHexModal(props) {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <a href={"/scorecard/"+highlightCountry}>
+            {/* <a href={"/Vaccinating-Undoc-Microsite/scorecard/"+highlightCountry}> */}
+            <Link to={"/scorecard/"+highlightCountry}>
             <div className={"hexModalMainLabel " + getGoodOrBad(countryRank)}>
               {/* Overall score: {countryRank} <br/> */}
               {t("Overall score") + ": " + t(countryRank)} <br/>
 
               <div className={"hexModalSecondaryLabel"}>{t("Click here to view scorecard for " + country)}</div>
             </div>
-            </a>
+            {/* </a> */}
+            </Link>
           </Grid.Row>
         </Grid>
       </Modal.Content>
