@@ -94,7 +94,7 @@ function CardSharePage(props) {
   return cardtype === "question"
     ? <ScorecardQuestion
         data={{
-          question: questions[id][0],
+          question: questions[i18n.language][id][0],
           score: countryDataNestToScore[iso][cat][id][0]
         }}
         width={260}

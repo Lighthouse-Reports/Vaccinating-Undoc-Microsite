@@ -62,7 +62,7 @@ function Routes(props) {
   return (
     // <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
     // <BrowserRouter history={history} basename={"/Vaccinating-Undoc-Microsite"}>
-    <BrowserRouter history={history} basename={"/"}>
+    <BrowserRouter history={history} basename={`/${process.env.PUBLIC_URL}`}>
       {/* <Wrapper> */}
       {/* <Route
         render={props => (
@@ -185,10 +185,10 @@ function Routes(props) {
               </Sidebar.Pushable>
             </Grid.Column>
           </Grid>
+          <Footer />
         </Route>
       </Switch>
 
-      <Footer />
 
       {/* </Wrapper> */}
 

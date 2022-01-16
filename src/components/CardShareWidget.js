@@ -4,18 +4,18 @@ import { Button, Icon, Modal, Popup, TextArea } from 'semantic-ui-react';
 
 function CardShareWidget(props) {
   const [open, setOpen] = React.useState(false);
-  const { shareRoute } = props
+  const { shareRoute, height } = props
   
   let location = window.location;
   // console.log(location)
 
   const getEmbedUrl = () => {
-    let url = location.origin + "/Vaccinating-Undoc-Microsite" + shareRoute;
+    let url = location.origin + "/" + shareRoute;
     return url;
   };
 
 
-  const getIframeHTML = () => {
+  const getIframeHTML = (height) => {
     const embedURL = getEmbedUrl();
     return {
       url: embedURL,
@@ -23,6 +23,7 @@ function CardShareWidget(props) {
         "<iframe id='inlineFrameVaccinationScoreCard' title='Vaccinating Europe's Undocumented: A Policy Scorecard' width='100%' src='" +
         embedURL +
         "'></iframe>",
+        // "<iframe id='inlineFrameVaccinationScoreCard' style='border:none; height:800px' title='Vaccinating Europe\'s Undocumented: A Policy Scorecard" width='100%' src='http://localhost:3000/share/hexmap'></iframe>
     };
   };
 
