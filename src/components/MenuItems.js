@@ -85,6 +85,13 @@ export default (props) => {
       />
       <Menu.Item
         as={Link}
+        to="/inthemedia"
+        name="in the media"
+        active={activeItem === "inthemedia"}
+        onClick={() => handleItemClick("inthemedia")}
+      />
+      <Menu.Item
+        as={Link}
         to="/about"
         name="about"
         active={activeItem === "about"}

@@ -10,19 +10,24 @@ function CardShareWidget(props) {
   // console.log(location)
 
   const getEmbedUrl = () => {
-    let url = location.origin + "/" + shareRoute;
+    let url = location.origin + shareRoute;
     return url;
   };
 
 
   const getIframeHTML = (height) => {
     const embedURL = getEmbedUrl();
+    console.log(embedURL)
     return {
       url: embedURL,
       html:
-        "<iframe id='inlineFrameVaccinationScoreCard' title='Vaccinating Europe's Undocumented: A Policy Scorecard' width='100%' src='" +
-        embedURL +
-        "'></iframe>",
+        // "<iframe id='inlineFrameVaccinationScoreCard' title='Vaccinating Europe's Undocumented: A Policy Scorecard' width='100%' src='" +
+        // embedURL +
+        // "'></iframe>",
+        "<iframe id='inlineFrameVaccinationScoreCard' style='border:none; overflow: hidden; height:640px; padding:5px' title='Vaccinating Europe\'s Undocumented: A Policy Scorecard' width='100%' src='"
+        + embedURL
+        + "'></iframe>"
+    
         // "<iframe id='inlineFrameVaccinationScoreCard' style='border:none; height:800px' title='Vaccinating Europe\'s Undocumented: A Policy Scorecard" width='100%' src='http://localhost:3000/share/hexmap'></iframe>
     };
   };

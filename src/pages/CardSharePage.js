@@ -91,25 +91,30 @@ function CardSharePage(props) {
     return returnArray;
   }
 
-  return cardtype === "question"
-    ? <ScorecardQuestion
-        data={{
-          question: questions[i18n.language][id][0],
-          score: countryDataNestToScore[iso][cat][id][0]
-        }}
-        width={260}
-        height={100}
-        key={"Question"+id}
-        shareRoute={"/share/card/" +cardtype+"/"+iso+"/"+cat+"/"+id}
-      />
-    : <Quote
-      data={quotesRaw[i18n.language].filter(q => q.id === +id)[0]}
-      width={260}
-      height={100}
-      key={"Quote"+id}
-      shareRoute={"/share/card/" +cardtype+"/"+iso+"/"+cat+"id"}
-    />
-  ;
+  return (
+    <div className="cardShareHolder">
+      {
+        cardtype === "question"
+        ? <ScorecardQuestion
+            data={{
+              question: questions[i18n.language][id][0],
+              score: countryDataNestToScore[iso][cat][id][0]
+            }}
+            width={260}
+            height={100}
+            key={"Question"+id}
+            shareRoute={"/share/card/" +cardtype+"/"+iso+"/"+cat+"/"+id}
+          />
+        : <Quote
+          data={quotesRaw[i18n.language].filter(q => q.id === +id)[0]}
+          width={260}
+          height={100}
+          key={"Quote"+id}
+          shareRoute={"/share/card/" +cardtype+"/"+iso+"/"+cat+"id"}
+        />
+      }
+    </div>
+  )
 
 }
 export default CardSharePage;

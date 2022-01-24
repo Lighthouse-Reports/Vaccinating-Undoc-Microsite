@@ -2,7 +2,7 @@
 import "semantic-ui-css/semantic.min.css";
 import React, { useState, useEffect, useRef } from "react";
 import { Grid } from "semantic-ui-react";
-import { data } from '../helpers/datasets';
+import { data, countryFactsRetrievedOn } from '../helpers/datasets';
 import {quotesNest} from '../helpers/quotes';
 import {stringListConcat} from '../helpers/stringListConcat';
 import { getGoodOrBad } from "../helpers/getGoodOrBad";
@@ -252,7 +252,7 @@ function ScorecardPage(props) {
                         </Trans>
                       </div>
                     }>
-                      {t("Source")}: <a href="https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations">Our World in Data</a>
+                      {t("Source")}: <a href="https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations">Our World in Data</a> <br />{t("Retrieved on ") + countryFactsRetrievedOn}
                   </Popup>
                 </Grid.Column>
                 <Grid.Column>
@@ -273,7 +273,7 @@ function ScorecardPage(props) {
                         </Trans>
                       </div>
                     }>
-                      {t("Source")}: <a href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a>
+                      {t("Source")}: <a href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a> <br /> {t("Retrieved on ") + countryFactsRetrievedOn}
                   </Popup>
                 </Grid.Column>
                 <Grid.Column>
@@ -293,7 +293,7 @@ function ScorecardPage(props) {
                         </Trans>
                       </div>
                     }>
-                      {t("Source")}: <a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD">World Bank</a>
+                      {t("Source")}: <a href="https://data.worldbank.org/indicator/SH.XPD.CHEX.PC.CD">World Bank</a> <br /> {t("Retrieved on ") + countryFactsRetrievedOn}
                   </Popup>
                 </Grid.Column>
               </Grid.Row>

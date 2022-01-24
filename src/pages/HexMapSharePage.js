@@ -19,6 +19,7 @@ function HexMapSharePage(props) {
           data={data}
           downloadable={false}
           sharable={false}
+          pointToTranslations={false}
         />
       </Container>
     </div>

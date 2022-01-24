@@ -13,7 +13,7 @@ import { numCats } from '../helpers/datasets';
 
 function MainMap(props) {
 
-  const { width, height, data, downloadable, sharable } = props;
+  const { width, height, data, downloadable, sharable, pointToTranslations } = props;
   const { gridMax, countryData, countryCodesArray, blanks, 
     categoryScoresExtent, isoToCountryLookup, countryProfiles } = data;
   const padding = paddings.mainMap;
@@ -80,7 +80,6 @@ function MainMap(props) {
 
     return {x, y, hexPoints, hexPointsString}
   }
-
   return (
     <div>
       <table cellspacing="0" cellpadding="0" style={{border: "none"}}>
@@ -114,7 +113,11 @@ function MainMap(props) {
           }
           </td>
           <td style={{border: "none",textAlign:"left"}}>
-            The visualisation below is also availble in {renderLanguageOptions(i18n,t,'/')}.
+            {
+              pointToTranslations
+              ? <div>The visualisation below is also availble in {renderLanguageOptions(i18n,t,'/')}.</div>
+              : <></>
+            }
           </td>
         </tr>
       </table>

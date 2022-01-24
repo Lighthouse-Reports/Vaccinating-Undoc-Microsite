@@ -7,6 +7,8 @@ import axios from "axios";
 
 function InvestigationPage(props) {
 
+  const {pageName,filterType} = props;
+
   const [investigationsData, setInvestigationsData] = useState([]);
   useEffect(() => {
 
@@ -28,17 +30,20 @@ function InvestigationPage(props) {
   return (
     <div className={'AboutPage'} >
         <Container>
-        <h1 className={"scoreCardPageHead"}>Investigations</h1>
+        <h1 className={"scoreCardPageHead"}>{pageName}</h1>
         
         {
           investigationsData && investigationsData.length > 0
           ? <Card.Group>
               {
-                investigationsData.map(articleInfo => {
+                investigationsData
+                  .filter(d => d.type === filterType)
+                  .map(articleInfo => {
                   // console.log(articleInfo)
                   return   <Card
                       image={articleInfo["photo_link"]}
                       header={articleInfo["headline"]}
+                      target={"_blank"}
                       // meta='Friend'
                       href={articleInfo["article_link"]}
                       description={articleInfo["blurb"]}

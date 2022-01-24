@@ -172,7 +172,14 @@ function Routes(props) {
                       <Route
                         exact
                         path="/investigations"
-                        component={InvestigationPage}
+                        // component={InvestigationPage}
+                        render={() => <InvestigationPage pageName={'Investigations'} filterType={'investigations'}/>}
+                      />
+                      <Route
+                        exact
+                        path="/inthemedia"
+                        // component={InvestigationPage}
+                        render={() => <InvestigationPage pageName={'In the Media'} filterType={'mentions'}/>}
                       />
                       <Route
                         exact

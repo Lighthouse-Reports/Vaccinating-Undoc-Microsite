@@ -42,6 +42,7 @@ function HomePage(props) {
           data={data}
           downloadable={true}
           sharable={true}
+          pointToTranslations={true}
         />
       </Container>
     </div>

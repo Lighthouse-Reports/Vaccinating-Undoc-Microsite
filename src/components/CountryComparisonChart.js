@@ -24,11 +24,14 @@ function CountryComparisonChart(props) {
 
   const containerRef = useRef();
   const chartRef = useRef();
-  // console.log(width,height);
 
   const [scatter, setScatter] = useState(false);
   const categoryScoreKey = (category === "overall") ? 'overall_score' : 'score-'+category;
   const categoryConfidenceKey = (category === "overall") ? 'overall_confidence' : 'CScore-'+category;
+
+  const medianConfidence = median(Object.keys(countryProfiles).map(iso => {
+    return countryProfiles[iso]['overall_confidence']
+  }))
 
 
   // This function calculates width and height of the list
@@ -108,9 +111,11 @@ function CountryComparisonChart(props) {
       }).strength(comparisonInfo.strength))
       .force("charge", forceManyBody().strength(scatter ? 0 : comparisonInfo.charge))
       .force('collide', forceCollide(
-          width > comparisonInfo.widthCutOffForLabels 
-          ? comparisonInfo.size*comparisonInfo.forceCollideMultipleBig
-          : comparisonInfo.size*comparisonInfo.forceCollideMultipleSmall
+          scatter 
+          ? comparisonInfo.size*comparisonInfo.forceCollideMultipleScatter
+          : width > comparisonInfo.widthCutOffForLabels 
+              ? comparisonInfo.size*comparisonInfo.forceCollideMultipleBig
+              : comparisonInfo.size*comparisonInfo.forceCollideMultipleSmall
         ));
 
     // update state on every frame
@@ -230,12 +235,12 @@ function CountryComparisonChart(props) {
           />
         </Grid.Column>
         <Grid.Column style={{textAlign:"right"}}>
-          {/* <Checkbox
+          <Checkbox
             slider
             checked={scatter}
             onChange={() => setScatter(!scatter)}
             label="Show as Scatterplot"
-          /> */}
+          />
         </Grid.Column>
       </Grid.Row>
       </Grid>
@@ -295,7 +300,10 @@ function CountryComparisonChart(props) {
                   : scaleXBuckets((comparisonInfo.negativeXVal+comparisonInfo.neutralXVal)/2)
               }
             y={scatter
-                ? (yScatterStart+yScatterEnd)/2
+                ? (category === "overall" 
+                    ? scaleYScatter(medianConfidence)
+                    : scaleYScatter(0.5)
+                  )
                 : verticalOrientation
                   ? comparisonInfo.fixedHeight(verticalOrientation)/3
                   : 0
@@ -457,7 +465,7 @@ function CountryComparisonChart(props) {
         
           {
             animatedNodes.map((country,i) => {
-              // console.log(data[score][country][0])
+              // console.log(country)
               return <g>
 
                 <image 
@@ -465,11 +473,11 @@ function CountryComparisonChart(props) {
                   height={comparisonInfo.size}
                   width={comparisonInfo.size}
                   x={country.x} 
-                  y={country.y}
+                  y={country.y-comparisonInfo.size/2}
                   className={"flag"}
                 />
                 {
-                  width > comparisonInfo.widthCutOffForLabels
+                  width > comparisonInfo.widthCutOffForLabels && scatter === false
                   ? <text
                       // x={country.x+comparisonInfo.size/2}
                       x={
@@ -477,7 +485,7 @@ function CountryComparisonChart(props) {
                         ? country.x+comparisonInfo.size
                         : country.x-(2*comparisonInfo.paddingSides) < 0 ? country.x : country.x+comparisonInfo.size/2
                       }
-                      y={country.y-5}
+                      y={country.y-comparisonInfo.size/2-5}
                       fontSize={comparisonInfo.fontSize}
                       textAnchor={
                         country.x+(2*comparisonInfo.paddingSides) > width 

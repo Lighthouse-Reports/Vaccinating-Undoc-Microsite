@@ -181,6 +181,23 @@ function MethodologyPage(props) {
         <br />
         <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented/blob/main/output/main_data.csv">Processed Data</a> and the <a href="https://github.com/Lighthouse-Reports/Vaccinating-the-Undocumented/blob/main/output/codebook.md">Descriptions</a>
         </p>
+
+        <p>
+        One key analysis that we have used in this analysis is dividing countries into confused, low score and high score groups. These groupings take precedence in the order given below:
+        </p>
+        <ol>
+          <li>Confused (for total score): A country is classified as “confused” overall if the overall confidence score of the country is in the below 50-percentile.</li>
+          <li>Confused: A country is classified as “confused” in a given category (this is one of the five categories or the total score) if the confidence score of the country in that category is less than 0.5, regardless of the aggregate score for that category.</li>
+          <li>Low score: A country is classified as “low score” in a given category if the score for that country in that category is below 50 percentile.</li>
+          <li>High score: A country is classified as “high score” in a given category if the score for that country in that category is above 50 percentile.</li>
+        </ol>
+
+        <p>
+        The confused classification has 2 approaches due to the limited number of questions in the category “Identification and Residency Requirements” which contains only 2 questions. This makes it technically impossible to use the percentile approach to classify the countries into the confused category. On the other hand, using the percentile approach when there’s enough data points is preferable. Therefore the overall confidence score is grouped by using percentile approach.
+        <br />
+        <br />
+        These groupings help us define which countries are unclear about their policies, which are clear but exclusionary and which are clear and inclusive of the undocumented population.
+        </p>
       </Container>
     </div>
   );

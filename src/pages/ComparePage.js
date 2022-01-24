@@ -25,7 +25,7 @@ function ComparePage(props) {
             <h1 className={"scoreCardPageHead"}>Countries Comparison</h1>          
             <h4>Explore how countries perform across the different categories of the Scorecard.</h4> 
             
-            {/* <ComparisonExplainer
+            <ComparisonExplainer
               open={openExplainer}
               setOpen={setOpenExplainer}
               categories={categories}
@@ -34,9 +34,8 @@ function ComparePage(props) {
               modalState={openExplainer}
               countryProfiles={countryProfiles}
             />         
-            <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button> */}
-            {/* <br/>
-            <br/> */}
+            <Button onClick={() => setOpenExplainer(true)}>Read Explainer Article</Button>
+            
             
           </Grid.Column>
         </Grid.Row>

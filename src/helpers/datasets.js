@@ -7590,3 +7590,5 @@ export const data = {
       .object(questionsReshaped(questionsEL))
   }
 }
+
+export const countryFactsRetrievedOn = '2021-11-11'

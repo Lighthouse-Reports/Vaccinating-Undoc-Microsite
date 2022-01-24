@@ -192,6 +192,7 @@ export const comparisonInfo = {
   fontSize: "0.7em",
   forceCollideMultipleBig: 1.6,
   forceCollideMultipleSmall: 0.6,
+  forceCollideMultipleScatter: 0.2,
   widthCutOffForLabels: 500,
   positiveXVal: 1.4,
   negativeXVal: -1.4,

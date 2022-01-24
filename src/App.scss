@@ -235,6 +235,7 @@ table, td, th {
   width: 100%;
   text-align: left;
   .scoreCardContent {
+    margin: 5px;
     min-height: 370px;
     .header {
       font-size: 1.1em;
@@ -288,6 +289,7 @@ table, td, th {
   text-align: left;
   background-color: #ddd !important;
   .quoteCardContent {
+    margin: 5px;
     min-height: 370px;
     .header {
 
@@ -351,6 +353,11 @@ table, td, th {
       }
     }
   }
+}
+
+.cardShareHolder {
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 

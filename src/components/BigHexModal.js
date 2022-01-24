@@ -79,7 +79,14 @@ function BigHexModal(props) {
               {/* Overall score: {countryRank} <br/> */}
               {t("Overall score") + ": " + t(countryRank)} <br/>
 
-              <div className={"hexModalSecondaryLabel"}>{t("Click here to view scorecard for " + country)}</div>
+              <div className={"hexModalSecondaryLabel"}>
+                {
+                  countryRank === 'Confused'
+                  ? <div>{t("Insufficient policy documentation available")}<br/><br/></div>
+                  : ""
+                }
+                {t("Click here to view scorecard for " + country)}
+              </div>
             </div>
             {/* </a> */}
             </Link>
