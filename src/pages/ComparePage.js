@@ -78,7 +78,7 @@ function ComparePage(props) {
                   <img src={iconsPathPrefix+"categories/"+catShort+"Complex.svg"}  width={240}/>
                 </Grid.Column>
                 <Grid.Column width={12}  className={"scoreCardDescription"}>
-                  <p>{scoreCardText[cat]}</p>
+                  {scoreCardText[cat]}
                   {/* <p>For a more detailed breakdown of questions, please refer to the section below.</p> */}
                 </Grid.Column>
               </Grid.Row>

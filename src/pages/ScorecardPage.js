@@ -215,13 +215,13 @@ function ScorecardPage(props) {
                   // stringListConcat(countryProfiles[iso].open_categories, "", highlightCatMouseOver, highlightCatMouseOut)
                   stringListConcat(openCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut, t)
                 }</>
-              : ""
+              : t("The country has no categories with enough data to be categorised as more open and accessible")
             }
             {
               // countryProfiles[iso].closed_categories.length > 0
               closedCatsRemoveConfused.length > 0
               // ? <>, and more exclusionary or less transparent for {stringListConcat(countryProfiles[iso].closed_categories, "", highlightCatMouseOver, highlightCatMouseOut)}. </>
-              ? <>{t(", and more exclusionary or less transparent for ")}{stringListConcat(closedCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut, t)}. </>
+              ? <>{t(", and is more exclusionary or less transparent for ")}{stringListConcat(closedCatsRemoveConfused, "", highlightCatMouseOver, highlightCatMouseOut, t)}. </>
               : ". "
             }
             </p>

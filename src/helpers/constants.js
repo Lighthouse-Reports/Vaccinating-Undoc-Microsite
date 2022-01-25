@@ -1,5 +1,6 @@
 import { rgb, copy } from 'd3-color'
 import { UndocSimple, IdresSimple, MargSimple, TransSimple, PrivSimple  } from '../icons'
+import React from "react";
 
 
 export const colors = {
@@ -203,11 +204,63 @@ export const comparisonInfo = {
 }
 
 export const scoreCardText = {
-  "Policy Transparency": "Policy Transparency evaluates government efforts to make national vaccine policies available to the public.  We determined whether an official vaccine strategy is online, whether the government has made public statements explaining the strategy, whether the budget is public, who was involved in developing the strategy and finally whether undocumented people were part of the process.",
-  "Undocumented Access": "Undocumented Access addresses the central question of the scorecard: are undocumented people able to access vaccination against COVID-19? This is where researchers identified whether undocumented people are included in the language of both written and oral vaccination policies, whether undocumented people can access vaccination without an ID, and whether access is equitable: undocumented people able to get vaccinated on the same basis as regularly residing individuals, and the type and choice of vaccine, costs and prioritisation are the same.",
-  "Identification and Residency Requirements": "Identification and Residency Requirements is an indirect means to determine whether the undocumented are able to get vaccinated. Researchers evaluated whether national vaccination policies are explicit in the type of documentation that is needed to access the vaccine, both in terms of identification and residency.",
-  "Marginalized Access": "Marginalised Access attempts to evaluate how a country is accommodating the needs of other marginalized groups within its borders.  The scorecard evaluates policies towards people in detention centres or without freedom of movement, people who are not fluent in the local language, people without internet access or means of transportation and people who are housing insecure. We evaluated how these groups are addressed overall, with the understanding  that undocumented people may also be part of these groups.",
-  "Privacy Guarantees": "Privacy Guarantees evaluates policies related to the collection, processing and sharing of data.  Researchers evaluated whether these policies are publicly available and whether assurances are provided that data collected prior to and during vaccination will not be shared outside health authorities. Undocumented people often avoid accessing public services out of fear that their residency status will be reported to government authorities. Privacy guarantees are therefore critical to making vaccines accessible. Lastly, researchers measured whether the certificate of vaccination indicates the location where the vaccination took place, with the understanding that this may create additional barriers for undocumented people if they seek to move to another country undetected."
+  "Policy Transparency": <div>
+      Policy Transparency evaluates government efforts to make national vaccine policies available to the public. 
+      We determined whether an official vaccine strategy is online, whether the government has made public statements explaining the strategy, whether the budget is public, 
+      who was involved in developing the strategy and finally whether undocumented people were part of the process.
+      <br/>
+      <br/>
+      Countries with little public information for the given category are shown "Confused", 
+      and among the rest, those that scored low on the scorecard are considered "Opaque", 
+      and those that scored high on the scorecard are considered "Transparent".
+    </div>,
+  "Undocumented Access": <div>
+      Undocumented Access addresses the central question of the scorecard: are undocumented people able to access vaccination against COVID-19? 
+      This is where researchers identified whether undocumented people are included in the language of both written and oral vaccination policies, 
+      whether undocumented people can access vaccination without an ID, and whether access is equitable: 
+      undocumented people able to get vaccinated on the same basis as regularly residing individuals, and the type and choice of vaccine, 
+      costs and prioritisation are the same.
+      <br/>
+      <br/>
+      Countries with little public information for the given category are shown "Confused", 
+      and among the rest, those that scored low on the scorecard are considered "Closed Door", 
+      and those that scored high on the scorecard are considered "Open and Accessible".
+    </div>,
+  "Identification and Residency Requirements": <div>
+      Identification and Residency Requirements is an indirect means to determine whether the undocumented are able to get vaccinated. 
+      Researchers evaluated whether national vaccination policies are explicit in the type of documentation that is needed to access the vaccine, 
+      both in terms of identification and residency.
+      <br/>
+      <br/>
+      Countries with little public information for the given category are shown "Confused", 
+      and among the rest, those that scored low on the scorecard are considered "Opaque", 
+      and those that scored high on the scorecard are considered "Transparent".
+    </div>,
+  "Marginalized Access": <div>
+      Marginalised Access attempts to evaluate how a country is accommodating the needs of other marginalized groups within its borders. 
+      The scorecard evaluates policies towards people in detention centres or without freedom of movement, people who are not fluent in the local language, 
+      people without internet access or means of transportation and people who are housing insecure. 
+      We evaluated how these groups are addressed overall, with the understanding  that undocumented people may also be part of these groups.
+      <br/>
+      <br/>
+      Countries with little public information for the given category are shown "Confused", 
+      and among the rest, those that scored low on the scorecard are considered "Exclusionary", 
+      and those that scored high on the scorecard are considered "Inclusive".
+    </div>,
+  "Privacy Guarantees": <div>
+      Privacy Guarantees evaluates policies related to the collection, processing and sharing of data. 
+      Researchers evaluated whether these policies are publicly available and whether assurances are provided that data 
+      collected prior to and during vaccination will not be shared outside health authorities. 
+      Undocumented people often avoid accessing public services out of fear that their residency status will be reported to government authorities. 
+      Privacy guarantees are therefore critical to making vaccines accessible. 
+      Lastly, researchers measured whether the certificate of vaccination indicates the location where the vaccination took place, 
+      with the understanding that this may create additional barriers for undocumented people if they seek to move to another country undetected.
+      <br/>
+      <br/>
+      Countries with little public information for the given category are shown "Confused", 
+      and among the rest, those that scored low on the scorecard are considered "Opaque", 
+      and those that scored high on the scorecard are considered "Transparent".
+    </div>
 }
 
 
