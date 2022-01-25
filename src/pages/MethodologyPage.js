@@ -83,6 +83,9 @@ function MethodologyPage(props) {
           <br />
           <br />
           The data cleaning continued for the remaining 21 countries. This process led to the elimination of a number of questions, which were deemed so vague that responses were inconsistent or so specific that the majority of researchers were not able to provide answers. 
+          <br />
+          <br />
+          The first data collection session took place in June 2021. Additional data collection took place over the following months, through September 2021. The data collected covers a period of time spanning from November 2020 to July 2021. Data cleaning took place from July to September 2021, and data processing from September and October 2021. 
         </p>
 
         <br />

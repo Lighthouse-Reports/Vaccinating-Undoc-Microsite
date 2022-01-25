@@ -212,6 +212,6 @@ export const scoreCardText = {
 
 
 // export const iconsPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/be6fb6f6db2795b3b556f0d2f8924c798da1c02a/public/icons/"
-export const iconsPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/f2621bee9ac7d2ca58ec654b7c6bff9c676965ff/public/icons/"
+export const iconsPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/a6806e985881af062462167ce0c28b7c6644f949/public/icons/"
 export const logoPathPrefix = "https://rawcdn.githack.com/Lighthouse-Reports/Vaccinating-Undoc-Microsite/20cf331d54c7ab9402cfa93f1155294effbfb248/public/logo-brand.svg"
 // export const logoPathPrefix = "https://www.lighthousereports.nl/wp-content/themes/lhr/assets/images/logo-text.svg"

@@ -226,6 +226,11 @@ function ScorecardPage(props) {
             }
             </p>
             <br/>
+            <p>
+              {
+                t("Scorecard data refers to November 2020 - July 2021. Coronavirus statistics are current up to early November 2021.")
+              }
+            </p>
             {/* <p>
             Overall, {countryProfiles[iso].country} has fared {countryProfiles[iso].covid_performance} than other countries in the Scorecard in confronting the pandemic
             . {f(countryProfiles[iso].vax_percent)}% of the population is fully vaccinated, which is {countryProfiles[iso].vax_rank} than average 
