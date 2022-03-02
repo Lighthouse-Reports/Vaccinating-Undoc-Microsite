@@ -489,3 +489,14 @@ table, td, th {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.comparisonChartContainerParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comparisonChartContainer {
+  text-align: center;
+}
+

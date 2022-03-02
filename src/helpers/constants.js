@@ -190,6 +190,7 @@ export const comparisonInfo = {
   strength: 5,
   size: 20,
   fixedHeight: (verticalOrientation) => verticalOrientation ? 600 : 350,
+  maxScatterWidth: 600,
   fontSize: "0.7em",
   forceCollideMultipleBig: 1.6,
   forceCollideMultipleSmall: 0.6,

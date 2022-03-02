@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { colors, paddings, catInitials, comparisonInfo, iconsPathPrefix, scoreThresholds } from '../helpers/constants';
+import { colors, paddings, catInitials, comparisonInfo, iconsPathPrefix } from '../helpers/constants';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { range, max, extent, median } from 'd3-array';
 import { forceSimulation, forceManyBody, forceX, forceY, 
@@ -13,12 +13,14 @@ function CountryComparisonChart(props) {
 
   const categoryId = category.replace(" ", "_")
   const [width, setWidth] = useState();
+  const [labelScaleRatio, setLabelScaleRatio] = useState(1);
   // const { subagg, agg } = data;
   const chartPadding = paddings.waterfallChartBorder;
   const inBetweenPadding = paddings.waterfallChartInBetween;
   const paddedWidth = width - chartPadding*2;
   const [animatedNodes, setAnimatedNodes] = useState([]);
   const [verticalOrientation, setVerticalOrientation] = useState(false);
+  const [gTranslateX, setGTranslateX] = useState(0);
   // const [data, setData] = useState([]);
   // console.log(verticalOrientation);
 
@@ -36,8 +38,20 @@ function CountryComparisonChart(props) {
 
   // This function calculates width and height of the list
   const getContainerSize = () => {
-    const newWidth = chartRef.current ? chartRef.current.clientWidth : 0;
-    setWidth(newWidth);
+    const newWidth = chartRef.current 
+      ? scatter 
+        ? (chartRef.current.clientWidth > comparisonInfo.maxScatterWidth 
+            ? comparisonInfo.maxScatterWidth 
+            : chartRef.current.clientWidth)
+        : chartRef.current.clientWidth
+      : 0;
+    setLabelScaleRatio(newWidth / comparisonInfo.maxScatterWidth);
+    if (newWidth) setWidth(newWidth);
+    if (scatter && chartRef.current) {
+      setGTranslateX((chartRef.current.clientWidth - newWidth) / 2)
+    } else {
+      setGTranslateX(0)
+    }
 
     if (newWidth < comparisonInfo.widthCutOffForLabels) {
       // console.log("Setting vertical orientation to true");
@@ -64,7 +78,7 @@ function CountryComparisonChart(props) {
 
   useEffect(() => {
     getContainerSize();
-  }, []);
+  }, [scatter]);
 
 
   const getPos = (isOverall,category,iso,showScatter) => {
@@ -247,7 +261,8 @@ function CountryComparisonChart(props) {
       <Grid className={"comparisonChartGridContainer"}>
       <Grid.Row className={"comparisonChartGrid"}>
         <svg  width={"100%"} height={scatter ? width : comparisonInfo.fixedHeight(verticalOrientation)} ref={chartRef}>
-        <g className="countryComparisonChart">
+        <g transform={"translate("+gTranslateX+",0)"}
+          className="countryComparisonChart">
           <clipPath id={"backgroundExtent"+categoryId}>
             <rect 
               x={0}
@@ -438,6 +453,7 @@ function CountryComparisonChart(props) {
                   x={width/2-comparisonInfo.paddingSides/2}
                   y={comparisonInfo.paddingSides/2}  
                   textAnchor={"end"}
+                  fontSize={14*labelScaleRatio}
                 >
                   ← {range[0]}
                 </text>
@@ -445,14 +461,16 @@ function CountryComparisonChart(props) {
                   x={width/2+comparisonInfo.paddingSides/2}
                   y={comparisonInfo.paddingSides/2}   
                   textAnchor={"start"}  
+                  fontSize={14*labelScaleRatio}
                 >
                   {range[1]} →
                 </text>
                 <text
-                  x={comparisonInfo.paddingSides/2}
-                  y={(xScatterStart+xScatterEnd) / 2 - comparisonInfo.paddingSides/2} 
+                  x={comparisonInfo.paddingSides/2 - 5}
+                  y={(category === "overall" ? scaleYScatter(medianConfidence) : scaleYScatter(0.5))} 
                   textAnchor={"end"}   
-                  transform={"rotate(-90,"+comparisonInfo.paddingSides+","+(xScatterStart+xScatterEnd) / 2 + comparisonInfo.paddingSides/2+")"}
+                  transform={"rotate(-90,"+(comparisonInfo.paddingSides/2)+","+(category === "overall" ? scaleYScatter(medianConfidence) : scaleYScatter(0.5))+")"}
+                  fontSize={14*labelScaleRatio}
                 >
                   ← Confused
                 </text>

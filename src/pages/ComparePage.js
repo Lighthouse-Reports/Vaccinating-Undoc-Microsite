@@ -83,8 +83,8 @@ function ComparePage(props) {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                <Grid.Column>
-                  <div key={+"Group"}>
+                <Grid.Column className={"comparisonChartContainerParent"}>
+                  <div key={+"Group"} className={"comparisonChartContainer"}>
                     <CountryComparisonChart
                       width={320}
                       height={300}
